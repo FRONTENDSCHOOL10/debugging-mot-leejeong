@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <!-- 헤더가 있어서 이 부분을 어떻게 해야할지 모르곘어요. -->
+    <h1>TAING</h1>
+    <main>
+      <section>
+        <h2>타잉 회원가입</h2>
+        <p>아이디와 이메일로 간편하게 타잉을 시작하세요!</p>
+        <form action="/">
+          <fieldset>
+            <legend>회원가입</legend>
+
+            <label for="userId">아이디</label>
+            <input
+              type="text"
+              name="userId"
+              class="userId"
+              placeholder="아이디"
+              required
+            />
+            <p>영문 또는 영문, 숫자 조합 6&minus;12자리</p>
+
+            <label for="userPwd">비밀번호</label>
+            <input
+              type="password"
+              name="userPwd"
+              class="userpwd"
+              placeholder="비밀번호"
+              required
+            />
+            <p>
+              영문, 숫자,
+              특수문자&#40;&#126;&#33;&#64;&#35;&#36;&#37;&#94;&#38;&#42;&#41;
+              조합 8&minus;15자리
+            </p>
+
+            <!-- 비밀번호 재입력 시 일치하는지 일치하지 않는지 알려주면 좋을 것 같다. -->
+            <label for="userPwdConfirm">비밀번호 재입력</label>
+            <input
+              type="password"
+              name="userPwdConfirm"
+              class="userpwd"
+              placeholder="비밀번호 재입력"
+              required
+            />
+            <label for="userEmail">이메일</label>
+            <input
+              type="email"
+              name="userEmail"
+              class="userEmail"
+              placeholder="이메일"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <legend>이용약관 동의</legend>
+            <label for="allAccept">모두 동의합니다.</label>
+            <input type="checkbox" name="allAccept" class="allAccept" />
+            <label for="ageCheck">만 14세 이상입니다.</label>
+            <input type="checkbox" name="ageCheck" class="ageCheck" />
+            <label for="userId">&#91;필수&#93; 서비스 이용약관 동의</label>
+            <input type="checkbox" name="userId" class="userId" required />
+            <label for="userId"
+              >&#91;필수&#93; 개인정보 수집 및 서비스 활용 동의</label
+            >
+            <input type="checkbox" name="userId" class="userId" required />
+            <label for="userId"
+              >&#91;필수&#93; 채널 홈페이지 개인정보 제 3자 제공 동의</label
+            >
+            <input type="checkbox" name="userId" class="userId" required />
+            <label for="userId">&#91;필수&#93; 개인정보 제 3자 제공 동의</label>
+            <input type="checkbox" name="userId" class="userId" required />
+            <label for="userId"
+              >&#91;선택&#93; 개인정보 수집 및 서비스 활용 동의</label
+            >
+            <input type="checkbox" name="userId" class="userId" />
+
+            <label for="userId">&#91;선택&#93; 마케팅 정보 SMS 수신 동의</label>
+            <input type="checkbox" name="userId" class="userId" />
+            <label for="userId"
+              >&#91;선택&#93; 마케팅 정보 이메일 수신 동의</label
+            >
+            <input type="checkbox" name="userId" class="userId" />
+          </fieldset>
+        </form>
+        <button>확인</button>
+      </section>
+    </main>
+  </body>
+</html>
