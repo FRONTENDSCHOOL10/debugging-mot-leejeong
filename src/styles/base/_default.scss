@@ -1,0 +1,22 @@
+@use "./../utils/variables" as var;
+@use "./../utils/mixins" as mix;
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+$base-font-family: "Pretendard Variable", sans-serif;
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var.$base-font-family;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  @include mix.a11yHidden;
+}
