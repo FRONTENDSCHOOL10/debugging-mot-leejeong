@@ -14,3 +14,10 @@ $gray-600: #565656;
 $gray-700: #404040;
 $gray-800: #2b2b2b;
 $gray-900: #151515;
+
+/* Breakpoints */
+$breakpoint-mobile: 680px;
+$breakpoint-tablet: 1024px;
+
+/* Spacing */
+$container-gutter: clamp(16px, 3.90625vw, 70px);
