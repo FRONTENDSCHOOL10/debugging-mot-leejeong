@@ -1,0 +1,91 @@
+/* Typography */
+
+/* ------------------ Heading ----------------- */
+.heading-medium {
+  font-family: $base-font-family;
+  font-size: 1.3125rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-large {
+  font-family: $base-font-family;
+  font-size: 1.375rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xlarge {
+  font-family: $base-font-family;
+  font-size: 1.17rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xxlarge {
+  font-family: $base-font-family;
+  font-size: 2.375rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xxxlarge {
+  font-family: $base-font-family;
+  font-size: 3.125rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* ------------------- Label ------------------ */
+.label-small {
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-medium {
+  font-family: $base-font-family;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-large {
+  font-family: $base-font-family;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-xlarge {
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-xxlarge {
+  font-family: $base-font-family;
+  font-size: 2.375rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ------------------- Paragraph ------------------ */
+.paragraph-small {
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.paragraph-medium {
+  font-family: $base-font-family;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.paragraph-large {
+  font-family: $base-font-family;
+  font-size: 1.375rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.paragraph-xlarge {
+  font-family: $base-font-family;
+  font-size: 1.75rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
