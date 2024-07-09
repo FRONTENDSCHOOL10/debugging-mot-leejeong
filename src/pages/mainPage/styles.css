@@ -1,3 +1,7 @@
+/* body {
+  background-color: white;
+} */
+
 .logo__1__icon {
   width: 132px;
   position: relative;
@@ -6,6 +10,7 @@
   flex-shrink: 0;
   object-fit: cover;
 }
+
 .icon__live {
   width: 34px;
   position: relative;
@@ -13,10 +18,12 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .text {
   position: relative;
   line-height: 160%;
 }
+
 .menu__icon__text {
   display: flex;
   flex-direction: row;
@@ -24,12 +31,14 @@
   justify-content: flex-start;
   gap: 10px;
 }
+
 .menu__icon__text1 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
+
 .icon__paramount {
   width: 111.9px;
   position: relative;
@@ -37,6 +46,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -44,6 +54,7 @@
   justify-content: flex-start;
   gap: 52px;
 }
+
 .logo__menu {
   display: flex;
   flex-direction: row;
@@ -51,6 +62,7 @@
   justify-content: center;
   gap: 52px;
 }
+
 .icon__search {
   width: 40px;
   position: relative;
@@ -58,6 +70,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .aside {
   display: flex;
   flex-direction: row;
@@ -65,6 +78,7 @@
   justify-content: flex-start;
   gap: 40px;
 }
+
 .nav {
   align-self: stretch;
   display: flex;
@@ -72,6 +86,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .header__organisms__2 {
   align-self: stretch;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
@@ -83,6 +98,7 @@
   padding: 0px 70px;
   box-sizing: border-box;
 }
+
 .banner__img__icon {
   position: absolute;
   top: 0px;
@@ -91,6 +107,7 @@
   height: 855px;
   object-fit: cover;
 }
+
 .after {
   position: absolute;
   top: 577px;
@@ -99,6 +116,7 @@
   width: 1920px;
   height: 278px;
 }
+
 .icon__banner__arrow {
   width: 70px;
   position: relative;
@@ -106,6 +124,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .swiper {
   align-self: stretch;
   display: flex;
@@ -114,6 +133,7 @@
   justify-content: flex-start;
   gap: 1780px;
 }
+
 .group__child {
   position: absolute;
   top: 0px;
@@ -122,6 +142,7 @@
   width: 5px;
   height: 16px;
 }
+
 .group__item {
   position: absolute;
   top: 0px;
@@ -130,6 +151,7 @@
   width: 5px;
   height: 16px;
 }
+
 .rectangle__parent {
   position: absolute;
   top: 1px;
@@ -137,6 +159,7 @@
   width: 14px;
   height: 16px;
 }
+
 .icon__pagination {
   width: 18px;
   position: relative;
@@ -144,6 +167,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .swiper__pagination__bullet {
   width: 12px;
   position: relative;
@@ -151,6 +175,7 @@
   background-color: #898989;
   height: 12px;
 }
+
 .swiper__pagination__bullet1 {
   width: 12px;
   position: relative;
@@ -158,6 +183,7 @@
   background-color: #fff;
   height: 12px;
 }
+
 .swiper__pagination__bullet__parent {
   display: flex;
   flex-direction: row;
@@ -165,6 +191,7 @@
   justify-content: flex-start;
   gap: 12px;
 }
+
 .banner__pagenation {
   display: flex;
   flex-direction: row;
@@ -172,6 +199,7 @@
   justify-content: flex-start;
   gap: 20px;
 }
+
 .contents__pagination {
   display: flex;
   flex-direction: column;
@@ -179,6 +207,7 @@
   justify-content: flex-start;
   gap: 20px;
 }
+
 .button__detail__view {
   width: 221px;
   border-radius: 4px;
@@ -192,6 +221,7 @@
   padding: 20px 0px;
   font-size: 21.33px;
 }
+
 .contents {
   align-self: stretch;
   display: flex;
@@ -200,6 +230,7 @@
   justify-content: space-between;
   padding: 0px 70px;
 }
+
 .inner {
   position: absolute;
   top: 392px;
@@ -210,6 +241,7 @@
   justify-content: center;
   gap: 138px;
 }
+
 .main__banner {
   align-self: stretch;
   position: relative;
@@ -217,6 +249,7 @@
   font-size: 28.43px;
   color: #fff;
 }
+
 .main {
   align-self: stretch;
   background-color: #000;
@@ -228,16 +261,19 @@
   font-size: 21.33px;
   color: #c4c4c4;
 }
+
 .b {
   position: relative;
   line-height: 140%;
 }
+
 .lists__title {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .title__wrap {
   align-self: stretch;
   display: flex;
@@ -246,6 +282,7 @@
   justify-content: flex-start;
   padding: 0px 70px;
 }
+
 .frame__child {
   position: absolute;
   top: 0px;
@@ -256,6 +293,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .group__icon {
   position: absolute;
   height: 100%;
@@ -268,6 +306,7 @@
   overflow: hidden;
   max-height: 100%;
 }
+
 .group__icon1 {
   position: absolute;
   height: 100%;
@@ -280,6 +319,7 @@
   overflow: hidden;
   max-height: 100%;
 }
+
 .icon__original {
   position: absolute;
   top: 303px;
@@ -288,6 +328,7 @@
   height: 20px;
   overflow: hidden;
 }
+
 .thumnail__vertical__1 {
   width: 240px;
   position: relative;
@@ -296,11 +337,13 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .title1 {
   position: relative;
   line-height: 150%;
   font-weight: 600;
 }
+
 .label__video__title__1 {
   width: 240px;
   display: flex;
@@ -308,6 +351,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .visual__thumnail__label__1 {
   position: absolute;
   top: 0px;
@@ -318,6 +362,7 @@
   justify-content: flex-start;
   gap: 8px;
 }
+
 .frame__parent {
   width: 240px;
   position: relative;
@@ -325,6 +370,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .ellipse__icon {
   position: absolute;
   height: 95.33%;
@@ -338,6 +384,7 @@
   max-height: 100%;
   opacity: 0.85;
 }
+
 .b1 {
   position: absolute;
   height: 76.33%;
@@ -348,6 +395,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .icon__age__limit {
   position: absolute;
   top: 5px;
@@ -356,6 +404,7 @@
   height: 30px;
   overflow: hidden;
 }
+
 .label__video__title__12 {
   width: 240px;
   display: flex;
@@ -367,6 +416,7 @@
   color: #c4c4c4;
   font-family: Pretendard;
 }
+
 .frame__container {
   width: 240px;
   position: relative;
@@ -378,10 +428,12 @@
   color: #fff;
   font-family: 'Noto Sans KR';
 }
+
 .title12 {
   width: 55px;
   height: 32px;
 }
+
 .label__video__title__16 {
   position: absolute;
   top: 355px;
@@ -392,6 +444,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .swiper__list__wrap {
   position: absolute;
   top: 0px;
@@ -402,6 +455,7 @@
   justify-content: flex-start;
   gap: 16px;
 }
+
 .img__frame {
   align-self: stretch;
   position: relative;
@@ -411,6 +465,7 @@
   font-size: 21.33px;
   color: #c4c4c4;
 }
+
 .must__see {
   align-self: stretch;
   display: flex;
@@ -420,6 +475,7 @@
   padding: 0px 0px 36px;
   gap: 12px;
 }
+
 .frame__child5 {
   position: absolute;
   top: 0px;
@@ -429,6 +485,7 @@
   height: 194px;
   overflow: hidden;
 }
+
 .f-webp400__icon {
   position: absolute;
   top: 0px;
@@ -437,6 +494,7 @@
   height: 194.1px;
   object-fit: cover;
 }
+
 .icon__quick__vod {
   position: absolute;
   top: 5px;
@@ -452,6 +510,7 @@
   padding: 0px 9px;
   box-sizing: border-box;
 }
+
 .thumnail__horizontal__1 {
   width: 345px;
   position: relative;
@@ -460,6 +519,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .title17 {
   align-self: stretch;
   display: flex;
@@ -467,6 +527,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .sub__title {
   align-self: stretch;
   display: flex;
@@ -476,6 +537,7 @@
   font-size: 16px;
   color: #a6a6a6;
 }
+
 .label__video__title__2 {
   width: 345px;
   display: flex;
@@ -486,6 +548,7 @@
   font-size: 21.33px;
   color: #c4c4c4;
 }
+
 .frame__parent5 {
   width: 345px;
   position: relative;
@@ -493,6 +556,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .img__frame1 {
   align-self: stretch;
   position: relative;
@@ -502,6 +566,7 @@
   font-size: 16px;
   color: #e1e1e1;
 }
+
 .thumnail__vertical__18 {
   width: 240px;
   position: relative;
@@ -511,6 +576,7 @@
   flex-shrink: 0;
   z-index: 0;
 }
+
 .b3 {
   position: absolute;
   top: -29px;
@@ -519,6 +585,7 @@
   transform: rotate(0.7deg);
   transform-origin: 0 0;
 }
+
 .ranking {
   position: absolute;
   height: 100%;
@@ -529,12 +596,14 @@
   left: 0%;
   overflow: hidden;
 }
+
 .title__inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .icon__dot {
   width: 8px;
   position: relative;
@@ -544,6 +613,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .icon__dot__wrapper {
   height: 32px;
   display: flex;
@@ -553,6 +623,7 @@
   padding: 6px 0px 0px;
   box-sizing: border-box;
 }
+
 .title29 {
   position: absolute;
   top: 0px;
@@ -568,6 +639,7 @@
   color: #c4c4c4;
   font-family: Pretendard;
 }
+
 .label__video__title__3 {
   width: 240px;
   position: absolute;
@@ -577,6 +649,7 @@
   height: 60px;
   z-index: 1;
 }
+
 .visual__thumnail__label__2 {
   position: absolute;
   top: 0px;
@@ -586,6 +659,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .frame__parent11 {
   width: 240px;
   position: relative;
@@ -593,10 +667,12 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .title__item {
   width: 8px;
   height: 32px;
 }
+
 .label__video__title__31 {
   width: 240px;
   position: absolute;
@@ -608,6 +684,7 @@
   text-align: left;
   font-size: 70px;
 }
+
 .frame__parent12 {
   width: 240px;
   position: relative;
@@ -617,6 +694,7 @@
   text-align: center;
   font-size: 15px;
 }
+
 .img__frame2 {
   align-self: stretch;
   position: relative;
@@ -626,6 +704,7 @@
   font-size: 70px;
   font-family: 'Noto Sans KR';
 }
+
 .img__frame__icon {
   position: absolute;
   top: 0px;
@@ -636,6 +715,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .title45 {
   align-self: stretch;
   display: flex;
@@ -644,6 +724,7 @@
   justify-content: flex-start;
   font-size: 21.33px;
 }
+
 .sub__title12 {
   align-self: stretch;
   display: flex;
@@ -652,6 +733,7 @@
   justify-content: flex-start;
   color: #a6a6a6;
 }
+
 .viewer {
   align-self: stretch;
   display: flex;
@@ -660,6 +742,7 @@
   justify-content: flex-start;
   color: #6b6b6b;
 }
+
 .title__wrap4 {
   position: absolute;
   top: 0px;
@@ -671,6 +754,7 @@
   justify-content: flex-start;
   gap: 2px;
 }
+
 .ranking8 {
   position: absolute;
   height: 100%;
@@ -684,11 +768,13 @@
   color: #fff;
   font-family: 'Noto Sans KR';
 }
+
 .label__video__title__4 {
   width: 345px;
   position: relative;
   height: 89px;
 }
+
 .list {
   width: 345px;
   position: relative;
@@ -696,6 +782,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .visual__thumnail__label__41 {
   position: absolute;
   top: 1px;
@@ -706,6 +793,7 @@
   justify-content: flex-start;
   gap: 8px;
 }
+
 .img__frame3 {
   align-self: stretch;
   position: relative;
@@ -715,6 +803,7 @@
   font-size: 16px;
   color: #c4c4c4;
 }
+
 .icon5 {
   width: 285px;
   position: relative;
@@ -722,6 +811,7 @@
   height: 570px;
   object-fit: cover;
 }
+
 .icon6 {
   width: 281.3px;
   position: relative;
@@ -729,6 +819,7 @@
   height: 562.7px;
   object-fit: cover;
 }
+
 .img__frame4 {
   align-self: stretch;
   position: relative;
@@ -736,6 +827,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .img__frame__icon6 {
   position: absolute;
   top: 36px;
@@ -746,6 +838,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .sports {
   align-self: stretch;
   position: relative;
@@ -753,6 +846,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .img__frame__icon7 {
   width: 346px;
   position: relative;
@@ -762,6 +856,7 @@
   flex-shrink: 0;
   object-fit: cover;
 }
+
 .swiper__list__wrap5 {
   position: absolute;
   top: 0px;
@@ -772,6 +867,7 @@
   justify-content: flex-start;
   gap: 16px;
 }
+
 .img__frame5 {
   align-self: stretch;
   position: relative;
@@ -779,6 +875,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .event {
   align-self: stretch;
   display: flex;
@@ -788,12 +885,14 @@
   padding: 0px 0px 36px 70px;
   gap: 12px;
 }
+
 .div3 {
   position: relative;
   line-height: 160%;
   color: #c4c4c4;
   white-space: pre-wrap;
 }
+
 .notice {
   display: flex;
   flex-direction: row;
@@ -801,6 +900,7 @@
   justify-content: flex-start;
   gap: 20px;
 }
+
 .go__brand {
   display: flex;
   flex-direction: row;
@@ -808,12 +908,14 @@
   justify-content: flex-start;
   gap: 16px;
 }
+
 .line__icon {
   width: 0px;
   position: relative;
   height: 24.8px;
   object-fit: contain;
 }
+
 .foot__select__wrap {
   display: flex;
   flex-direction: row;
@@ -822,6 +924,7 @@
   gap: 30px;
   color: #c4c4c4;
 }
+
 .line {
   align-self: stretch;
   position: relative;
@@ -830,6 +933,7 @@
   box-sizing: border-box;
   height: 1px;
 }
+
 .footer__util {
   align-self: stretch;
   display: flex;
@@ -839,6 +943,7 @@
   gap: 36px;
   color: #c4c4c4;
 }
+
 .line1 {
   width: 1px;
   position: relative;
@@ -847,6 +952,7 @@
   box-sizing: border-box;
   height: 15.4px;
 }
+
 .paragraph {
   align-self: stretch;
   display: flex;
@@ -855,11 +961,13 @@
   justify-content: flex-start;
   gap: 8px;
 }
+
 .tvingcjnet {
   position: relative;
   text-decoration: underline;
   line-height: 160%;
 }
+
 .copyright__box {
   align-self: stretch;
   display: flex;
@@ -867,6 +975,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .icon__youtube {
   width: 52px;
   position: relative;
@@ -875,6 +984,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .footer__content {
   align-self: stretch;
   display: flex;
@@ -883,6 +993,7 @@
   justify-content: flex-start;
   gap: 24px;
 }
+
 .inner1 {
   align-self: stretch;
   display: flex;
@@ -892,6 +1003,7 @@
   padding: 0px 68px;
   gap: 27px;
 }
+
 .footer {
   align-self: stretch;
   background-color: #000;
@@ -903,6 +1015,7 @@
   font-size: 21.33px;
   color: #6b6b6b;
 }
+
 .tving {
   width: 100%;
   position: relative;
