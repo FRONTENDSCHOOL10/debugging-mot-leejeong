@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <!-- 헤더가 있어서 이 부분을 어떻게 해야할지 모르곘어요. -->
+    <header class="header">
+      <h1 class="header__title">TAING</h1>
+    </header>
+    <!-- 메인 -->
+    <main class="main">
+      <section class="signup">
+        <h2 class="signup__title">타잉 회원가입</h2>
+        <p class="signup__description">
+          아이디와 이메일로 간편하게 타잉을 시작하세요!
+        </p>
+        <form action="/" class="signup__form">
+          <fieldset class="signup__fieldset">
+            <legend class="sr-only">회원가입</legend>
+
+            <input
+              type="text"
+              name="userId"
+              id="userId"
+              placeholder="아이디"
+              required
+            />
+            <label for="userId" class="sr-only">아이디</label>
+            <p class="signup__validation--id">
+              영문 또는 영문, 숫자 조합 6&minus;12자리
+            </p>
+
+            <input
+              type="password"
+              name="userPwd"
+              id="userPwd"
+              placeholder="비밀번호"
+              required
+            />
+            <label for="userPwd" class="sr-only">비밀번호</label>
+
+            <p class="signup__validation--id">
+              영문, 숫자,
+              특수문자&#40;&#126;&#33;&#64;&#35;&#36;&#37;&#94;&#38;&#42;&#41;
+              조합 8&minus;15자리
+            </p>
+
+            <input
+              type="password"
+              name="userPwdConfirm"
+              id="userPwdConfirm"
+              placeholder="비밀번호 재입력"
+              required
+            />
+            <label for="userPwdConfirm" class="sr-only">비밀번호 재입력</label>
+
+            <!-- 비밀번호 재입력 시 일치하는지 일치하지 않는지 알려주면 좋을 것 같다. -->
+            <p class="signup__validation--pwd-confirm">
+              비밀번호가 일치합니다.
+            </p>
+
+            <input
+              type="email"
+              name="userEmail"
+              id="userEmail"
+              placeholder="이메일"
+              required
+            />
+            <label for="userEmail" class="sr-only">이메일</label>
+          </fieldset>
+
+          <!-- 이용약관 form -->
+          <fieldset class="signup-terms__fieldset">
+            <legend class="sr-only">이용약관 동의</legend>
+            <ul class="signup-terms__lists">
+              <li>
+                <input
+                  type="checkbox"
+                  name="acceptAllTerms"
+                  id="acceptAllTerms"
+                />
+                <label for="acceptAllTerms">모두 동의합니다.</label>
+
+                <ul>
+                  <li>
+                    <input type="checkbox" name="termsAge" id="termsAge" />
+                    <label for="termsAge">만 14세 이상입니다.</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="termsAgreementService"
+                      id="termsAgreementService"
+                      required
+                    />
+                    <label for="termsAgreementService"
+                      >&#91;필수&#93; 서비스 이용약관 동의</label
+                    >
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="termsUsingPersonalInfo"
+                      id="termsUsingPersonalInfo"
+                      required
+                    />
+                    <label for="termsUsingPersonalInfo"
+                      >&#91;필수&#93; 개인정보 수집 및 서비스 활용 동의</label
+                    >
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="termsProvidePersonalInfoOnWeb"
+                      id="termsProvidePersonalInfoOnWeb"
+                      required
+                    />
+                    <label for="termsProvidePersonalInfoOnWeb"
+                      >&#91;필수&#93; 채널 홈페이지 개인정보 제 3자 제공
+                      동의</label
+                    >
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="termsProvidePersonalInfo"
+                      id="termsProvidePersonalInfo"
+                      required
+                    />
+                    <label for="termsProvidePersonalInfo"
+                      >&#91;선택&#93; 개인정보 제 3자 제공 동의</label
+                    >
+                  </li>
+
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="termsCollectPersonalInfo"
+                      id="termsCollectPersonalInfo"
+                    />
+                    <label for="termsCollectPersonalInfo"
+                      >&#91;선택&#93; 개인정보 수집 및 서비스 활용 동의</label
+                    >
+                    <ul>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="termsReceiveSMS"
+                          id="termsReceiveSMS"
+                        />
+                        <label for="termsReceiveSMS"
+                          >&#91;선택&#93; 마케팅 정보 SMS 수신 동의</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="termsReceiveEmail"
+                          id="termsReceiveEmail"
+                        />
+                        <label for="termsReceiveEmail"
+                          >&#91;선택&#93; 마케팅 정보 이메일 수신 동의</label
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+
+        <button type="submit" class="signup__submit-button" disabled>
+          확인
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
