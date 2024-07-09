@@ -1,0 +1,139 @@
+@use '/styles/base' as *;
+@use '/styles/utils' as *;
+
+body {
+  background-color: $black;
+  color: $white;
+}
+
+/* 헤더 */
+#header {
+  height: rem(100);
+  position: fixed;
+
+  .header__container {
+    width: 100%;
+    height: 100%;
+    padding-left: $container-gutter;
+    padding-right: $container-gutter;
+    display: flex;
+    align-items: center;
+  }
+  .head__logo {
+    display: block;
+
+    .head__logo--image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: rem(132);
+      }
+    }
+  }
+}
+
+/* 메인 */
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section__main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, #000 100%),
+    url(/assets/landing/main-bg.jpg);
+  background-size: cover;
+}
+
+.main__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: $container-gutter;
+  padding-right: $container-gutter;
+
+  .section__maintitle {
+    text-align: center;
+  }
+
+  .section__subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-weight: 500;
+    margin-top: em(20, 28);
+    margin-bottom: em(60, 28);
+  }
+
+  .main__button {
+    height: rem(80);
+    background-color: $brand-red-2;
+    color: $white;
+    padding: 0 em(80, 28) 0 0;
+    border: 0;
+    border-radius: rem(4);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    .symbol {
+      height: 100%;
+      svg {
+        width: rem(80);
+        height: rem(80);
+        margin-right: em(38, 28);
+      }
+    }
+  }
+}
+
+.section {
+  display: flex;
+}
+
+/* 반응형 스타일 분기 */
+// header
+@media screen and (max-width: $breakpoint-tablet) {
+  #header {
+    height: rem(56);
+    .head__logo .head__logo--image svg {
+      width: rem(80);
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  #header {
+    height: rem(38);
+    .head__logo .head__logo--image svg {
+      width: rem(60);
+    }
+  }
+}
+
+// main
+@media screen and (max-width: $breakpoint-tablet) {
+  .main__wrap .main__button {
+    height: rem(48);
+    .symbol svg {
+      width: rem(56);
+      height: rem(56);
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .main__wrap .main__button {
+    height: rem(34);
+    .symbol svg {
+      width: rem(38);
+      height: rem(38);
+    }
+  }
+}
