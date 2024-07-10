@@ -1,1 +1,1 @@
-import './header.scss';
+import '/src/layouts/header/header.scss';
