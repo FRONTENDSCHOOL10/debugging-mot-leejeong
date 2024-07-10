@@ -146,13 +146,23 @@ body {
 
 /* ----------------- original ----------------- */
 
-.original__swiper {
-  width: 100vw;
+.swiper {
+  display: block;
+  width: rem(900);
   height: rem(510);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(277);
+    height: rem(400);
+  }
 
-  .original__swiper-wrapper {
+  .swiper-wrapper {
     display: flex;
     flex-flow: row nowrap;
     gap: rem(24);
@@ -161,17 +171,48 @@ body {
   }
 }
 
-.original__swiper-slide {
+.swiper-slide {
   width: rem(900);
   height: rem(510);
+  cursor: pointer;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(277);
+    height: rem(400);
+  }
 }
 
-.original__slide-image {
+.slide-image {
   width: 100%;
   height: 100%;
-  background-image: url(./../../assets/landing/original/original-1.jpg);
   background-position: center;
   background-size: cover;
+}
+
+.original__content1 {
+  background-image: url(./../../assets/landing/original/original-1.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-1.jpg);
+  }
+}
+
+.original__content2 {
+  background-image: url(./../../assets/landing/original/original-2.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-2.jpg);
+  }
+}
+.original__content3 {
+  background-image: url(./../../assets/landing/original/original-3.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-3.jpg);
+  }
+}
+.original__content4 {
+  background-image: url(./../../assets/landing/original/original-4.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-4.jpg);
+  }
 }
 
 /* ------------------- trend ------------------ */
