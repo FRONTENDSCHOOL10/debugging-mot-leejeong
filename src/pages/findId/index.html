@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAING 아이디 찾기</title>
+  </head>
+  <body>
+    <!-- 헤더가 있어서 이 부분을 어떻게 해야할지 모르곘어요. -->
+    <header class="header">
+      <h1 class="header__title">TAING</h1>
+    </header>
+
+    <!-- 아이디 찾기 페이지 본문 -->
+    <main class="main">
+      <section class="find-id">
+        <h2 class="find-id__title">아이디 찾기</h2>
+
+        <!-- 이메일로 찾기 -->
+        <article class="find-id__article--email">
+          <h3 class="find-id__title--email">이메일로 찾기</h3>
+          <p class="find-id__description--email">
+            가입 시 등록한 이메일을 입력해주세요.
+          </p>
+
+          <!-- 이메일 입력 form -->
+          <form action="/" class="find-id__form--email">
+            <fieldset class="find-id__fieldset--email">
+              <legend class="sr-only">이메일 입력</legend>
+              <input
+                type="email"
+                name="useremail"
+                id="useremail"
+                placeholder="이메일"
+                required
+              />
+              <label for="useremail" class="sr-only">이메일</label>
+            </fieldset>
+          </form>
+
+          <button type="submit" class="find-id__submit-button--email" disabled>
+            확인
+          </button>
+        </article>
+
+        <!-- 구분선 -->
+        <p class="find-id__or">또는</p>
+
+        <!-- 본인인증으로 찾기 -->
+        <article class="find-id__article--phone">
+          <h3 class="find-id__title--phone">본인인증으로 찾기</h3>
+          <p class="find-id__description--phone">
+            이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.
+          </p>
+
+          <button type="button" class="find-id__button--phone">
+            본인인증하기
+          </button>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
