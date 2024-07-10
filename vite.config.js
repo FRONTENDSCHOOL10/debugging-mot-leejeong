@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         landing: resolve(__dirname, 'src/pages/landing/index.html'),
+        footer: resolve(__dirname, 'src/layouts/footer/index.html'),
       },
     },
   },
