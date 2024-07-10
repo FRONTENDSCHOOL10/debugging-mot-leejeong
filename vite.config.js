@@ -11,6 +11,7 @@ export default defineConfig({
         findid: resolve(__dirname, 'src/pages/findId/index.html'),
         landing: resolve(__dirname, 'src/pages/landing/index.html'),
         footer: resolve(__dirname, 'src/layouts/footer/index.html'),
+        mainPage: resolve(__dirname, 'src/pages/main/index.html'),
       },
     },
   },
