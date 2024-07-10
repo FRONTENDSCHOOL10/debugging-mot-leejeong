@@ -1,6 +1,6 @@
-// @use './base';
-// @use './layout/header';
-// @use './pages';
+@use '/styles/base';
+@use '/styles/layout/header';
+@use '/styles/pages';
 
 .tving {
   width: 100%;
@@ -207,6 +207,8 @@
 }
 
 .banner__pagenation {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -898,6 +900,15 @@
   justify-content: flex-start;
   padding: 0px 0px 36px 70px;
   gap: 12px;
+}
+
+.div {
+  position: relative;
+  font-size: 21.33px;
+  line-height: 160%;
+  font-family: Pretendard;
+  color: #fff;
+  text-align: left;
 }
 
 .div3 {
