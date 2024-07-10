@@ -8,12 +8,19 @@
     <link rel="apple-touch-icon" href="/favicon/favicon.png" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@700&display=swap"
     />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="mainPage.js"></script>
   </head>
   <body>
     <!-- 헤더 -->
@@ -79,25 +86,28 @@
       <!-- 메인배너 -->
       <section class="main__banner">
         <div class="banner__img">
-          <img
-            class="banner__img__icon"
-            src="/assets/main/배너이미지.png"
-            alt="배너 이미지"
-          />
-          <div class="after"></div>
-          <div class="inner">
-            <div class="swiper">
-              <img
-                class="icon__banner__arrow"
-                src="/assets/main/왼쪽.svg"
-                alt="배너 스와이퍼 화살표"
-              />
-              <img
-                class="icon__banner__arrow"
-                src="/assets/main/오른쪽.svg"
-                alt="배너 스와이퍼 화살표"
-              />
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/assets/main/배너이미지.png" alt="배너 이미지 1" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/main/아무것도하고싶지않아1.png"
+                  alt="배너 이미지 2"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/main/캐나다체크인.png" alt="배너 이미지 3" />
+              </div>
+              <!-- 필요한 만큼 슬라이드 추가 -->
             </div>
+            <!-- 추가적인 Swiper 컨트롤 요소들 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
             <div class="contents">
               <div class="contents__pagination">
                 <div class="div">인생 2회차를 사는 판타지 드라마</div>
