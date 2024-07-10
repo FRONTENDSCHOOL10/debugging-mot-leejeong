@@ -125,23 +125,27 @@ body {
 }
 
 .section {
+  width: 100%;
   display: flex;
+  justify-content: center;
   padding-top: rem(160);
 }
-
-.section__maintitle {
-  text-align: center;
-}
-.section__subtitle {
-  text-align: center;
-  color: $gray-200;
-  margin-top: em(20, 28);
-}
-.section__desc {
-  text-align: center;
-  color: $gray-200;
-  margin-top: em(4, 20);
-  margin-bottom: em(50, 20);
+.section__info {
+  width: 100%;
+  .section__maintitle {
+    text-align: center;
+  }
+  .section__subtitle {
+    text-align: center;
+    color: $gray-200;
+    margin-top: em(20, 28);
+  }
+  .section__desc {
+    text-align: center;
+    color: $gray-200;
+    margin-top: em(4, 20);
+    margin-bottom: em(50, 20);
+  }
 }
 
 /* ----------------- original ----------------- */
@@ -217,6 +221,81 @@ body {
 
 /* ------------------- trend ------------------ */
 
+.trend__wrap {
+  width: 100%;
+}
+
+.flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: rem(544);
+  @media (max-width: $breakpoint-tablet) {
+    gap: rem(12);
+    height: rem(212);
+  }
+}
+
+.flow__slide-first {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.flow__slide-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: rem(264);
+  @media (max-width: $breakpoint-tablet) {
+    height: rem(100);
+  }
+}
+
+.flow__slide-list {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: rem(16);
+  animation: scroll 30s linear infinite;
+  @media (max-width: $breakpoint-tablet) {
+    gap: rem(12);
+  }
+}
+.flow__slide-item picture {
+  width: rem(470);
+  height: rem(264);
+  position: relative;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(180);
+    height: rem(100);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* ------------------ ending ------------------ */
 
 .ending {
@@ -227,6 +306,12 @@ body {
 
   img {
     width: rem(280);
+    @media (max-width: $breakpoint-tablet) {
+      width: rem(135);
+    }
+    @media (max-width: $breakpoint-mobile) {
+      width: rem(83);
+    }
   }
   .section__maintitle {
     margin: em(36, 50) 0;

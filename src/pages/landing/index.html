@@ -88,12 +88,14 @@
               간편하게 가입하고&#44; 원하실 때 해지할 수 있어요&#46;
             </p>
           </div>
-          <button
+          <a
+            href=""
+            href="./../main/index.html"
+            role="button"
             type="submit"
             class="main__button label-small"
             aria-label="메인 페이지로 이동"
-          >
-            <div aria-hidden="true" class="symbol">
+            ><div aria-hidden="true" class="symbol">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="80"
@@ -115,8 +117,8 @@
                 />
               </svg>
             </div>
-            새로워진 타잉을 만나보세요&#33;
-          </button>
+            새로워진 타잉을 만나보세요&#33;</a
+          >
         </div>
       </section>
       <!-- 오리지널 -->
@@ -133,7 +135,7 @@
               차별화된 웰메이드 오리지널 콘텐츠
             </p>
           </div>
-          <!-- Slider main container -->
+          <!-- Slider container -->
           <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -167,37 +169,339 @@
               파라마운트&#43; 오리지널 및 독점
             </p>
           </div>
-          <div class="trend__flow-container">
-            <ul class="trend__flow-slide-first">
-              <li class="trend__flow-slide-item">
-                <picture class="trend__flow-slide-image"></picture>
-              </li>
-              <li class="trend__flow-slide-item">
-                <picture class="trend__flow-slide-image"></picture>
-              </li>
-              <li class="trend__flow-slide-item">
-                <picture class="trend__flow-slide-image"></picture>
-              </li>
-              <li class="trend__flow-slide-item">
-                <picture class="trend__flow-slide-image"></picture>
-              </li>
-              <li class="trend__flow-slide-item">
-                <picture class="trend__flow-slide-image"></picture>
-              </li>
-            </ul>
+          <!-- Flow container -->
+          <div class="flow">
+            <div class="flow__slide-first">
+              <div class="flow__slide-wrapper">
+                <ul class="flow__slide-list">
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-1.jpg,
+                          /src/assets/landing/trend/2x-trend-1.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-1.jpg"
+                        alt="슈룹"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-2.jpg,
+                          /src/assets/landing/trend/2x-trend-2.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-2.jpg"
+                        alt="연예인 매니저로 살아남기"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-3.jpg,
+                          /src/assets/landing/trend/2x-trend-3.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-3.jpg"
+                        alt="렛미인"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-4.jpg,
+                          /src/assets/landing/trend/2x-trend-4.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-4.jpg"
+                        alt="유퀴즈 온 더 블럭"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-5.jpg,
+                          /src/assets/landing/trend/2x-trend-5.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-5.jpg"
+                        alt="푸드크로니클"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                </ul>
+                <ul class="flow__slide-list">
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-1.jpg,
+                          /src/assets/landing/trend/2x-trend-1.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-1.jpg"
+                        alt="슈룹"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-2.jpg,
+                          /src/assets/landing/trend/2x-trend-2.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-2.jpg"
+                        alt="연예인 매니저로 살아남기"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-3.jpg,
+                          /src/assets/landing/trend/2x-trend-3.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-3.jpg"
+                        alt="렛미인"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-4.jpg,
+                          /src/assets/landing/trend/2x-trend-4.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-4.jpg"
+                        alt="유퀴즈 온 더 블럭"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-5.jpg,
+                          /src/assets/landing/trend/2x-trend-5.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-5.jpg"
+                        alt="푸드크로니클"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flow__slide-second">
+              <div class="flow__slide-wrapper">
+                <ul class="flow__slide-list">
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-1.jpg,
+                          /src/assets/landing/trend/2x-trend-1.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-1.jpg"
+                        alt="슈룹"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-2.jpg,
+                          /src/assets/landing/trend/2x-trend-2.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-2.jpg"
+                        alt="연예인 매니저로 살아남기"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-3.jpg,
+                          /src/assets/landing/trend/2x-trend-3.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-3.jpg"
+                        alt="렛미인"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-4.jpg,
+                          /src/assets/landing/trend/2x-trend-4.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-4.jpg"
+                        alt="유퀴즈 온 더 블럭"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-5.jpg,
+                          /src/assets/landing/trend/2x-trend-5.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-5.jpg"
+                        alt="푸드크로니클"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                </ul>
+                <ul class="flow__slide-list">
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-1.jpg,
+                          /src/assets/landing/trend/2x-trend-1.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-1.jpg"
+                        alt="슈룹"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-2.jpg,
+                          /src/assets/landing/trend/2x-trend-2.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-2.jpg"
+                        alt="연예인 매니저로 살아남기"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-3.jpg,
+                          /src/assets/landing/trend/2x-trend-3.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-3.jpg"
+                        alt="렛미인"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-4.jpg,
+                          /src/assets/landing/trend/2x-trend-4.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-4.jpg"
+                        alt="유퀴즈 온 더 블럭"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                  <li class="flow__slide-item">
+                    <picture>
+                      <source
+                        srcset="
+                          /src/assets/landing/trend/trend-5.jpg,
+                          /src/assets/landing/trend/2x-trend-5.jpg
+                        "
+                      />
+                      <img
+                        src="/src/assets/landing/trend/m-trend-5.jpg"
+                        alt="푸드크로니클"
+                        class="flow__slide-image"
+                      />
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <!-- 엔딩 -->
       <section class="section ending">
         <img src="../../assets/landing/logo-new.svg" alt="TAING" />
-        <h2 class="section__maintitle heading-xxxlarge">지금 시작해보세요</h2>
-        <button
+        <h2 class="section__maintitle heading-xxlarge">지금 시작해보세요</h2>
+        <a
+          href=""
+          href="./../main/index.html"
+          role="button"
           type="submit"
           class="main__button label-small"
           aria-label="메인 페이지로 이동"
-        >
-          <div aria-hidden="true" class="symbol">
+          ><div aria-hidden="true" class="symbol">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="80"
@@ -219,8 +523,8 @@
               />
             </svg>
           </div>
-          새로워진 타잉을 만나보세요&#33;
-        </button>
+          새로워진 타잉을 만나보세요&#33;</a
+        >
       </section>
     </main>
     <!-- 푸터 -->
