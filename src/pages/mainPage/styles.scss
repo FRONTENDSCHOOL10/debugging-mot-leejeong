@@ -35,8 +35,12 @@
 
 .text {
   position: relative;
-  line-height: 160%;
+  font-size: 28.43px;
+  line-height: 140%;
   font-weight: 600;
+  font-family: Pretendard;
+  color: #fff;
+  text-align: left;
 }
 
 .menu__icon__text {
@@ -517,20 +521,14 @@
   object-fit: cover;
 }
 
-.icon__quick__vod {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  border-radius: 4px;
-  background-color: #c73e4e;
-  width: 96px;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 9px;
-  box-sizing: border-box;
+.quick__vod {
+  position: relative;
+  font-size: 28.43px;
+  line-height: 140%;
+  font-weight: 600;
+  font-family: Pretendard;
+  color: #fff;
+  text-align: left;
 }
 
 .thumnail__horizontal__1 {
