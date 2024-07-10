@@ -14,7 +14,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        header: resolve(__dirname, 'src/pages/header/index.html'),
+        header: resolve(__dirname, 'src/layouts/index.html'),
       },
       },
     },
