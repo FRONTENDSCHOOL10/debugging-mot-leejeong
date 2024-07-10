@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         login: resolve(__dirname, 'src/pages/login/index.html'),
         findid: resolve(__dirname, 'src/pages/findId/index.html'),
+        landing: resolve(__dirname, 'src/pages/landing/index.html'),
       },
     },
   },
