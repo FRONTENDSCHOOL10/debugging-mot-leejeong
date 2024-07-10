@@ -158,6 +158,16 @@
   gap: 1780px;
 }
 
+.div {
+  position: relative;
+  font-size: 28.43px;
+  line-height: 160%;
+  font-weight: 600;
+  font-family: Pretendard;
+  color: #fff;
+  text-align: left;
+}
+
 .group__child {
   position: absolute;
   top: 0px;
@@ -217,8 +227,6 @@
 }
 
 .banner__pagenation {
-  position: relative;
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -249,12 +257,18 @@
 }
 
 .contents {
-  align-self: stretch;
+  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0px 70px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 28.43px;
+  color: #fff;
+  font-family: Pretendard;
 }
 
 .inner {
@@ -906,7 +920,7 @@
   gap: 12px;
 }
 
-.div {
+.text {
   position: relative;
   font-size: 21.33px;
   line-height: 160%;
