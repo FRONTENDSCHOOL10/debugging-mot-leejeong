@@ -3,7 +3,7 @@
 @use './../../styles/utils/typography' as typo;
 @use './../../styles/utils/fuctions' as func;
 
-.find-id {
+.find-pwd {
   display: flex;
   flex-flow: column nowrap;
   max-width: var.$breakpoint-mobile;
@@ -12,11 +12,14 @@
   align-items: center;
   padding: 0 var.$container-gutter;
 
-  .find-id__title {
+  .find-pwd__title {
     @extend .heading-large;
     padding: func.rem(28) 0;
   }
-
+  .find-pwd__description {
+    @extend .label-small;
+    color: var.$gray-400;
+  }
   @media (min-width: var.$breakpoint-mobile) {
     max-width: var.$breakpoint-tablet;
   }
@@ -26,23 +29,7 @@
   }
 }
 
-.find-id__article--email {
-  @extend .label-small;
-  width: 100%;
-
-  .find-id__title--email {
-    color: var.$white;
-  }
-
-  .find-id__description--email {
-    color: var.$gray-400;
-  }
-  @media (min-width: var.$breakpoint-mobile) {
-    width: auto;
-  }
-}
-
-.find-id__form--email {
+.find-pwd__form--id {
   @extend .paragraph-large;
   input {
     width: 100%;
@@ -75,7 +62,7 @@
   }
 }
 
-.find-id__submit-button--email {
+.find-pwd__submit-button--id {
   @extend .label-small;
   width: 100%;
   border: none;
@@ -95,67 +82,7 @@
   }
 }
 
-.find-id__submit-button--email:hover {
+.find-pwd__submit-button--id:hover {
   background-color: var.$white;
   color: var.$black;
-}
-
-// .find-id__or::before,
-// .find-id__or::after {
-//   content: '';
-//   display: inline-block;
-//   background-color: #fff;
-
-//   width: 150px;
-//   height: 1px;
-// }
-
-.find-id__or {
-  span {
-    display: inline-block;
-    width: 50px;
-    height: 1px;
-    color: white;
-    background-color: white;
-  }
-}
-.find-id__article--verify {
-  @extend .label-small;
-  width: 100%;
-
-  .find-id__title--verify {
-    color: var.$white;
-  }
-
-  .find-id__description--verify {
-    color: var.$gray-400;
-  }
-
-  @media screen and (min-width: var.$breakpoint-mobile) {
-    width: auto;
-  }
-}
-
-.find-id__button--verify {
-  @extend .label-small;
-  width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  color: var.$black;
-  background-color: var.$gray-100;
-  height: 2.625rem;
-
-  @media (max-width: var.$breakpoint-tablet) {
-    width: 26rem;
-    height: 3.125rem;
-  }
-
-  @media (min-width: var.$breakpoint-tablet) {
-    width: 45.75rem;
-    height: 5.375rem;
-  }
-}
-
-.find-id__button--verify:hover {
-  background-color: var.$gray-200;
 }
