@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       el: '.swiper-pagination',
       clickable: true,
     },
-    /*자동 플레이*/
+    /* 자동 플레이 설정 */
     // autoplay: {
     //   delay: 3000,
     //   disableOnInteraction: false,
@@ -19,14 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // 네비게이션 버튼 클릭 이벤트
-  document
-    .querySelector('.swiper-button-prev')
-    .addEventListener('click', function () {
-      swiper.slidePrev();
-    });
-  document
-    .querySelector('.swiper-button-next')
-    .addEventListener('click', function () {
-      swiper.slideNext();
-    });
+  document.querySelector('.swiper-button-prev').addEventListener('click', function () {
+    swiper.slidePrev();
+  });
+  document.querySelector('.swiper-button-next').addEventListener('click', function () {
+    swiper.slideNext();
+  });
 });
