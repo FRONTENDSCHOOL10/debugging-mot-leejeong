@@ -9,6 +9,7 @@ export default defineConfig({
         index: resolve(__dirname, 'index.html'),
         login: resolve(__dirname, 'src/pages/login/index.html'),
         findid: resolve(__dirname, 'src/pages/findId/index.html'),
+        findpwd: resolve(__dirname, 'src/pages/findPwd/index.html'),
         landing: resolve(__dirname, 'src/pages/landing/index.html'),
         footer: resolve(__dirname, 'src/layouts/footer/index.html'),
         modal: resolve(__dirname, 'src/layouts/modal/index.html'),

@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+address {
+  all: unset;
+}
+
 ul,
 ol {
   list-style: none;
@@ -299,10 +303,6 @@ body {
   padding: 0;
   white-space: nowrap;
   border-width: 0;
-}
-
-.container {
-  background-color: dodgerblue;
 }
 
 .login {
