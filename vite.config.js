@@ -11,6 +11,7 @@ export default defineConfig({
         findid: resolve(__dirname, 'src/pages/findId/index.html'),
         findpwd: resolve(__dirname, 'src/pages/findPwd/index.html'),
         landing: resolve(__dirname, 'src/pages/landing/index.html'),
+        header : resolve(__dirname, 'src/layouts/header/index.html'),
         footer: resolve(__dirname, 'src/layouts/footer/index.html'),
         header: resolve(__dirname, 'src/layouts/header/index.html'),
         main: resolve(__dirname, 'src/pages/main/index.html'),
