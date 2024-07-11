@@ -4,11 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="styles.scss" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon/favicon.png" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      href="https://unpkg.com/swiper/swiper__bundle.min.css"
     />
     <link
       rel="stylesheet"
@@ -19,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@700&display=swap"
     />
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper__bundle.min.js"></script>
     <script src="main.js"></script>
     <title>Taing - Main Page</title>
   </head>
@@ -29,27 +27,48 @@
       <section class="header__organisms__2">
         <div class="nav">
           <div class="logo__menu">
-            <a href="/"><img class="logo__1__icon" alt="logoIcon" src="/src/assets/main/img_logo_1.svg"></a>
-              <div class="menu">
-                <div class="menu__icon__text">
-                  <img class="icon__live" alt="headerLiveIcon" src="/src/assets/main/icon_menu_live.svg">
-                    <div class="div"><a href="#">시간</a></div>
-                </div>
-                <div class="menu__icon__text1">
+            <a href="/"
+              ><img
+                class="logo__1__icon"
+                alt="logoIcon"
+                src="/src/assets/main/img_logo_1.svg"
+            /></a>
+            <div class="menu">
+              <div class="menu__icon__text">
+                <img
+                  class="icon__live"
+                  alt="headerLiveIcon"
+                  src="/src/assets/main/icon_menu_live.svg"
+                />
+                <div class="div"><a href="#">시간</a></div>
+              </div>
+              <div class="menu__icon__text1">
                 <div class="div"><a href="#">TV프로그램</a></div>
               </div>
               <div class="menu__icon__text1">
                 <div class="div"><a href="#">영화</a></div>
               </div>
-                <img class="icon__paramount" alt="" src="/src/assets/main/paramount+.svg"/>
-              </div>
+              <img
+                class="icon__paramount"
+                alt=""
+                src="/src/assets/main/paramount+.svg"
+              />
+            </div>
           </div>
           <div class="aside">
-            <img class="icon__search" alt="검색" src="/src/assets/main/Group.svg">
-            <img class="icon__search" alt="프로필" src="/src/assets/main/Profile.png">
+            <img
+              class="icon__search"
+              alt="검색"
+              src="/src/assets/main/Group.svg"
+            />
+            <img
+              class="icon__search"
+              alt="프로필"
+              src="/src/assets/main/Profile.png"
+            />
           </div>
         </div>
-        </section>
+      </section>
     </header>
 
     <!-- <iframe src="/layouts/header/header.html"></iframe> -->
@@ -57,63 +76,72 @@
     <!-- 헤더 끝 -->
 
     <!-- 메인 시작 -->
-    <main class="tving">
+    <main id="main">
       <!-- 메인배너 -->
       <section class="main__banner">
         <div class="banner__img">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/src/assets/main/배너이미지.png" alt="배너 이미지 1" />
-              </div>
-              <div class="swiper-slide">
+          <div class="swiper__container">
+            <div class="swiper__wrapper">
+              <div class="swiper__slide">
+                <div class="banner__title">
+                  <img
+                    class="banner__image"
+                    src="/src/assets/main/banner/banner1-tit.webp"
+                    alt="배너 타이틀"
+                  />
+                  <p class="banner__description label-small">
+                    귀신 현상과 한국 샤머니즘에 대한<br />리얼 취재 티빙
+                    오리지널 다큐멘터리!
+                  </p>
+                </div>
                 <img
-                  src="/src/assets/main/아무것도하고싶지않아1.png"
-                  alt="배너 이미지 2"
+                  class="banner__background-image"
+                  src="/src/assets/main/banner/banner1.webp"
+                  srcset="
+                    /src/assets/main/banner/m-banner1.webp,
+                    /src/assets/main/banner/banner1.webp
+                  "
+                  alt="배너 이미지 포스터"
                 />
               </div>
-              <div class="swiper-slide">
-                <img src="/src/assets/main/캐나다체크인.png" alt="배너 이미지 3" />
+              <div class="swiper__slide">
+                <img
+                  src="/src/assets/main/banner/banner2.webp"
+                  srcset="
+                    /src/assets/main/banner/m-banner2.webp,
+                    /src/assets/main/banner/banner2.webp
+                  "
+                  alt="배너 이미지 포스터"
+                />
+              </div>
+              <div class="swiper__slide">
+                <img
+                  src="/src/assets/main/banner/banner3.webp"
+                  srcset="
+                    /src/assets/main/banner/m-banner3.webp,
+                    /src/assets/main/banner/banner3.webp
+                  "
+                  alt="배너 이미지 포스터"
+                />
               </div>
               <!-- 필요한 만큼 슬라이드 추가 -->
             </div>
             <!-- 추가적인 Swiper 컨트롤 요소들 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-  
-            <div class="contents">
-              <div class="contents__pagination">
-                <!-- 이미지 내부에 들어갈 텍스트 겹침--> 
-                <div class="div"></div>
-                <div class="banner__pagination">
-                  <div class="icon__pagination">
-                    <div class="rectangle__parent">
-                      <div class="group__child"></div>
-                      <div class="group__item"></div>
-                    </div>
-                  </div>
-                  <div class="swiper__pagination__bullets">
-                    <div class="swiper__pagination__bullet"></div>
-                    <div class="swiper__pagination__bullet"></div>
-                    <div class="swiper__pagination__bullet"></div>
-                    <div class="swiper__pagination__bullet"></div>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="button__detail__view">
-                <div class="div">자세히 보기</div>
-              </a>
-            </div>
+            <div class="swiper__button-prev"></div>
+            <div class="swiper__button-next"></div>
+            <div class="swiper__pagination"></div>
           </div>
         </div>
       </section>
       <!-- 메인배너 끝 -->
       <!-- 꼭 봐야하는 컨텐츠 -->
-      <section class="must__see">
+      <section class="section must__see">
         <div class="title__wrap">
-          <h2 class="lists__title"><b class="b">티빙에서 꼭 봐야 하는 컨텐츠</b></h2>
+          <h2 class="lists__title">
+            <b class="section__title label-small"
+              >티빙에서 꼭 봐야 하는 컨텐츠</b
+            >
+          </h2>
         </div>
         <div class="img__frame">
           <div class="swiper__list__wrap">
@@ -209,13 +237,15 @@
                 </div>
               </div>
             </div>
-           
 
             <div class="frame__parent">
-              <img class="frame__child" alt="털사킹1" src="/src/assets/main/털사킹1.png">
-                <div class="visual__thumnail__label__1">
-                 <div class="thumnail__vertical__1">
-              </div>
+              <img
+                class="frame__child"
+                alt="털사킹1"
+                src="/src/assets/main/털사킹1.png"
+              />
+              <div class="visual__thumnail__label__1">
+                <div class="thumnail__vertical__1"></div>
                 <div class="label__video__title__1">
                   <div class="title">
                     <div class="title1">털사 킹</div>
@@ -223,58 +253,67 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="frame__parent">
-              <img class="frame__child" alt="아무것도하고싶지않아1" src="/src/assets/main/아무것도하고싶지않아1.png">
-                <div class="visual__thumnail__label__1">
-                  <div class="thumnail__vertical__1">
-              </div>
+              <img
+                class="frame__child"
+                alt="아무것도하고싶지않아1"
+                src="/src/assets/main/아무것도하고싶지않아1.png"
+              />
+              <div class="visual__thumnail__label__1">
+                <div class="thumnail__vertical__1"></div>
                 <div class="label__video__title__1">
                   <div class="title">
-                   <div class="title1">아무것도 하고 싶지 않아</div>
+                    <div class="title1">아무것도 하고 싶지 않아</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="frame__parent">
-              <img class="frame__child" alt="블랙독1.png" src="/src/assets/main/블랙독1.png">
-                <div class="visual__thumnail__label__1">
-                  <div class="thumnail__vertical__1">
-                  </div>
-                 <div class="label__video__title__1">
+              <img
+                class="frame__child"
+                alt="블랙독1.png"
+                src="/src/assets/main/블랙독1.png"
+              />
+              <div class="visual__thumnail__label__1">
+                <div class="thumnail__vertical__1"></div>
+                <div class="label__video__title__1">
                   <div class="title">
                     <div class="title1">블랙독</div>
                   </div>
-                 </div>
+                </div>
               </div>
             </div>
-            
+
             <div class="frame__parent">
-                <img class="frame__child" alt="우리들의블루스1" src="/src/assets/main/우리들의블루스1.png">
-                  <div class="label__video__title__16">
-                    <div class="title12">
-                    </div>
-                  </div>
-                  <div class="visual__thumnail__label__1">
-                    <div class="thumnail__vertical__1">
-                    </div>
-                  <div class="label__video__title__1">
-                    <div class="title">
-                      <div class="title1">우리들의 블루스</div>
-                    </div>
+              <img
+                class="frame__child"
+                alt="우리들의블루스1"
+                src="/src/assets/main/우리들의블루스1.png"
+              />
+              <div class="label__video__title__16">
+                <div class="title12"></div>
+              </div>
+              <div class="visual__thumnail__label__1">
+                <div class="thumnail__vertical__1"></div>
+                <div class="label__video__title__1">
+                  <div class="title">
+                    <div class="title1">우리들의 블루스</div>
                   </div>
                 </div>
+              </div>
             </div>
-
           </div>
         </div>
       </section>
       <!-- 꼭 봐야하는 컨텐츠 끝-->
-       <!-- Quick VOD -->
-       <section class="quick__vod">
+      <!-- Quick VOD -->
+      <section class="section quick__vod">
         <div class="title__wrap">
-          <h2 class="lists__title"><b class="b">Quick VOD</b></h2>
+          <h2 class="lists__title">
+            <b class="section__title label-small">Quick VOD</b>
+          </h2>
         </div>
         <div class="img__frame1">
           <div class="swiper__list__wrap">
@@ -421,9 +460,11 @@
       </section>
       <!-- Quick VOD 끝-->
       <!-- 실시간 인기 프로그램 -->
-      <section class="popular__program">
+      <section class="section popular__program">
         <div class="title__wrap">
-          <h2 class="lists__title"><b class="b">실시간 인기 프로그램</b></h2>
+          <h2 class="lists__title">
+            <b class="section__title label-small">실시간 인기 프로그램</b>
+          </h2>
         </div>
         <div class="img__frame2">
           <div class="swiper__list__wrap">
@@ -498,10 +539,10 @@
       </section>
       <!-- 실시간 인기 프로그램 끝-->
       <!-- live channel -->
-      <section class="live__channel">
+      <section class="section live__channel">
         <div class="title__wrap">
           <div class="lists__title">
-            <h2><b class="b">인기 LIVE 채널</b></h2>
+            <h2><b class="section__title label-small">인기 LIVE 채널</b></h2>
           </div>
         </div>
         <div class="img__frame3">
@@ -564,10 +605,12 @@
       </section>
       <!-- live channel -->
       <!-- 오직 티빙 -->
-      <section class="only__tving">
+      <section class="section only__tving">
         <div class="title__wrap">
           <div class="lists__title">
-            <h2><b class="b">오직 티빙에만 있어요</b></h2>
+            <h2>
+              <b class="section__title label-small">오직 티빙에만 있어요</b>
+            </h2>
           </div>
         </div>
         <div class="img__frame4">
@@ -609,27 +652,50 @@
         </div>
       </section>
 
-      
-      <img class="icon" alt="" src="/src/assets/main/배너.png">
-   
+      <img class="icon" alt="" src="/src/assets/main/배너.png" />
+
       <section class="event">
         <div class="title__wrap">
           <div class="lists__title">
-            <div class="div">이벤트</div>
+            <div class="section__title label-small">이벤트</div>
           </div>
         </div>
         <div class="img__frame">
           <div class="swiper__list__wrap">
-            <img class="img__frame__icon" alt="이벤트1" src="/src/assets/main/이벤트1.png">
-            <img class="img__frame__icon" alt="이벤트2" src="/src/assets/main/이벤트2.png">
-            <img class="img__frame__icon" alt="이벤트3" src="/src/assets/main/이벤트3.png">
-            <img class="img__frame__icon" alt="이벤트4" src="/src/assets/main/이벤트4.png">
-            <img class="img__frame__icon" alt="이벤트5" src="/src/assets/main/이벤트5.png">
-            <img class="img__frame__icon" alt="이벤트6" src="/src/assets/main/이벤트6.png">
+            <img
+              class="img__frame__icon"
+              alt="이벤트1"
+              src="/src/assets/main/이벤트1.png"
+            />
+            <img
+              class="img__frame__icon"
+              alt="이벤트2"
+              src="/src/assets/main/이벤트2.png"
+            />
+            <img
+              class="img__frame__icon"
+              alt="이벤트3"
+              src="/src/assets/main/이벤트3.png"
+            />
+            <img
+              class="img__frame__icon"
+              alt="이벤트4"
+              src="/src/assets/main/이벤트4.png"
+            />
+            <img
+              class="img__frame__icon"
+              alt="이벤트5"
+              src="/src/assets/main/이벤트5.png"
+            />
+            <img
+              class="img__frame__icon"
+              alt="이벤트6"
+              src="/src/assets/main/이벤트6.png"
+            />
           </div>
         </div>
       </section>
-      
+
       <!-- 광고배너 긑-->
       <!-- 푸터 시작 -->
       <!-- <iframe src="/layouts/footer/footer.html"></iframe> -->

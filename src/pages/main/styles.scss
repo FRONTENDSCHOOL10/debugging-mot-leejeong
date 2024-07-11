@@ -2,23 +2,115 @@
 @use 'src/styles/utils' as *;
 
 body {
-  margin: 0;
-  line-height: normal;
+  background-color: $black;
+  color: $white;
 }
 
-
-.tving {
+#main {
   width: 100%;
   position: relative;
-  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
   font-size: 28.43px;
-  color: #fff;
-  font-family: Pretendard;
+}
+
+/* ------------------- 메인 배너 ------------------ */
+
+.banner__img {
+  width: 100%;
+  height: calc(100vh - rem(100));
+  overflow: hidden;
+
+  .swiper__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .swiper__wrapper {
+      width: 100%;
+      height: 100%;
+
+      .swiper__slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .banner__title {
+          position: absolute;
+          left: calc($container-gutter * 2);
+          bottom: 12vh;
+
+          .banner__image {
+            max-width: 31.667rem;
+            max-height: 9.833rem;
+            object-fit: contain;
+          }
+          .banner__description {
+            margin-top: em(16, 28);
+          }
+        }
+
+        .banner__background-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .swiper__button-prev {
+      width: $container-gutter;
+      position: absolute;
+      left: rem(46);
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      height: 100%;
+      font-size: 0px;
+      margin: 0px;
+      padding: 0px;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(../../assets/main/banner/banner_arrow.svg);
+    }
+    .swiper__button-next {
+      width: $container-gutter;
+      position: absolute;
+      right: rem(46);
+      top: 50%;
+      transform: scaleX(-1) translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      height: 100%;
+      font-size: 0px;
+      margin: 0px;
+      padding: 0px;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(../../assets/main/banner/banner_arrow.svg);
+    }
+    .swiper__pagination {
+      position: absolute;
+      bottom: 12vh;
+    }
+  }
+}
+
+.section {
+  padding-top: rem(40);
+}
+
+.section__title {
+  margin-bottom: rem(16);
 }
 
 .logo__1__icon {
@@ -268,7 +360,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 70px;
+  padding: 0px $container-gutter;
   box-sizing: border-box;
   text-align: left;
   font-size: 28.43px;
@@ -297,14 +389,12 @@ body {
 
 .main {
   align-self: stretch;
-  background-color: #000;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 21.33px;
-  color: #c4c4c4;
 }
 
 .b {
@@ -325,7 +415,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 70px;
+  padding: 0px $container-gutter;
 }
 
 .frame__child {
@@ -493,7 +583,7 @@ body {
 .swiper__list__wrap {
   position: absolute;
   top: 0px;
-  left: 70px;
+  left: $container-gutter;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -517,8 +607,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 0px 36px;
-  gap: 12px;
 }
 
 .frame__child5 {
@@ -921,7 +1009,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 0px 36px 70px;
+  padding-left: $container-gutter;
+  padding-bottom: rem(36);
   gap: 12px;
 }
 
