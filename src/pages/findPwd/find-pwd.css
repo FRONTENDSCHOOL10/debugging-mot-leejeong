@@ -64,7 +64,7 @@ button {
   font-weight: 700;
 }
 
-.heading-large, .find-id .find-id__title {
+.heading-large, .find-pwd .find-pwd__title {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 2.375rem;
   line-height: 1.4;
@@ -93,7 +93,7 @@ button {
 }
 
 /* ------------------- Label ------------------ */
-.label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
+.label-small, .find-pwd .find-pwd__description, .find-pwd__submit-button--id {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.75rem;
   line-height: 1.5;
@@ -129,7 +129,7 @@ button {
   font-weight: 400;
 }
 
-.paragraph-large, .find-id__form--email {
+.paragraph-large, .find-pwd__form--id {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.75rem;
   line-height: 1.6;
@@ -144,7 +144,7 @@ button {
     line-height: 1.4;
     font-weight: 700;
   }
-  .heading-large, .find-id .find-id__title {
+  .heading-large, .find-pwd .find-pwd__title {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1.75rem;
     line-height: 1.4;
@@ -169,7 +169,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
+  .label-small, .find-pwd .find-pwd__description, .find-pwd__submit-button--id {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1rem;
     line-height: 1.5;
@@ -200,7 +200,7 @@ button {
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-large, .find-id__form--email {
+  .paragraph-large, .find-pwd__form--id {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.875rem;
     line-height: 1.6;
@@ -215,7 +215,7 @@ button {
     line-height: 1.4;
     font-weight: 700;
   }
-  .heading-large, .find-id .find-id__title {
+  .heading-large, .find-pwd .find-pwd__title {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1rem;
     line-height: 1.4;
@@ -240,7 +240,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
+  .label-small, .find-pwd .find-pwd__description, .find-pwd__submit-button--id {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.75rem;
     line-height: 1.5;
@@ -271,7 +271,7 @@ button {
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-large, .find-id__form--email {
+  .paragraph-large, .find-pwd__form--id {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.8125rem;
     line-height: 1.6;
@@ -305,7 +305,7 @@ body {
   border-width: 0;
 }
 
-.find-id {
+.find-pwd {
   display: flex;
   flex-flow: column nowrap;
   max-width: 42.5rem;
@@ -314,36 +314,24 @@ body {
   align-items: center;
   padding: 0 clamp(1rem, 3.90625vw, 4.375rem);
 }
-.find-id .find-id__title {
+.find-pwd .find-pwd__title {
   padding: 1.75rem 0;
 }
+.find-pwd .find-pwd__description {
+  color: #898989;
+}
 @media (min-width: 42.5rem) {
-  .find-id {
+  .find-pwd {
     max-width: 64rem;
   }
 }
 @media (min-width: 64rem) {
-  .find-id {
+  .find-pwd {
     max-width: 100vw;
   }
 }
 
-.find-id__article--email {
-  width: 100%;
-}
-.find-id__article--email .find-id__title--email {
-  color: rgb(255, 255, 255);
-}
-.find-id__article--email .find-id__description--email {
-  color: #898989;
-}
-@media (min-width: 42.5rem) {
-  .find-id__article--email {
-    width: auto;
-  }
-}
-
-.find-id__form--email input {
+.find-pwd__form--id input {
   width: 100%;
   border-radius: 0.25rem;
   margin: 1rem 0 1.25rem 0;
@@ -352,27 +340,27 @@ body {
   border: none;
   color: rgb(255, 255, 255);
 }
-.find-id__form--email input input:focus {
+.find-pwd__form--id input input:focus {
   outline: 1px solid #e1e1e1;
 }
 @media (min-width: 42.5rem) {
-  .find-id__form--email {
+  .find-pwd__form--id {
     width: 26rem;
   }
-  .find-id__form--email input {
+  .find-pwd__form--id input {
     padding: 0.87rem 1.25rem 0.87rem 1rem;
   }
 }
 @media (min-width: 64rem) {
-  .find-id__form--email {
+  .find-pwd__form--id {
     width: 45.75rem;
   }
-  .find-id__form--email input {
+  .find-pwd__form--id input {
     padding: 1.59rem 1.75rem 1.59rem 1.5rem;
   }
 }
 
-.find-id__submit-button--email {
+.find-pwd__submit-button--id {
   width: 100%;
   border: none;
   border-radius: 0.25rem;
@@ -381,67 +369,19 @@ body {
   height: 2.625rem;
 }
 @media (min-width: 42.5rem) {
-  .find-id__submit-button--email {
+  .find-pwd__submit-button--id {
     width: 26rem;
     height: 3.125rem;
   }
 }
 @media (min-width: 64rem) {
-  .find-id__submit-button--email {
+  .find-pwd__submit-button--id {
     width: 45.75rem;
     height: 5.375rem;
   }
 }
 
-.find-id__submit-button--email:hover {
+.find-pwd__submit-button--id:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-}
-
-.find-id__or span {
-  display: inline-block;
-  width: 50px;
-  height: 1px;
-  color: white;
-  background-color: white;
-}
-
-.find-id__article--verify {
-  width: 100%;
-}
-.find-id__article--verify .find-id__title--verify {
-  color: rgb(255, 255, 255);
-}
-.find-id__article--verify .find-id__description--verify {
-  color: #898989;
-}
-@media screen and (min-width: 42.5rem) {
-  .find-id__article--verify {
-    width: auto;
-  }
-}
-
-.find-id__button--verify {
-  width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  color: rgb(0, 0, 0);
-  background-color: #e1e1e1;
-  height: 2.625rem;
-}
-@media (max-width: 64rem) {
-  .find-id__button--verify {
-    width: 26rem;
-    height: 3.125rem;
-  }
-}
-@media (min-width: 64rem) {
-  .find-id__button--verify {
-    width: 45.75rem;
-    height: 5.375rem;
-  }
-}
-
-.find-id__button--verify:hover {
-  background-color: #c4c4c4;
-}/*# sourceMappingURL=find-id.css.map */
+}/*# sourceMappingURL=find-pwd.css.map */
