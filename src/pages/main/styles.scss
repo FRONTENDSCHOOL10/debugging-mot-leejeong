@@ -1,11 +1,11 @@
-@use '/src/styles/base';
-@use '/src/styles/layout/header';
-@use '/src/styles/utils';
+@use 'src/styles/base' as *;
+@use 'src/styles/utils' as *;
 
 body {
   margin: 0;
   line-height: normal;
 }
+
 
 .tving {
   width: 100%;
