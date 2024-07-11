@@ -1,0 +1,113 @@
+@use '/src/styles/base' as *;
+@use '/src/styles/utils' as *;
+
+body {
+  position: relative;
+  color: $gray-200;
+  background-color: black;
+}
+
+.header {
+  width: 100%;
+  padding: 0 rem(70);
+  height: rem(100);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    font-size: 0;
+  }
+
+  .header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1; 
+    margin-left: rem(52);
+
+
+    .header__menu-left {
+      display: flex;
+      align-items: center;
+      gap: rem(52);
+    }
+
+    .header__menu-item a:first-of-type {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: rem(10);
+      }
+    }
+
+    .header__menu-item:last-of-type:hover {
+      svg path {
+        fill: $white;
+        transition: stroke .2s linear;
+      }
+    }
+
+    .header__menu-item:not(:last-of-type):hover {
+      color: $white;
+      transition: color .2s linear;
+
+      svg path {
+        stroke: $white;
+        transition: stroke .2s linear;
+      }
+    }
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+
+    .header__actions-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover svg path,
+      &:hover svg rect {
+        stroke: $white;
+        transition: stroke .2s linear;
+      }
+    }
+  }
+}
+
+
+// 태블릿
+@media (max-width: $breakpoint-tablet) {
+  .header__logo img {
+    width: rem(77);
+    height: rem(24);
+  }
+
+
+  .header__menu-item svg {
+    width: rem(20);
+    height: rem(20);
+  }
+
+
+  .header__actions {
+    gap: rem(24);
+
+    .header__actions-btn svg, img {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+}
+
