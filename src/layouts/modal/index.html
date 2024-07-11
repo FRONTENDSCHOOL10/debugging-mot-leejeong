@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modal</title>
+  <script type="module" src="./modal.js"></script>
+</head>
+<body>
+  
+  <!-- 로그아웃 모달 -->
+  <div class="modal__background">
+    <section class="modal modal--logout" role="dialog" aria-labelledby="modalTitle">
+      <h2 id="modalTitle" class="sr-only">로그아웃 모달 영역</h2>
+      <div class="modal__container">
+        <p class="modal__prompt">로그아웃 하시겠습니까?</p>
+        <div class="modal__btns">
+          <button class="modal__btn--confirm" type="button">확인</button>
+          <button class="modal__btn--cancel" type="button">취소</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</body>
+</html>
