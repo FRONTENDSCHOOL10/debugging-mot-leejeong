@@ -1,11 +1,11 @@
-@use '/src/styles/base';
-@use '/src/styles/layout/header';
-@use '/src/styles/utils';
+@use 'src/styles/base' as *;
+@use 'src/styles/utils' as *;
 
 body {
   margin: 0;
   line-height: normal;
 }
+
 
 .tving {
   width: 100%;
@@ -1052,30 +1052,13 @@ body {
   gap: 27px;
 }
 
-.footer {
-  align-self: stretch;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 140px 0px 170px;
-  font-size: 21.33px;
-  color: #6b6b6b;
-}
-
-.tving {
+.icon {
   width: 100%;
   position: relative;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 28.43px;
-  color: #fff;
-  font-family: Pretendard;
+  max-width: 100%;
+  overflow: hidden;
+  height: 177px;
+  object-fit: cover;
 }
 
 .footer {

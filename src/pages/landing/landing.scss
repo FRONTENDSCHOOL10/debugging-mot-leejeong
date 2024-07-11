@@ -125,34 +125,48 @@ body {
 }
 
 .section {
+  width: 100%;
   display: flex;
+  justify-content: center;
   padding-top: rem(160);
 }
-
-.section__maintitle {
-  text-align: center;
+.section__info {
+  width: 100%;
+  .section__maintitle {
+    text-align: center;
+  }
+  .section__subtitle {
+    text-align: center;
+    color: $gray-200;
+    margin-top: em(20, 28);
+  }
+  .section__desc {
+    text-align: center;
+    color: $gray-200;
+    margin-top: em(4, 20);
+    margin-bottom: em(50, 20);
+  }
 }
-.section__subtitle {
-  text-align: center;
-  color: $gray-200;
-  margin-top: em(20, 28);
-}
-.section__desc {
-  text-align: center;
-  color: $gray-200;
-  margin-top: em(4, 20);
-  margin-bottom: em(50, 20);
-}
 
-/* ----------------- original ----------------- */
+/* ----------------- 오리지널 ----------------- */
 
-.original__swiper {
-  width: 100vw;
+.swiper {
+  display: block;
+  width: rem(900);
   height: rem(510);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(277);
+    height: rem(400);
+  }
 
-  .original__swiper-wrapper {
+  .swiper-wrapper {
     display: flex;
     flex-flow: row nowrap;
     gap: rem(24);
@@ -161,20 +175,145 @@ body {
   }
 }
 
-.original__swiper-slide {
+.swiper-slide {
   width: rem(900);
   height: rem(510);
+  cursor: pointer;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(277);
+    height: rem(400);
+  }
 }
 
-.original__slide-image {
+.slide-image {
   width: 100%;
   height: 100%;
-  background-image: url(./../../assets/landing/original/original-1.jpg);
   background-position: center;
   background-size: cover;
 }
 
-/* ------------------- trend ------------------ */
+.original__content1 {
+  background-image: url(./../../assets/landing/original/original-1.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-1.jpg);
+  }
+}
+
+.original__content2 {
+  background-image: url(./../../assets/landing/original/original-2.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-2.jpg);
+  }
+}
+.original__content3 {
+  background-image: url(./../../assets/landing/original/original-3.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-3.jpg);
+  }
+}
+.original__content4 {
+  background-image: url(./../../assets/landing/original/original-4.jpg);
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url(./../../assets/landing/original/m-original-4.jpg);
+  }
+}
+
+/* ------------------- 트렌드 ------------------ */
+
+.trend__wrap {
+  width: 100%;
+}
+
+.flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: rem(544);
+  @media (max-width: $breakpoint-tablet) {
+    gap: rem(12);
+    height: rem(212);
+  }
+}
+
+.flow__slide-first {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.flow__slide-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: rem(264);
+  @media (max-width: $breakpoint-tablet) {
+    height: rem(100);
+  }
+}
+
+.flow__slide-list {
+  display: flex;
+  flex-flow: row nowrap;
+  animation: scroll 30s linear infinite;
+  @media (max-width: $breakpoint-tablet) {
+    gap: rem(12);
+  }
+}
+.flow__slide-item picture {
+  width: rem(470);
+  height: rem(264);
+  margin: 0 rem(8);
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(180);
+    height: rem(100);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+// 애니메이션
+.flow__slide-wrapper.original {
+  animation: rollingleft1 33s linear infinite;
+}
+.flow__slide-wrapper.clone {
+  animation: rollingleft2 33s linear infinite;
+}
+@keyframes rollingleft1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.01% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollingleft2 {
+  0% {
+    transition: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
 
 /* ------------------ ending ------------------ */
 
@@ -186,6 +325,12 @@ body {
 
   img {
     width: rem(280);
+    @media (max-width: $breakpoint-tablet) {
+      width: rem(135);
+    }
+    @media (max-width: $breakpoint-mobile) {
+      width: rem(83);
+    }
   }
   .section__maintitle {
     margin: em(36, 50) 0;
