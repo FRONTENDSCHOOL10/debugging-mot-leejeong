@@ -301,10 +301,6 @@ body {
   border-width: 0;
 }
 
-.container {
-  background-color: dodgerblue;
-}
-
 .login {
   display: flex;
   flex-flow: column nowrap;

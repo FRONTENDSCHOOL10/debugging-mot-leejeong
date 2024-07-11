@@ -89,7 +89,7 @@ button {
 }
 
 /* ------------------- Label ------------------ */
-.label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__button--verify {
+.label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.75rem;
   line-height: 1.5;
@@ -165,7 +165,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__button--verify {
+  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1rem;
     line-height: 1.5;
@@ -236,7 +236,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__button--verify {
+  .label-small, .find-id__article--email, .find-id__submit-button--email, .find-id__article--verify, .find-id__button--verify {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.75rem;
     line-height: 1.5;
@@ -301,10 +301,6 @@ body {
   border-width: 0;
 }
 
-.container {
-  background-color: dodgerblue;
-}
-
 .find-id {
   display: flex;
   flex-flow: column nowrap;
@@ -317,7 +313,7 @@ body {
 .find-id .find-id__title {
   padding: 1.75rem 0;
 }
-@media (max-width: 64rem) {
+@media (min-width: 42.5rem) {
   .find-id {
     max-width: 64rem;
   }
@@ -328,11 +324,19 @@ body {
   }
 }
 
+.find-id__article--email {
+  width: 100%;
+}
 .find-id__article--email .find-id__title--email {
   color: rgb(255, 255, 255);
 }
 .find-id__article--email .find-id__description--email {
   color: #898989;
+}
+@media (min-width: 42.5rem) {
+  .find-id__article--email {
+    width: auto;
+  }
 }
 
 .find-id__form--email input {
@@ -351,24 +355,21 @@ body {
   .find-id__form--email {
     width: 26rem;
   }
-  .find-id__form--email .find-id__form--email input {
+  .find-id__form--email input {
     padding: 0.87rem 1.25rem 0.87rem 1rem;
-    background-color: #212121;
-    border: none;
-    color: rgb(255, 255, 255);
   }
 }
 @media (min-width: 64rem) {
   .find-id__form--email {
     width: 45.75rem;
   }
-  .find-id__form--email .find-id__form--email input {
-    padding: 1.59rem 1.25rem 1.59rem 1.5rem;
+  .find-id__form--email input {
+    padding: 1.59rem 1.75rem 1.59rem 1.5rem;
   }
 }
 
 .find-id__submit-button--email {
-  width: 18rem;
+  width: 100%;
   border: none;
   border-radius: 0.25rem;
   color: rgb(255, 255, 255);
@@ -389,23 +390,42 @@ body {
 }
 
 .find-id__submit-button--email:hover {
-  background-color: #e1e1e1;
+  background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+}
+
+.find-id__or span {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  color: white;
+  background-color: white;
 }
 
 .find-id__article--verify {
   width: 100%;
+}
+.find-id__article--verify .find-id__title--verify {
+  color: rgb(255, 255, 255);
+}
+.find-id__article--verify .find-id__description--verify {
+  color: #898989;
+}
+@media screen and (min-width: 42.5rem) {
+  .find-id__article--verify {
+    width: auto;
+  }
 }
 
 .find-id__button--verify {
   width: 100%;
   border: none;
   border-radius: 0.25rem;
-  color: rgb(255, 255, 255);
-  background-color: #ff153c;
+  color: rgb(0, 0, 0);
+  background-color: #e1e1e1;
   height: 2.625rem;
 }
-@media (min-width: 42.5rem) {
+@media (max-width: 64rem) {
   .find-id__button--verify {
     width: 26rem;
     height: 3.125rem;
@@ -419,5 +439,5 @@ body {
 }
 
 .find-id__button--verify:hover {
-  background-color: #cc1030;
+  background-color: #c4c4c4;
 }/*# sourceMappingURL=find-id.css.map */
