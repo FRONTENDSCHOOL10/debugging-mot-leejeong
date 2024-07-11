@@ -148,7 +148,7 @@ body {
   }
 }
 
-/* ----------------- original ----------------- */
+/* ----------------- 오리지널 ----------------- */
 
 .swiper {
   display: block;
@@ -219,7 +219,7 @@ body {
   }
 }
 
-/* ------------------- trend ------------------ */
+/* ------------------- 트렌드 ------------------ */
 
 .trend__wrap {
   width: 100%;
@@ -249,7 +249,6 @@ body {
 }
 
 .flow__slide-wrapper {
-  position: relative;
   display: flex;
   flex-flow: row nowrap;
   -webkit-box-align: center;
@@ -262,10 +261,8 @@ body {
 }
 
 .flow__slide-list {
-  position: absolute;
   display: flex;
   flex-flow: row nowrap;
-  gap: rem(16);
   animation: scroll 30s linear infinite;
   @media (max-width: $breakpoint-tablet) {
     gap: rem(12);
@@ -274,7 +271,7 @@ body {
 .flow__slide-item picture {
   width: rem(470);
   height: rem(264);
-  position: relative;
+  margin: 0 rem(8);
   display: block;
   border-radius: 4px;
   overflow: hidden;
@@ -287,12 +284,34 @@ body {
     height: 100%;
   }
 }
-@keyframes scroll {
+// 애니메이션
+.flow__slide-wrapper.original {
+  animation: rollingleft1 33s linear infinite;
+}
+.flow__slide-wrapper.clone {
+  animation: rollingleft2 33s linear infinite;
+}
+@keyframes rollingleft1 {
   0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.01% {
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollingleft2 {
+  0% {
+    transition: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
   }
 }
 
