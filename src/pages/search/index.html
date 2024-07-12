@@ -4,40 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>search</title>
+  <script type="module" src="./search.js"></script>
 </head>
 <body>
-
+  <!-- 나중에 aria-labelledby 이거 점검하기 -->
   <main>
     <section class="search" aria-labelledby="search-heading">
-      <h1 id="search-heading" class="search__title">TV프로그램, 영화 제목 및 출연진으로 검색해보세요</h1>
-      
-      <form class="search__form" role="search">
-        <label for="search-input" class="sr-only">검색어 입력</label>
-        <input type="search" id="search-input" class="search__input" aria-label="검색어 입력">
-        <button type="submit" class="search__button">
-          <img src="/src/assets/search.svg" alt="검색 돋보기 아이콘">
-        </button>
-      </form>
-      
-      <div class="recent" aria-labelledby="recent-heading">
-        <h2 id="recent-heading" class="recent__title">최근 검색어</h2>
-        <button type="button" class="recent__clear" aria-label="모두 지우기">모두 지우기</button>
-        <ul class="recent__list" id="recent-list">
-          <!-- js로 최근 검색어 동적으로 추가-->
-        </ul>
-      </div>
-      
-      <div class="popular" aria-labelledby="popular-heading">
-        <h2 id="popular-heading" class="popular__title">실시간 인기 검색어</h2>
-        <ol class="popular__list" id="popular-list">
-          <!-- js로 실시간 인기 검색어가 동적으로 추가 -->
-        </ol>
-        
-        <!-- 업데이트 시간 표시 --> 
-        <p class="popular__timestamp" id="update-timestamp"></p>
+      <div class="search__wrapper">
+        <h2 id="search-heading" class="sr-only">검색 영역</h2>
+        <form method="GET" action="/" class="search__form">
+          <fieldset>
+            <legend class="sr-only">검색 폼</legend>
+            <div class="search__form-wrapper">
+              <div class="search__form-box">
+                <label for="search" class="sr-only">콘텐츠 검색</label>
+                <input type="text" class="search__form-input heading-large" id="search" placeholder="TV 프로그램, 영화 제목 및 출연진으로 검색해보세요." />
+              </div>
+              <button type="submit" class="search__button">
+                <img src="/src/assets/search.svg" alt="검색 돋보기 아이콘"/>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="search__preview">
+          <section class="search__recent">
+            <h2 class="search__recent-title">
+              <span class="label-small">최근 검색어</span>
+              <button type="button" class="search__recent-clear">
+                <span>모두 지우기</span>
+                <img src="/src/assets/deleteAll.svg" alt="모두 삭제 아이콘" />
+              </button>
+            </h2>
+            <ul class="search__recent-list">
+              <li class="search__recent-item search__recent-item--empty">
+                <span>검색 내역이 없습니다.</span>
+              </li>
+              <li class="search__recent-item">
+                <button type="button" class="search__recent-content-btn">짱구는 못말려</button>
+                <button type="button" class="search__recent-delete-btn">
+                  <img src="/src/assets/deleteList.svg" alt="검색 콘텐츠 삭제 아이콘" />
+                </button>
+              </li> 
+              <!-- 동적으로 항목 추가 -->
+            </ul>
+          </section>
+          
+          <section class="search__popular" aria-labelledby="popular-heading">
+            <h2 id="popular-heading" class="search__popular-title label-small">실시간 인기 검색어</h2>
+            <ol class="search__popular-list" id="popular-list">
+              <li class="search__popular-item">
+                <button type="button" class="search__popluar-btn">
+                  <span class="search__popular-rank">1</span>
+                  <span class="search__popular-content">귀멸의 칼날: 합동 강화 훈련편</span>
+                </button>
+              </li> 
+              <!-- js로 실시간 인기 검색어가 동적으로 추가 -->
+            </ol> 
+            <!-- 업데이트 시간 표시 --> 
+            <p class="search__popular-timestamp" id="update-timestamp">
+              2024.07.12 오후 4:39 기준
+            </p>
+          </section>
+        </div>
       </div>
     </section>
   </main>
-
 </body>
 </html>

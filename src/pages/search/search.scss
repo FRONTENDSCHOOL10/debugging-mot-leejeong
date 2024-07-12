@@ -1,0 +1,151 @@
+@use '/src/styles/base' as *;
+@use '/src/styles/utils' as *;
+
+.search {
+  height: rem(893);
+  padding-top: rem(52);
+  background-color: $brand-dark-bg-1;
+
+  &__wrapper {
+    width: 100%;
+    height: rem(800);
+    padding: 0 rem(220);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form {
+    border-bottom: 2px solid white;
+    margin-bottom: rem(98);
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-input {
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      appearance: none;
+      padding: rem(16) 0;
+    }
+  }
+}
+
+.search__preview {
+  display: flex;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: rem(1);
+    height: rem(613);
+    background-color: $gray-800;
+    position: absolute;
+    left: 50%;
+  }
+}
+
+.search__recent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  &-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+  
+    & > span {
+      color: $gray-200;
+    }
+  }
+}
+
+
+.search__recent-clear {
+  display: flex;
+  align-items: center;
+
+  & span {
+    color: $gray-600;
+    margin: 0 rem(12) 0 rem(24);
+    font-size: rem(21);
+    font-weight: 600;
+  } 
+}
+
+.search__recent-item {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+  color: $gray-300;
+  font-size: rem(21);
+  font-weight: 600;
+}
+
+.search__recent-content-btn:hover {
+  color: $gray-100;
+  transition: color 0.1s linear;
+}
+
+.search__popular {
+  width: 50%;
+  padding-left: rem(60);
+
+  & h2 {
+    color: $gray-200;
+    margin-bottom: rem(36);
+  }
+}
+
+
+
+.search__popular-list {
+  margin-bottom: rem(16);
+
+  .search__popular-item span {
+    margin-right: rem(34);
+    font-size: rem(21);
+    font-weight: 600;
+  }
+
+  .search__popular-rank {
+    color: $brand-red-1;
+  }
+
+  .search__popular-content {
+    color: $gray-300;
+  }
+
+  .search__popular-content:hover {
+    color: $gray-100;
+    transition: color 0.1s linear;
+  }
+}
+
+ 
+.search__popular-timestamp {
+  color: $gray-500;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
