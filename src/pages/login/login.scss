@@ -1,134 +1,152 @@
 @use './../../styles/style';
-@use './../../styles/utils/variables' as var;
-@use './../../styles/utils/typography' as typo;
-@use './../../styles/utils/fuctions' as func;
+@use './../../styles/utils' as *;
 
 // 이 부분 논의!!
-.login {
+.log-in {
   display: flex;
   flex-flow: column nowrap;
-  max-width: var.$breakpoint-mobile;
-  background-color: var.$black;
-  color: var.$white;
+  max-width: $breakpoint-mobile;
+  background-color: $black;
+  color: $white;
   align-items: center;
-  padding: 0 var.$container-gutter;
+  padding: 0 $container-gutter;
 
-  .login__title {
-    @extend .heading-large;
-    padding: func.rem(28) 0;
+  .log-in__title {
+    padding: rem(28) 0;
   }
 
-  @media (max-width: var.$breakpoint-tablet) {
-    max-width: var.$breakpoint-tablet;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: $breakpoint-tablet;
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet) {
     max-width: 100vw;
   }
 }
 
-.login__form {
-  @extend .paragraph-large;
+.log-in__form {
   width: 100%;
   fieldset {
     display: flex;
     flex-flow: column nowrap;
   }
-  .login-form__input--id,
-  .login-form__input--pwd {
+
+  .log-in-form__input--id,
+  .log-in-form__input--pwd {
     border-radius: 0.25rem;
-    margin-bottom: func.rem(8);
+    margin-bottom: rem(8);
     padding: 0.84rem 1.25rem 0.84rem 1rem;
-    background-color: var.$brand-dark-bg-2;
+    background-color: $brand-dark-bg-2;
     border: none;
-    color: var.$white;
+    color: $white;
   }
 
-  .login-form__input--id:focus,
-  .login-form__input--pwd:focus {
-    outline: 1px solid var.$gray-100;
+  .log-in-form__input--id:focus,
+  .log-in-form__input--pwd:focus {
+    outline: 1px solid $gray-100;
   }
 
-  .login__auto {
-    @extend .paragraph-medium;
-    position: relative;
+  .log-in__auto {
     padding: 0.5rem 0 1rem;
     font-weight: 600;
 
     input {
+      position: absolute;
       appearance: none;
+      width: 1rem;
+      height: 1rem;
+
+      @media (min-width: 1025px) {
+        width: 1.625rem;
+        height: 1.625rem;
+      }
+    }
+
+    input:focus {
+      outline: 1px solid $gray-100;
     }
 
     label {
-      position: absolutes;
+      position: relative;
       padding: 1.25rem;
-      background-image: url('./../../assets/log-in/input/auto-login-uncheckd-mobile.svg');
-      background-position: left;
+      background-image: url('./../../assets/icon/circle-unchecked-icon.svg');
+      background-position: left center;
       background-repeat: no-repeat;
-      background-size: inherit;
-      color: var.$gray-500;
+      background-size: 1rem;
+      color: $gray-500;
+
+      @media (min-width: 1025px) {
+        background-size: 1.625rem;
+        padding-left: rem(32);
+      }
     }
     input:checked + label {
-      background-image: url('./../../assets/log-in/input/auto-login-checked-mobile.svg');
-      color: var.$white;
+      background-image: url('./../../assets/icon/circle-checked-icon.svg');
+      color: $white;
     }
   }
 
-  @media (min-width: var.$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     width: 26rem;
 
-    .login-form__input--id,
-    .login-form__input--pwd {
+    .log-in-form__input--id,
+    .log-in-form__input--pwd {
       border-radius: 0.25rem;
-      margin-bottom: func.rem(8);
+      margin-bottom: rem(8);
       padding: 0.87rem 1.25rem 0.87rem 1rem;
-      background-color: var.$brand-dark-bg-2;
+      background-color: $brand-dark-bg-2;
       border: none;
-      color: var.$white;
+      color: $white;
     }
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: 1025px) {
     width: 45.75rem;
-    .login-form__input--id,
-    .login-form__input--pwd {
+    .log-in-form__input--id,
+    .log-in-form__input--pwd {
       padding: 1.59rem 1.25rem 1.59rem 1.5rem;
     }
   }
 }
 
-.login-submit__button {
-  @extend .label-small;
+.log-in-submit__button {
   width: 100%;
   border: none;
   border-radius: 0.25rem;
-  color: var.$white;
-  background-color: var.$brand-red-1;
+  color: $white;
+  background-color: $brand-red-1;
   height: 2.625rem;
 
-  @media (min-width: var.$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     width: 26rem;
     height: 3.125rem;
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet) {
     width: 45.75rem;
     height: 5.375rem;
   }
 }
 
-.login-submit__button:hover {
+.log-in-submit__button:hover {
   background-color: #cc1030;
 }
 
-.login-actions {
-  @extend .paragraph-medium;
-  color: var.$gray-300;
+.log-in-submit__button:focus {
+  outline: 1px solid $gray-100;
+}
+
+.log-in-actions {
+  color: $gray-300;
   padding-top: 1.25rem;
   font-weight: 600;
 
   a {
     padding: 0 0.75rem;
+  }
+
+  a:focus {
+    outline: 1px solid $gray-100;
   }
 
   span {
@@ -139,21 +157,23 @@
   }
 }
 
-.login__sign-up {
-  @extend .paragraph-medium;
+.log-in__sign-up {
   font-weight: 600;
-  color: var.$gray-500;
+  color: $gray-500;
   padding-top: 1.25rem;
 
   a {
-    @extend .paragraph-medium;
     font-weight: 600;
     padding: 0 0.75rem;
-    color: var.$gray-300;
+    color: $gray-300;
+  }
+
+  a:focus {
+    outline: 1px solid $gray-100;
   }
 }
 
-.login-actions a:hover,
-.login__sign-up a:hover {
-  color: var.$white;
+.log-in-actions a:hover,
+.log-in__sign-up a:hover {
+  color: $white;
 }
