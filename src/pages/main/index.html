@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.scss" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper__bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link
       rel="stylesheet"
@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@700&display=swap"
     />
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper__bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
     <title>Taing - Main Page</title>
   </head>
@@ -80,9 +80,9 @@
       <!-- 메인배너 -->
       <section class="main__banner">
         <div class="banner__img">
-          <div class="swiper__container">
-            <div class="swiper__wrapper">
-              <div class="swiper__slide">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
                 <div class="banner__title">
                   <img
                     class="banner__image"
@@ -96,6 +96,7 @@
                 </div>
                 <img
                   class="banner__background-image"
+                  class="banner__background-image"
                   src="/src/assets/main/banner/banner1.webp"
                   srcset="
                     /src/assets/main/banner/m-banner1.webp,
@@ -104,8 +105,20 @@
                   alt="배너 이미지 포스터"
                 />
               </div>
-              <div class="swiper__slide">
+              <div class="swiper-slide">
+                <div class="banner__title">
+                  <img
+                    class="banner__image"
+                    src="/src/assets/main/banner/banner1-tit.webp"
+                    alt="배너 타이틀"
+                  />
+                  <p class="banner__description label-small">
+                    귀신 현상과 한국 샤머니즘에 대한<br />리얼 취재 티빙
+                    오리지널 다큐멘터리!
+                  </p>
+                </div>
                 <img
+                  class="banner__background-image"
                   src="/src/assets/main/banner/banner2.webp"
                   srcset="
                     /src/assets/main/banner/m-banner2.webp,
@@ -114,8 +127,20 @@
                   alt="배너 이미지 포스터"
                 />
               </div>
-              <div class="swiper__slide">
+              <div class="swiper-slide">
+                <div class="banner__title">
+                  <img
+                    class="banner__image"
+                    src="/src/assets/main/banner/banner1-tit.webp"
+                    alt="배너 타이틀"
+                  />
+                  <p class="banner__description label-small">
+                    귀신 현상과 한국 샤머니즘에 대한<br />리얼 취재 티빙
+                    오리지널 다큐멘터리!
+                  </p>
+                </div>
                 <img
+                  class="banner__background-image"
                   src="/src/assets/main/banner/banner3.webp"
                   srcset="
                     /src/assets/main/banner/m-banner3.webp,
@@ -124,12 +149,10 @@
                   alt="배너 이미지 포스터"
                 />
               </div>
-              <!-- 필요한 만큼 슬라이드 추가 -->
             </div>
-            <!-- 추가적인 Swiper 컨트롤 요소들 -->
-            <div class="swiper__button-prev"></div>
-            <div class="swiper__button-next"></div>
-            <div class="swiper__pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>

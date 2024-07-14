@@ -1,32 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper__container', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
+  var swiper = new Swiper('.mySwiper', {
     navigation: {
-      nextEl: '.swiper__button-next',
-      prevEl: '.swiper__button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
+    loop: true,
     pagination: {
-      el: '.swiper__pagination',
-      clickable: true,
+      el: '.swiper-pagination',
     },
-    /* 자동 플레이 설정 */
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
   });
-
-  // 네비게이션 버튼 클릭 이벤트
-  document
-    .querySelector('.swiper__button-prev')
-    .addEventListener('click', function () {
-      swiper.slidePrev();
-    });
-  document
-    .querySelector('.swiper__button-next')
-    .addEventListener('click', function () {
-      swiper.slideNext();
-    });
 });
