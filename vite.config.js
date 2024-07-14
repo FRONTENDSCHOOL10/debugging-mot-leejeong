@@ -14,6 +14,8 @@ export default defineConfig({
         header : resolve(__dirname, 'src/layouts/header/index.html'),
         footer: resolve(__dirname, 'src/layouts/footer/index.html'),
         main: resolve(__dirname, 'src/pages/main/index.html'),
+        modal: resolve(__dirname, 'src/layouts/modal/index.html'),
+        search: resolve(__dirname, 'src/pages/search/index.html'),
       },
     },
   },
