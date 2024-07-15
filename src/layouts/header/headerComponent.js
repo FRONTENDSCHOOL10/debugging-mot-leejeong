@@ -5,7 +5,7 @@ class HeaderComponent extends HTMLElement {
 
       const linkElem = document.createElement('link');
       linkElem.setAttribute('rel', 'stylesheet');
-      linkElem.setAttribute('href', './header.css');
+      linkElem.setAttribute('href', './header.scss');
 
       const template = document.createElement('template');
       template.innerHTML = `
