@@ -3,7 +3,6 @@
 
 body {
   color: white;
-  background-image: url(../../assets/landing/trend/trend-5.jpg);
 }
 
 .modal__background {
@@ -32,14 +31,12 @@ body {
         height: rem(110);
         padding: rem(36) 0;
         font-size: rem(21);
-        // border: 2px solid brown;
         text-align: center;
       }
 
       .modal__btns {
         width: 100%;
         height: rem(82);
-        // border: 2px solid gold;
         color: $gray-300;
         position: relative;
 
