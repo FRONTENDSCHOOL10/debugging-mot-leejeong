@@ -14,6 +14,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
+  overflow: hidden;
 }
 
 /* ------------------- 메인 배너 ------------------ */
@@ -22,53 +23,9 @@ body {
   width: 100%;
   height: calc(100vh - rem(100));
   overflow: hidden;
-
-  // .swiper__container {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 100%;
-
-  //   .swiper__wrapper {
-  //     width: 100%;
-  //     height: 100%;
-
-  //     .swiper__slide {
-  //       position: relative;
-  //       width: 100%;
-  //       height: 100%;
-
-  //       .banner__title {
-  //         position: absolute;
-  //         left: calc($container-gutter * 2);
-  //         bottom: 12vh;
-
-  //         .banner__image {
-  //           max-width: 31.667rem;
-  //           max-height: 9.833rem;
-  //           object-fit: contain;
-  //         }
-  //         .banner__description {
-  //           margin-top: em(16, 28);
-  //         }
-  //       }
-
-  //       .banner__background-image {
-  //         width: 100%;
-  //         height: 100%;
-  //         object-fit: cover;
-  //       }
-  //     }
-  //   }
-  //
-
-  //   .swiper__pagination {
-  //     position: absolute;
-  //     bottom: 12vh;
-  //   }
-  // }
 }
 
-.mySwiper {
+.mainSwiper {
   height: calc(100vh - rem(100));
   .banner__background-image {
     width: 100%;
@@ -144,6 +101,79 @@ body {
   }
 }
 
+/* ------------------- test ------------------- */
+
+.must__see {
+  padding-left: $container-gutter;
+  padding-right: $container-gutter;
+  margin-left: -rem(70);
+
+  .contentsSwiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      text-align: center;
+      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(240);
+      height: rem(387);
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-prev {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      left: calc($container-gutter * 0.5);
+      transform: translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+    }
+    .swiper-button-next {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      right: calc($container-gutter * 0.5);
+      transform: scaleX(-1) translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+    }
+  }
+}
+
+/* ------------------- test ------------------- */
 .section {
   width: 100%;
   padding-top: rem(40);

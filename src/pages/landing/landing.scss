@@ -246,7 +246,10 @@ body {
   display: flex;
   width: 100%;
   overflow: hidden;
-  padding: 20px 0;
+  padding: rem(8) 0;
+  @media (max-width: $breakpoint-tablet) {
+    padding: rem(6) 0;
+  }
 }
 
 .marquee-1 {
@@ -257,9 +260,9 @@ body {
 }
 
 .marquee-2 {
-  width: calc(100% + 100px);
+  width: calc(100% + rem(100));
   position: relative;
-  left: -100px;
+  left: -rem(100) px;
   .marquee-content {
     display: flex;
     animation: marquee2 20s linear infinite;
@@ -272,8 +275,14 @@ body {
 
 .marquee-item {
   flex: 0 0 auto;
-  margin: 0 20px;
-  width: 250px;
+  margin: 0 rem(8);
+  width: rem(470);
+  border-radius: rem(4);
+  overflow: hidden;
+  @media (max-width: $breakpoint-tablet) {
+    width: rem(180);
+    margin: 0 rem(6);
+  }
 }
 
 figure {
