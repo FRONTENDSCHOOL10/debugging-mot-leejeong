@@ -23,53 +23,7 @@
   </head>
   <body>
     <!-- 헤더 -->
-    <header>
-      <section class="header__organisms__2">
-        <div class="nav">
-          <div class="logo__menu">
-            <a href="/"
-              ><img
-                class="logo__1__icon"
-                alt="logoIcon"
-                src="/src/assets/main/img_logo_1.svg"
-            /></a>
-            <div class="menu">
-              <div class="menu__icon__text">
-                <img
-                  class="icon__live"
-                  alt="headerLiveIcon"
-                  src="/src/assets/main/icon_menu_live.svg"
-                />
-                <div class="div"><a href="#">시간</a></div>
-              </div>
-              <div class="menu__icon__text1">
-                <div class="div"><a href="#">TV프로그램</a></div>
-              </div>
-              <div class="menu__icon__text1">
-                <div class="div"><a href="#">영화</a></div>
-              </div>
-              <img
-                class="icon__paramount"
-                alt=""
-                src="/src/assets/main/paramount+.svg"
-              />
-            </div>
-          </div>
-          <div class="aside">
-            <img
-              class="icon__search"
-              alt="검색"
-              src="/src/assets/main/Group.svg"
-            />
-            <img
-              class="icon__search"
-              alt="프로필"
-              src="/src/assets/main/Profile.png"
-            />
-          </div>
-        </div>
-      </section>
-    </header>
+    <header></header>
     <!-- <iframe src="/layouts/header/header.html"></iframe> -->
     <!-- 메인 -->
     <main id="main">
@@ -81,7 +35,6 @@
               <div class="swiper-slide">
                 <div class="banner__title">
                   <img
-                    class="banner__image"
                     src="/src/assets/main/banner/banner1-tit.webp"
                     alt="배너 타이틀"
                   />
@@ -90,21 +43,20 @@
                     오리지널 다큐멘터리!
                   </p>
                 </div>
-                <img
-                  class="banner__background-image"
-                  class="banner__background-image"
-                  src="/src/assets/main/banner/banner1.webp"
-                  srcset="
-                    /src/assets/main/banner/m-banner1.webp,
-                    /src/assets/main/banner/banner1.webp
-                  "
-                  alt="배너 이미지 포스터"
-                />
+                <div class="banner__background-image">
+                  <img
+                    src="/src/assets/main/banner/banner1.webp"
+                    srcset="
+                      /src/assets/main/banner/m-banner1.webp,
+                      /src/assets/main/banner/banner1.webp
+                    "
+                    alt="배너 이미지 포스터"
+                  />
+                </div>
               </div>
               <div class="swiper-slide">
                 <div class="banner__title">
                   <img
-                    class="banner__image"
                     src="/src/assets/main/banner/banner1-tit.webp"
                     alt="배너 타이틀"
                   />
@@ -113,20 +65,20 @@
                     오리지널 다큐멘터리!
                   </p>
                 </div>
-                <img
-                  class="banner__background-image"
-                  src="/src/assets/main/banner/banner2.webp"
-                  srcset="
-                    /src/assets/main/banner/m-banner2.webp,
-                    /src/assets/main/banner/banner2.webp
-                  "
-                  alt="배너 이미지 포스터"
-                />
+                <div class="banner__background-image">
+                  <img
+                    src="/src/assets/main/banner/banner2.webp"
+                    srcset="
+                      /src/assets/main/banner/m-banner2.webp,
+                      /src/assets/main/banner/banner2.webp
+                    "
+                    alt="배너 이미지 포스터"
+                  />
+                </div>
               </div>
               <div class="swiper-slide">
                 <div class="banner__title">
                   <img
-                    class="banner__image"
                     src="/src/assets/main/banner/banner1-tit.webp"
                     alt="배너 타이틀"
                   />
@@ -135,15 +87,16 @@
                     오리지널 다큐멘터리!
                   </p>
                 </div>
-                <img
-                  class="banner__background-image"
-                  src="/src/assets/main/banner/banner3.webp"
-                  srcset="
-                    /src/assets/main/banner/m-banner3.webp,
-                    /src/assets/main/banner/banner3.webp
-                  "
-                  alt="배너 이미지 포스터"
-                />
+                <div class="banner__background-image">
+                  <img
+                    src="/src/assets/main/banner/banner3.webp"
+                    srcset="
+                      /src/assets/main/banner/m-banner3.webp,
+                      /src/assets/main/banner/banner3.webp
+                    "
+                    alt="배너 이미지 포스터"
+                  />
+                </div>
               </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -1008,8 +961,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
         </div>
       </section>
 

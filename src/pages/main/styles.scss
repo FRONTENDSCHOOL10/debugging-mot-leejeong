@@ -4,6 +4,7 @@
 body {
   background-color: $black;
   color: $white;
+  overflow-x: hidden;
 }
 
 #main {
@@ -32,6 +33,10 @@ header {
   width: $width;
   height: $height;
   margin-right: rem(8);
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: rem(4);
+  }
 
   .thumbnail-wrapper {
     width: 100%;
@@ -62,7 +67,6 @@ header {
   top: 50%;
   left: -2rem;
   transform: translateY(-50%);
-  opacity: 0.5;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
@@ -93,7 +97,6 @@ header {
   top: 50%;
   right: -2rem;
   transform: scaleX(-1) translateY(-50%);
-  opacity: 0.5;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
@@ -101,6 +104,9 @@ header {
   transition: opacity 0.1s ease 0s;
   cursor: pointer;
   background-image: url(/src/assets/main/arrow.svg);
+  .swiper-button-disabled {
+    opacity: 0.5;
+  }
   @media (max-width: $breakpoint-tablet) {
     width: rem(16);
     right: -1rem;
@@ -127,7 +133,10 @@ header {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  text-align: left;
   color: $gray-200;
+  line-height: 1.4;
+  text-overflow: ellipsis;
 }
 
 .title-wrapper {
@@ -139,6 +148,9 @@ header {
   gap: rem(4);
   margin-top: rem(4);
   margin-bottom: rem(8);
+  @media (max-width: $breakpoint-mobile) {
+    gap: rem(2);
+  }
 }
 
 /* ------------------- 메인 배너 ------------------ */
@@ -148,86 +160,134 @@ header {
   .banner__img {
     width: 100%;
     height: calc(100vh - rem(100));
-    overflow: hidden;
     @media (max-width: $breakpoint-tablet) {
-      height: 45vw;
+      height: rem(400);
     }
+    @media (max-width: $breakpoint-mobile) {
+      height: rem(200);
+    }
+    overflow: hidden;
   }
-}
-
-.mainSwiper {
-  height: calc(100vh - rem(100));
-  .banner__background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .banner__title {
-    position: absolute;
-    left: calc($container-gutter * 2);
-    bottom: 12vh;
-
-    .banner__image {
-      max-width: 31.667rem;
-      max-height: 9.833rem;
-      object-fit: contain;
+  .mainSwiper {
+    height: calc(100vh - rem(100));
+    @media (max-width: $breakpoint-tablet) {
+      height: rem(400);
     }
-    .banner__description {
-      margin-top: em(16, 28);
+    @media (max-width: $breakpoint-mobile) {
+      height: rem(200);
     }
-  }
+    .banner__background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .banner__title {
+      position: absolute;
+      left: calc($container-gutter * 2);
+      bottom: 12vh;
+      @media (max-width: $breakpoint-tablet) {
+        bottom: rem(50);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        bottom: rem(30);
+      }
 
-  .swiper-button-prev {
-    &::after {
-      content: none;
+      img {
+        max-width: rem(512);
+        max-height: rem(160);
+        object-fit: contain;
+        @media (max-width: $breakpoint-tablet) {
+          max-width: rem(480);
+          max-height: rem(72);
+        }
+        @media (max-width: $breakpoint-mobile) {
+          max-width: rem(300);
+          max-height: rem(50);
+        }
+      }
+      .banner__description {
+        margin-top: em(16, 28);
+      }
     }
-    &:hover {
+    .banner__background-image {
+      text-align: center;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      left: $container-gutter;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(16);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        width: rem(12);
+      }
+    }
+    .swiper-button-next {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      right: $container-gutter;
+      transform: scaleX(-1) translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(16);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        width: rem(12);
+      }
+    }
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.5;
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(6);
+        height: rem(6);
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background: white;
       opacity: 1;
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(6);
+        height: rem(6);
+      }
     }
-    position: absolute;
-    width: rem(24);
-    top: 50%;
-    left: $container-gutter;
-    transform: translateY(-50%);
-    opacity: 0.5;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% 50%;
-    z-index: 10;
-    transition: opacity 0.1s ease 0s;
-    cursor: pointer;
-    background-image: url(/src/assets/main/arrow.svg);
-  }
-  .swiper-button-next {
-    &::after {
-      content: none;
-    }
-    &:hover {
-      opacity: 1;
-    }
-    position: absolute;
-    width: rem(24);
-    top: 50%;
-    right: $container-gutter;
-    transform: scaleX(-1) translateY(-50%);
-    opacity: 0.5;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% 50%;
-    z-index: 10;
-    transition: opacity 0.1s ease 0s;
-    cursor: pointer;
-    background-image: url(/src/assets/main/arrow.svg);
-  }
-
-  .swiper-pagination-bullet {
-    background: white;
-    opacity: 0.5;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: white;
-    opacity: 1;
   }
 }
 
@@ -276,9 +336,16 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(345), rem(264));
-      img {
-        height: rem(194);
+
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(224);
+        height: rem(175);
       }
+      @media (max-width: $breakpoint-mobile) {
+        width: rem(145);
+        height: rem(120);
+      }
+
       .thumbnail-wrapper {
         position: relative;
       }
@@ -286,6 +353,18 @@ header {
         position: absolute;
         top: rem(5);
         left: rem(5);
+        @media (max-width: $breakpoint-mobile) {
+          top: rem(3);
+          left: rem(3);
+        }
+        svg {
+          width: rem(96);
+          height: rem(30);
+          @media (max-width: $breakpoint-tablet) {
+            width: rem(57);
+            height: rem(16);
+          }
+        }
       }
       img {
         display: block;
@@ -320,15 +399,15 @@ header {
     .swiper-slide {
       position: relative;
       @include swiperSlide(rem(240), rem(385));
-      img {
-        display: block;
-        height: rem(345);
-        object-fit: cover;
+
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(130);
+        height: rem(228);
       }
 
       .popular__info {
         position: absolute;
-        width: rem(240);
+        width: 100%;
         height: rem(60);
         top: rem(328);
         left: 0;
@@ -337,12 +416,28 @@ header {
         align-items: flex-end;
         .popular__rangking {
           display: inline-block;
+          svg {
+            width: rem(40);
+            height: auto;
+            transform: translateY(rem(3));
+          }
+          @media (max-width: $breakpoint-tablet) {
+            svg {
+              width: rem(20);
+            }
+          }
         }
+
         .popular__title {
           display: flex;
           align-items: flex-end;
           color: $gray-200;
+          text-align: left;
           margin-left: rem(16);
+          line-height: 1.4;
+          @media (max-width: $breakpoint-tablet) {
+            margin-left: rem(6);
+          }
         }
 
         h3::after {
@@ -350,6 +445,13 @@ header {
           font-size: rem(30);
           margin-left: rem(3);
           color: $brand-red-1;
+          @media (max-width: $breakpoint-tablet) {
+            font-size: rem(24);
+          }
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+          top: rem(158);
         }
       }
 
@@ -361,6 +463,10 @@ header {
         top: 0;
         left: 0;
         overflow: hidden;
+        @media (max-width: $breakpoint-tablet) {
+          width: rem(130);
+          height: rem(190);
+        }
 
         img {
           width: 100%;
@@ -389,9 +495,16 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(345), rem(285));
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(224);
+        height: rem(190);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        width: rem(145);
+        height: rem(148);
+      }
       img {
         display: block;
-        height: rem(194);
         object-fit: cover;
       }
 
@@ -405,11 +518,24 @@ header {
         gap: rem(16);
         .live__rangking {
           display: inline-block;
-          margin-top: rem(10);
+          margin-top: rem(5);
+          svg {
+            width: rem(40);
+            height: auto;
+          }
+          @media (max-width: $breakpoint-tablet) {
+            svg {
+              width: rem(20);
+              transform: translateY(rem(3));
+            }
+          }
         }
         .title-wrapper {
           color: $gray-200;
           gap: 0;
+        }
+        @media (max-width: $breakpoint-tablet) {
+          gap: rem(6);
         }
       }
 
@@ -449,10 +575,17 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(285), rem(570));
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(130);
+        height: rem(260);
+      }
       img {
         display: block;
         height: rem(570);
         object-fit: cover;
+        @media (max-width: $breakpoint-tablet) {
+          height: rem(260);
+        }
       }
     }
 
@@ -475,7 +608,7 @@ header {
     height: 100%;
 
     .swiper-slide {
-      @include swiperSlide(100%, rem(177));
+      @include swiperSlide(100%, auto);
       img {
         display: block;
         width: 100%;
@@ -504,6 +637,14 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(348), rem(120));
+      @media (max-width: $breakpoint-tablet) {
+        width: rem(214);
+        height: rem(73);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        width: rem(145);
+        height: rem(50);
+      }
       img {
         display: block;
         width: 100%;
@@ -514,9 +655,11 @@ header {
 
     .swiper-button-prev {
       @include swiperButtonPrev();
+      transform: translateY(0%);
     }
     .swiper-button-next {
       @include swiperButtonNext();
+      transform: scaleX(-1) translateY(0%);
     }
   }
   padding-bottom: rem(80);
