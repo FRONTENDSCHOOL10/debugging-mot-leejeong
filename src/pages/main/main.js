@@ -1,5 +1,3 @@
-import './main.scss';
-
 document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper('.mainSwiper', {
     navigation: {
@@ -16,16 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   var swiper1 = new Swiper('.contentsSwiper', {
     slidesPerView: 'auto',
-    spaceBetween: 8,
+    spaceBetween: 30,
     freeMode: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      1025: {
-        spaceBetween: 16,
-      },
     },
   });
 });
