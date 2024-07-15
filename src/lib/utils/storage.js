@@ -1,4 +1,4 @@
-import { isString } from './type.js';
+import { isString } from './typeOf.js';
 
 const { localStorage: storage } = window;
 
