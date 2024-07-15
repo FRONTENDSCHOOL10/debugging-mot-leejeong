@@ -67,6 +67,7 @@ body {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, #000 100%),
     url(/src/assets/landing/main-bg.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 .main__wrap {
@@ -129,6 +130,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: rem(160);
+  overflow-x: hidden;
 }
 .section__info {
   width: 100%;
@@ -240,81 +242,91 @@ body {
   }
 }
 
-.flow__slide-first {
+.marquee {
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
   width: 100%;
   overflow: hidden;
-}
-
-.flow__slide-wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  -webkit-box-align: center;
-  align-items: center;
-  width: 100%;
-  height: rem(264);
+  padding: rem(8) 0;
   @media (max-width: $breakpoint-tablet) {
-    height: rem(100);
+    padding: rem(6) 0;
   }
 }
 
-.flow__slide-list {
-  display: flex;
-  flex-flow: row nowrap;
-  animation: scroll 30s linear infinite;
-  @media (max-width: $breakpoint-tablet) {
-    gap: rem(12);
+.marquee-1 {
+  .marquee-content {
+    display: flex;
+    animation: marquee1 30s linear infinite;
   }
 }
-.flow__slide-item picture {
-  width: rem(470);
-  height: rem(264);
+
+.marquee-2 {
+  width: calc(100% + rem(100));
+  position: relative;
+  left: -rem(100) px;
+  .marquee-content {
+    display: flex;
+    animation: marquee2 20s linear infinite;
+  }
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
   margin: 0 rem(8);
-  display: block;
-  border-radius: 4px;
+  width: rem(470);
+  border-radius: rem(4);
   overflow: hidden;
   @media (max-width: $breakpoint-tablet) {
     width: rem(180);
-    height: rem(100);
-  }
-  img {
-    width: 100%;
-    height: 100%;
+    margin: 0 rem(6);
   }
 }
-// 애니메이션
-.flow__slide-wrapper.original {
-  animation: rollingleft1 33s linear infinite;
+
+figure {
+  margin: 0;
+  text-align: center;
 }
-.flow__slide-wrapper.clone {
-  animation: rollingleft2 33s linear infinite;
+
+figure img {
+  width: 100%;
+  height: auto;
 }
-@keyframes rollingleft1 {
+
+.description {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+figcaption {
+  margin-top: 5px;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8em;
+  color: #666;
+}
+
+@keyframes marquee1 {
   0% {
     transform: translateX(0);
   }
-  50% {
+  100% {
     transform: translateX(-100%);
   }
-  50.01% {
-    transform: translateX(100%);
-  }
-  100% {
+}
+
+@keyframes marquee2 {
+  0% {
     transform: translateX(0);
   }
-}
-
-@keyframes rollingleft2 {
-  0% {
-    transition: translateX(0);
-  }
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
-
 /* ------------------ ending ------------------ */
 
 .ending {

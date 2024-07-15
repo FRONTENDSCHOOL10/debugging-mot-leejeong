@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>search</title>
+  <title>Search</title>
   <script type="module" src="./search.js"></script>
 </head>
 <body>
   <main>
-    <!-- 검색 폼 영역-->
+    <!-- 검색 폼 영역 -->
     <section class="search" aria-labelledby="search-heading" role="search">
       <div class="search__wrapper">
         <h2 id="search-heading" class="sr-only">검색 영역</h2>
-        <form method="GET" action="/" class="search__form">
+        <form method="GET" action="/" class="search__form" onsubmit="return false;">
           <fieldset>
             <legend class="sr-only">검색 폼</legend>
             <div class="search__form-wrapper">
@@ -23,6 +23,7 @@
               </button>
             </div>
           </fieldset>
+          <div id="autocomplete-list" class="autocomplete-list" role="listbox"></div>
         </form>
 
         <!-- 검색어 영역 -->
@@ -36,33 +37,18 @@
                 <img src="/src/assets/deleteAll.svg" alt="최근 검색어 모두 삭제" />
               </button>
             </h2>
-            <ul class="search__recent-list">
+            <ul class="search__recent-list" id="recent-search-list">
               <li class="search__recent-item search__recent-item-empty paragraph-medium">
                 <span class="paragraph-medium">검색 내역이 없습니다.</span>
               </li>
-              <li class="search__recent-item paragraph-medium">
-                <button type="button" class="search__recent-content-btn paragraph-medium">짱구는 못말려</button>
-                <button type="button" class="search__recent-delete-btn" aria-label="검색어 삭제">
-                  <img src="/src/assets/deleteList.svg" alt="검색어 삭제" />
-                </button>
-              </li> 
             </ul>
           </section>
           
           <!-- 실시간 인기 검색어 영역 -->
           <section class="search__popular" aria-labelledby="popular-heading" role="region">
             <h2 id="popular-heading" class="search__popular-title label-large">실시간 인기 검색어</h2>
-            <ol class="search__popular-list" id="popular-list" aria-live="polite">
-              <li class="search__popular-item">
-                <button type="button" class="search__popular-btn" aria-label="EURO 2024 하이라이트 검색">
-                  <span class="search__popular-rank paragraph-medium">1</span>
-                  <span class="search__popular-content paragraph-medium">EURO 2024 하이라이트</span>
-                </button>
-              </li> 
-            </ol> 
-            <p class="search__popular-timestamp paragraph-small" id="update-timestamp">
-              2024.07.12 오후 4:39 기준
-            </p>
+            <ol class="search__popular-list" id="popular-list" aria-live="polite"></ol>
+            <p class="search__popular-timestamp paragraph-small" id="update-timestamp"></p>
           </section>
         </div>
       </div>

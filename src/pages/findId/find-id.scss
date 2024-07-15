@@ -1,64 +1,59 @@
 @use './../../styles/style';
-@use './../../styles/utils/variables' as var;
-@use './../../styles/utils/typography' as typo;
-@use './../../styles/utils/fuctions' as func;
+@use './../../styles/utils' as *;
 
 .find-id {
   display: flex;
   flex-flow: column nowrap;
-  max-width: var.$breakpoint-mobile;
-  background-color: var.$black;
-  color: var.$white;
+  max-width: $breakpoint-mobile;
+  background-color: $black;
+  color: $white;
   align-items: center;
-  padding: 0 var.$container-gutter;
+  padding: 0 $container-gutter;
 
   .find-id__title {
-    @extend .heading-large;
-    padding: func.rem(28) 0;
+    padding: rem(28) 0;
   }
 
-  @media (min-width: var.$breakpoint-mobile) {
-    max-width: var.$breakpoint-tablet;
+  @media (min-width: $breakpoint-mobile) {
+    max-width: $breakpoint-tablet;
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: 1025px) {
     max-width: 100vw;
   }
 }
 
 .find-id__article--email {
-  @extend .label-small;
   width: 100%;
 
   .find-id__title--email {
-    color: var.$white;
+    color: $white;
   }
 
   .find-id__description--email {
-    color: var.$gray-400;
+    color: $gray-400;
   }
-  @media (min-width: var.$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     width: auto;
   }
 }
 
 .find-id__form--email {
-  @extend .paragraph-large;
   input {
     width: 100%;
     border-radius: 0.25rem;
     margin: 1rem 0 1.25rem 0;
     padding: 0.84rem 1.25rem 0.84rem 1rem;
-    background-color: var.$brand-dark-bg-2;
+    background-color: $brand-dark-bg-2;
     border: none;
-    color: var.$white;
+    color: $white;
 
     input:focus {
-      outline: 1px solid var.$gray-100;
+      outline: 1px solid $gray-100;
     }
   }
 
-  @media (min-width: var.$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     width: 26rem;
 
     input {
@@ -66,38 +61,42 @@
     }
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: 1025px) {
     width: 45.75rem;
 
     input {
+      margin: 1.5rem 0 2.25rem 0;
       padding: 1.59rem 1.75rem 1.59rem 1.5rem;
     }
   }
 }
 
 .find-id__submit-button--email {
-  @extend .label-small;
   width: 100%;
   border: none;
   border-radius: 0.25rem;
-  color: var.$white;
-  background-color: var.$gray-700;
+  color: $white;
+  background-color: $gray-700;
   height: 2.625rem;
 
-  @media (min-width: var.$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     width: 26rem;
     height: 3.125rem;
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: 1025px) {
     width: 45.75rem;
     height: 5.375rem;
   }
 }
 
 .find-id__submit-button--email:hover {
-  background-color: var.$white;
-  color: var.$black;
+  background-color: $white;
+  color: $black;
+}
+
+.find-id__submit-button--email:focus {
+  outline: 1px solid $gray-100;
 }
 
 // .find-id__or::before,
@@ -120,42 +119,46 @@
   }
 }
 .find-id__article--verify {
-  @extend .label-small;
   width: 100%;
 
   .find-id__title--verify {
-    color: var.$white;
+    color: $white;
   }
 
   .find-id__description--verify {
-    color: var.$gray-400;
+    color: $gray-400;
   }
 
-  @media screen and (min-width: var.$breakpoint-mobile) {
+  @media screen and (min-width: $breakpoint-mobile) {
     width: auto;
   }
 }
 
 .find-id__button--verify {
-  @extend .label-small;
   width: 100%;
+  height: 2.625rem;
   border: none;
   border-radius: 0.25rem;
-  color: var.$black;
-  background-color: var.$gray-100;
-  height: 2.625rem;
+  color: $black;
+  background-color: $gray-100;
+  margin-top: 1rem;
 
-  @media (max-width: var.$breakpoint-tablet) {
+  @media (min-width: $breakpoint-mobile) {
     width: 26rem;
     height: 3.125rem;
   }
 
-  @media (min-width: var.$breakpoint-tablet) {
+  @media (min-width: 1025px) {
     width: 45.75rem;
     height: 5.375rem;
+    margin-top: 2.25rem;
   }
 }
 
 .find-id__button--verify:hover {
-  background-color: var.$gray-200;
+  background-color: $gray-200;
+}
+
+.find-id__button--verify:focus {
+  outline: 1px solid $brand-red-1;
 }

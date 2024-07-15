@@ -20,14 +20,14 @@
     </header>
     <!-- 로그인 페이지 본문 -->
     <main class="main">
-      <section class="login">
-        <h2 class="login__title">TVING ID 로그인</h2>
+      <section class="log-in">
+        <h2 class="log-in__title heading-large">TAING ID 로그인</h2>
         <!-- 로그인 폼 -->
-        <form action="/" class="login__form">
-          <fieldset class="login-form__fieldset">
-            <legend class="login-form__legend sr-only">로그인</legend>
+        <form action="/" class="log-in__form paragraph-large">
+          <fieldset class="log-in-form__fieldset">
+            <legend class="log-in-form__legend sr-only">로그인</legend>
             <input
-              class="login-form__input--id"
+              class="log-in-form__input--id"
               type="text"
               name="userId"
               id="userId"
@@ -36,7 +36,7 @@
             />
             <label for="userId" class="sr-only">아이디</label>
             <input
-              class="login-form__input--pwd"
+              class="log-in-form__input--pwd"
               type="password"
               name="userPwd"
               id="userPwd"
@@ -44,27 +44,46 @@
               required
             />
             <label for="userPwd" class="sr-only">비밀번호</label>
-            <div role="group" aria-label="자동 로그인" class="login__auto">
-              <input type="checkbox" name="autoLogin" id="autoLogin" />
-              <label for="autoLogin">자동 로그인</label>
+            <div
+              role="group"
+              aria-label="자동 로그인"
+              class="log-in__auto-group paragraph-medium"
+            >
+              <input
+                type="checkbox"
+                class="auto-log-in__input"
+                name="auto-login"
+                id="auto-login"
+              />
+              <label for="auto-login">자동 로그인</label>
             </div>
           </fieldset>
         </form>
-        <button type="submit" class="login-submit__button">로그인 하기</button>
+        <button type="submit" class="log-in-submit__button label-small">
+          로그인 하기
+        </button>
 
-        <!-- 이부분의 접근성을 높이고 싶다. -->
         <div
           role="group"
-          class="login-actions"
+          class="log-in-actions paragraph-medium"
           aria-label="아이디 및 비밀번호 찾기"
         >
-          <a href="/" class="login-actions__link--find-id">아이디 찾기</a
+          <a
+            href="/src/pages/findId/index.html"
+            class="log-in-actions__link--find-id"
+            >아이디 찾기</a
           ><span aria-hidden="true" tabindex="-1" draggable="false">|</span
-          ><a href="/" class="login-actions__link--find-pwd">비밀번호 찾기</a>
+          ><a
+            href="/src/pages/findPwd/index.html"
+            class="log-in-actions__link--find-pwd"
+            >비밀번호 찾기</a
+          >
         </div>
         <!-- 이부분의 접근성을 높일 수 있을까 -->
-        <p class="login__sign-up">
-          아직 계정이 없으신가요?<a href="/" class="signup__link"
+        <p class="log-in__sign-up paragraph-medium">
+          아직 계정이 없으신가요?<a
+            href="/src/pages/register/index.html"
+            class="sign-up__link paragraph-medium"
             >회원가입하기</a
           >
         </p>
