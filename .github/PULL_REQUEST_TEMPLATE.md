@@ -43,8 +43,8 @@
 
 ## 스크린샷
 
-!https://example.com/screenshot/login.png
+!https://example.com/screenshot/log-in.png
 
 ## 추가 정보
 
-- 코드 리뷰 시 주요 변경 사항은 `UserManager` 클래스와 `LoginController` 클래스입니다. 이 부분을 중점적으로 확인해 주시면 감사하겠습니다.
+- 코드 리뷰 시 주요 변경 사항은 `UserManager` 클래스와 `log-inController` 클래스입니다. 이 부분을 중점적으로 확인해 주시면 감사하겠습니다.
