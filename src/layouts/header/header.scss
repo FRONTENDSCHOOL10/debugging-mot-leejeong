@@ -1,5 +1,9 @@
-@use '/src/styles/base' as *;
-@use '/src/styles/utils' as *;
+// @use '/src/styles/base' as *;
+// @use '/src/styles/utils' as *;
+
+@use './../../styles/base' as * ;
+@use './../../styles/utils' as * ;
+
 
 body {
   position: relative;

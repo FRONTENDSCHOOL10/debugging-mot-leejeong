@@ -1,0 +1,544 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* 스타일 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+address {
+  all: unset;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+figure {
+  margin: 0;
+}
+
+input,
+textarea,
+select,
+option,
+button {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Color */
+/* Breakpoints */
+/* Spacing */
+/* Typography */
+.heading-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.375rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.625rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xxlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.875rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xxxlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 3.125rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* ------------------- Label ------------------ */
+.label-small {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.label-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.label-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ------------------- Paragraph ------------------ */
+.paragraph-small {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.paragraph-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.paragraph-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1024px) {
+  /* ------------------ Heading ----------------- */
+  .heading-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  /* ------------------- Label ------------------ */
+  .label-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  /* ------------------- Paragraph ------------------ */
+  .paragraph-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 680px) {
+  /* ------------------ Heading ----------------- */
+  .heading-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  /* ------------------- Label ------------------ */
+  .label-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  /* ------------------- Paragraph ------------------ */
+  .paragraph-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard Variable", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  position: relative;
+  color: #c4c4c4;
+  background-color: black;
+}
+
+.header {
+  width: 100%;
+  padding: 0 4.375rem;
+  height: 6.25rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.header .header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin-left: 3.25rem;
+}
+.header .header__menu .header__menu-left {
+  display: flex;
+  align-items: flex-end;
+  gap: 3.25rem;
+}
+.header .header__menu .header__menu-item {
+  font-size: 1.3125rem;
+  font-weight: 600;
+}
+.header .header__menu .header__menu-item a:first-of-type {
+  display: flex;
+  align-items: flex-end;
+}
+.header .header__menu .header__menu-item a:first-of-type svg {
+  margin-right: 0.625rem;
+}
+.header .header__menu .header__menu-item:last-of-type:hover svg path {
+  fill: rgb(255, 255, 255);
+  transition: stroke 0.2s linear;
+}
+.header .header__menu .header__menu-item:not(:last-of-type):hover {
+  color: rgb(255, 255, 255);
+  transition: color 0.15s linear;
+}
+.header .header__menu .header__menu-item:not(:last-of-type):hover svg path {
+  stroke: rgb(255, 255, 255);
+  transition: stroke 0.2s linear;
+}
+.header .header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.header .header__actions .header__actions-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header .header__actions .header__actions-btn:hover svg path, .header .header__actions .header__actions-btn:hover svg rect {
+  stroke: rgb(255, 255, 255);
+  transition: stroke 0.2s linear;
+}
+.header .header__actions .header__profile-dropdown {
+  width: 19.375rem;
+  padding: 20px;
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 4.375rem;
+  background: #212121;
+  border: 1px solid #565656;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+.header .header__actions .header__profile-dropdown .profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+}
+.header .header__actions .header__profile-dropdown .profile::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.0625rem;
+  background-color: #6b6b6b;
+  position: absolute;
+  top: 6.875rem;
+  left: 0;
+}
+.header .header__actions .header__profile-dropdown .profile img {
+  width: 4.0625rem;
+  border-radius: 0.3125rem;
+}
+.header .header__actions .header__profile-dropdown .profile__info-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.header .header__actions .header__profile-dropdown .profile__info-change {
+  font-size: 0.9375rem;
+}
+.header .header__actions .header__profile-dropdown .profile__service-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 3.125rem 0 0.625rem 0;
+  font-size: 20px;
+}
+.header .header__actions .header__profile-dropdown .profile__service-btn li a {
+  color: #c4c4c4;
+  text-decoration: none;
+  padding: 0.3125rem 0;
+}
+.header .header__actions .header__profile-dropdown .profile__service-btn li a:hover, .header .header__actions .header__profile-dropdown .profile__service-btn li a:focus {
+  color: rgb(255, 255, 255);
+  background-color: #565656;
+  border-radius: 5px;
+  transition: background-color 0.2s linear;
+}
+.header .header__actions .profile-btn[aria-expanded=true] + .header__profile-dropdown {
+  display: block;
+}
+
+@media (max-width: 64rem) {
+  .header {
+    padding: 0 2.5rem;
+    height: 3.5rem;
+  }
+  .header .header__logo img {
+    width: 4.8125rem;
+    height: 1.5rem;
+  }
+  .header .header__menu .header__menu-left {
+    gap: 1.75rem;
+  }
+  .header .header__menu .header__menu-item {
+    font-size: 0.75rem;
+  }
+  .header .header__menu .header__menu-item svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .header .header__menu .header__menu-item:last-of-type svg {
+    width: 4.0625rem;
+    height: 1.25rem;
+  }
+  .header .header__actions {
+    gap: 1.5rem;
+  }
+  .header .header__actions .header__actions-btn svg,
+  .header .header__actions .header__actions-btn img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .header .header__actions .header__profile-dropdown {
+    width: 12.5rem;
+    right: 2.5rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile {
+    gap: 0.9375rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile::after {
+    top: 5.3125rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile img {
+    width: 2.5rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__info-name {
+    font-size: 0.9375rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__info-change {
+    font-size: 0.75rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__service-btn {
+    padding: 2.5rem 0 0.5rem 0;
+    font-size: 0.9375rem;
+  }
+}
+@media (max-width: 42.5rem) {
+  .header {
+    padding: 0 1.25rem;
+    height: 3.75rem;
+  }
+  .header .header__logo img {
+    width: 2.875rem;
+  }
+  .header .header__menu-left {
+    display: none;
+  }
+  .header .header__actions {
+    position: absolute;
+    top: 0.8125rem;
+    right: 1.875rem;
+  }
+  .header .header__actions .header__actions-btn svg,
+  .header .header__actions .header__actions-btn img {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  .header .header__actions .header__profile-dropdown {
+    width: 100%;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+  }
+  .header .header__actions .header__profile-dropdown .profile {
+    gap: 0.625rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile img {
+    width: 2.5rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__info-name {
+    font-size: 1rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__info-change {
+    font-size: 0.75rem;
+  }
+  .header .header__actions .header__profile-dropdown .profile__service-btn {
+    padding: 1.25rem 0 0.3125rem 0;
+    font-size: 16px;
+  }
+  .header .header__actions .header__profile-dropdown .profile__service-btn li a {
+    padding: 0.1875rem 0;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */
