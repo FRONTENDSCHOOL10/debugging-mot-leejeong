@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   var swiper1 = new Swiper('.contentsSwiper', {
-    slidesPerView: 3,
+    slidesPerView: 'auto',
     spaceBetween: 30,
     freeMode: true,
     navigation: {
