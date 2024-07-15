@@ -352,11 +352,11 @@ body {
 .log-in__form .log-in-form__input--pwd:focus {
   outline: 1px solid #e1e1e1;
 }
-.log-in__form .log-in__auto {
+.log-in__form .log-in__auto-group {
   padding: 0.5rem 0 1rem;
   font-weight: 600;
 }
-.log-in__form .log-in__auto input {
+.log-in__form .log-in__auto-group input {
   position: absolute;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -365,15 +365,15 @@ body {
   height: 1rem;
 }
 @media (min-width: 1025px) {
-  .log-in__form .log-in__auto input {
+  .log-in__form .log-in__auto-group input {
     width: 1.625rem;
     height: 1.625rem;
   }
 }
-.log-in__form .log-in__auto input:focus {
+.log-in__form .log-in__auto-group input:focus {
   outline: 1px solid #e1e1e1;
 }
-.log-in__form .log-in__auto label {
+.log-in__form .log-in__auto-group label {
   position: relative;
   padding: 1.25rem;
   background-image: url("./../../assets/icon/circle-unchecked-icon.svg");
@@ -383,12 +383,12 @@ body {
   color: #6b6b6b;
 }
 @media (min-width: 1025px) {
-  .log-in__form .log-in__auto label {
+  .log-in__form .log-in__auto-group label {
     background-size: 1.625rem;
     padding-left: 2rem;
   }
 }
-.log-in__form .log-in__auto input:checked + label {
+.log-in__form .log-in__auto-group input:checked + label {
   background-image: url("./../../assets/icon/circle-checked-icon.svg");
   color: rgb(255, 255, 255);
 }
