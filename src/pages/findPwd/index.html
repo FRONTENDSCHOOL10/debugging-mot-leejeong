@@ -17,15 +17,15 @@
     <!-- 메인 -->
     <main class="main">
       <section class="find-pwd">
-        <h2 class="find-pwd__title">비밀번호 찾기</h2>
-        <p class="find-pwd__description">
+        <h2 class="find-pwd__title heading-large">비밀번호 찾기</h2>
+        <p class="find-pwd__description label-small">
           아이디 확인 후 등록된 이메일 주소로 비밀번호 재설정을 위한 인증 메일이
           발송됩니다. 이메일을 확인하여 12시간 이내에 비밀번호 재설정을
           완료해주세요.
         </p>
 
         <!-- 아이디 입력 폼 -->
-        <form action="/" class="find-pwd__form--id">
+        <form action="/" class="find-pwd__form--id paragraph-large">
           <fieldset>
             <legend class="sr-only">아이디로 찾기</legend>
             <input
@@ -38,7 +38,11 @@
             <label for="userId" class="sr-only">아이디</label>
           </fieldset>
         </form>
-        <button type="submit" class="find-pwd__submit-button--id" disabled>
+        <button
+          type="submit"
+          class="find-pwd__submit-button--id label-small"
+          disabled
+        >
           확인
         </button>
       </section>
