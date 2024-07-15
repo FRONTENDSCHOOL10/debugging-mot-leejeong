@@ -21,17 +21,17 @@
     <!-- 아이디 찾기 페이지 본문 -->
     <main class="main">
       <section class="find-id">
-        <h2 class="find-id__title">아이디 찾기</h2>
+        <h2 class="find-id__title heading-large">아이디 찾기</h2>
 
         <!-- 이메일로 찾기 -->
-        <article class="find-id__article--email">
+        <article class="find-id__article--email label-small">
           <h3 class="find-id__title--email">이메일로 찾기</h3>
           <p class="find-id__description--email">
             가입 시 등록한 이메일을 입력해주세요.
           </p>
 
           <!-- 이메일 입력 form -->
-          <form action="/" class="find-id__form--email">
+          <form action="/" class="find-id__form--email paragraph-large">
             <fieldset>
               <legend class="sr-only">이메일 입력</legend>
               <input
@@ -45,7 +45,11 @@
             </fieldset>
           </form>
 
-          <button type="submit" class="find-id__submit-button--email" disabled>
+          <button
+            type="submit"
+            class="find-id__submit-button--email label-small"
+            disabled
+          >
             확인
           </button>
         </article>
@@ -58,13 +62,13 @@
         </div>
 
         <!-- 본인인증으로 찾기 -->
-        <article class="find-id__article--verify">
+        <article class="find-id__article--verify label-small">
           <h3 class="find-id__title--verify">본인인증으로 찾기</h3>
           <p class="find-id__description--verify">
             이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.
           </p>
 
-          <button type="button" class="find-id__button--verify">
+          <button type="button" class="find-id__button--verify label-small">
             본인인증하기
           </button>
         </article>
