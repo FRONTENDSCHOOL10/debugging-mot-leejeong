@@ -95,12 +95,12 @@ class HeaderComponent extends HTMLElement {
                         <div class="profile">
                           <div class="profile__img">
                             <picture>
-                              <source srcset="" type="image/webp">
-                              <img src="" alt="사용자 프로필 사진" id="profile-img">
+                              <source srcset="https://image.tving.com/upload/profile/IG00000016_IMAGE_2.png/dims/resize/100" type="image/webp">
+                              <img src="https://image.tving.com/upload/profile/IG00000016_IMAGE_2.png/dims/resize/100" alt="사용자 프로필 사진" id="profile-img">
                             </picture>
                           </div>
                           <div class="profile__info">
-                            <p class="profile__info-name" id="profile-name"></p>
+                            <p class="profile__info-name" id="profile-name">짱구</p>
                             <button type="button" class="profile__info-change">
                               <span>프로필 전환 <i class="fa-solid fa-angle-right"></i></span>
                             </button>

@@ -1,19 +1,18 @@
-// @use '/src/styles/base' as *;
-// @use '/src/styles/utils' as *;
-
 @use './../../styles/base' as * ;
 @use './../../styles/utils' as * ;
 
-
 body {
+  height: auto;
   position: relative;
   color: $gray-200;
   background-color: black;
+  // border: 5px solid gold;
 }
 
 .header {
+  // border: 1px solid blue;
   width: 100%;
-  padding: 0 rem(70);
+  max-width: 1920px; 
   height: rem(100);
   position: fixed;
   display: flex;
@@ -21,7 +20,10 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
   z-index: 2;
   top: 0;
-  left: 0;
+  left: 50%; 
+  transform: translateX(-50%); 
+  padding: 0 rem(70); 
+  box-sizing: border-box; 
 
   .header__menu {
     display: flex;
@@ -29,6 +31,7 @@ body {
     align-items: flex-start;
     flex-grow: 1;
     margin-left: rem(52);
+    // border: 3px solid red;
 
     .header__menu-left {
       display: flex;
@@ -199,14 +202,17 @@ body {
       }
 
       .header__profile-dropdown {
-        width: rem(200);
+        width: rem(150);
         right: rem(40);
 
         .profile {
           gap: rem(15);
+          position: relative;
+          top: -5px;
 
           &::after {
-            top: rem(85);
+            top: rem(65);
+            width: 100%;
           }
 
           img {
@@ -214,17 +220,17 @@ body {
           }
 
           &__info-name {
-            font-size: rem(15);
+            font-size: rem(10);
           }
 
           &__info-change {
-            font-size: rem(12);
+            font-size: rem(8);
           }
         }
 
         .profile__service-btn {
           padding: rem(40) 0 rem(8) 0;
-          font-size: rem(15);
+          font-size: rem(10);
         }
       }
     }
@@ -234,15 +240,15 @@ body {
 // Mobile
 @media (max-width: $breakpoint-mobile) {
   .header {
-    padding: 0 rem(20);
-    height: rem(60);
+    padding: 0 rem(16);
+    height: rem(38);
 
     .header__logo img {
       width: rem(46);
     }
 
     .header__menu-left {
-      display: none;
+      visibility: hidden;
     }
 
     .header__actions {
@@ -259,39 +265,7 @@ body {
       }
 
       .header__profile-dropdown {
-        width: 100%;
-        right: 0;
-        left: 0;
-        padding: 10px;
-        box-shadow: none;
-        border: none;
-
-        .profile {
-          gap: rem(10);
-
-          img {
-            width: rem(40);
-          }
-
-          &__info-name {
-            font-size: rem(16);
-          }
-
-          &__info-change {
-            font-size: rem(12);
-          }
-        }
-
-        .profile__service-btn {
-          padding: rem(20) 0 rem(5) 0;
-          font-size: 16px;
-
-          li {
-            a {
-              padding: rem(3) 0;
-            }
-          }
-        }
+        display: none;
       }
     }
   }
