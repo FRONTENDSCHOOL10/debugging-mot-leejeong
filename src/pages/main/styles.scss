@@ -2,23 +2,181 @@
 @use 'src/styles/utils' as *;
 
 body {
-  margin: 0;
-  line-height: normal;
+  background-color: $black;
+  color: $white;
 }
 
-
-.tving {
+#main {
   width: 100%;
   position: relative;
-  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
-  font-size: 28.43px;
-  color: #fff;
-  font-family: Pretendard;
+  overflow: hidden;
+}
+
+/* ------------------- 메인 배너 ------------------ */
+
+.banner__img {
+  width: 100%;
+  height: calc(100vh - rem(100));
+  overflow: hidden;
+}
+
+.mainSwiper {
+  height: calc(100vh - rem(100));
+  .banner__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .banner__title {
+    position: absolute;
+    left: calc($container-gutter * 2);
+    bottom: 12vh;
+
+    .banner__image {
+      max-width: 31.667rem;
+      max-height: 9.833rem;
+      object-fit: contain;
+    }
+    .banner__description {
+      margin-top: em(16, 28);
+    }
+  }
+
+  .swiper-button-prev {
+    &::after {
+      content: none;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    position: absolute;
+    width: rem(24);
+    top: 50%;
+    left: $container-gutter;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    z-index: 10;
+    transition: opacity 0.1s ease 0s;
+    cursor: pointer;
+    background-image: url(/src/assets/main/arrow.svg);
+  }
+  .swiper-button-next {
+    &::after {
+      content: none;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    position: absolute;
+    width: rem(24);
+    top: 50%;
+    right: $container-gutter;
+    transform: scaleX(-1) translateY(-50%);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    z-index: 10;
+    transition: opacity 0.1s ease 0s;
+    cursor: pointer;
+    background-image: url(/src/assets/main/arrow.svg);
+  }
+
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white;
+    opacity: 1;
+  }
+}
+
+/* ------------------- test ------------------- */
+
+.must__see {
+  padding-left: $container-gutter;
+  padding-right: $container-gutter;
+  margin-left: -rem(70);
+
+  .contentsSwiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      text-align: center;
+      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(240);
+      height: rem(387);
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-prev {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      left: calc($container-gutter * 0.5);
+      transform: translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+    }
+    .swiper-button-next {
+      &::after {
+        content: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      width: rem(24);
+      top: 50%;
+      right: calc($container-gutter * 0.5);
+      transform: scaleX(-1) translateY(-50%);
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+      z-index: 10;
+      transition: opacity 0.1s ease 0s;
+      cursor: pointer;
+      background-image: url(/src/assets/main/arrow.svg);
+    }
+  }
+}
+
+/* ------------------- test ------------------- */
+.section {
+  width: 100%;
+  padding-top: rem(40);
 }
 
 .logo__1__icon {
@@ -268,7 +426,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 70px;
+  padding: 0px $container-gutter;
   box-sizing: border-box;
   text-align: left;
   font-size: 28.43px;
@@ -297,14 +455,12 @@ body {
 
 .main {
   align-self: stretch;
-  background-color: #000;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 21.33px;
-  color: #c4c4c4;
 }
 
 .b {
@@ -317,6 +473,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-bottom: rem(12);
 }
 
 .title__wrap {
@@ -325,7 +482,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 70px;
+  padding: 0px $container-gutter;
 }
 
 .frame__child {
@@ -367,30 +524,28 @@ body {
 
 .icon__original {
   position: absolute;
-  top: 303px;
-  left: 63px;
-  width: 114.4px;
-  height: 20px;
+  top: rem(303);
+  left: rem(63);
+  width: rem(114);
+  height: rem(20);
   overflow: hidden;
 }
 
 .thumnail__vertical__1 {
-  width: 240px;
+  width: rem(240);
   position: relative;
-  border-radius: 4px;
-  height: 345px;
+  border-radius: rem(4);
+  height: rem(345);
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .title1 {
   position: relative;
-  line-height: 150%;
-  font-weight: 600;
 }
 
 .label__video__title__1 {
-  width: 240px;
+  width: rem(240);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -405,7 +560,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 8px;
+  gap: rem(8);
 }
 
 .frame__parent {
@@ -493,7 +648,7 @@ body {
 .swiper__list__wrap {
   position: absolute;
   top: 0px;
-  left: 70px;
+  left: $container-gutter;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -517,17 +672,14 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 0px 36px;
-  gap: 12px;
 }
 
 .frame__child5 {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: #fff;
-  width: 345px;
-  height: 194px;
+  width: rem(345);
+  height: rem(194);
   overflow: hidden;
 }
 
@@ -535,28 +687,29 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 345px;
-  height: 194.1px;
+  width: rem(345);
+  height: rem(194);
   object-fit: cover;
 }
 
 .quick__vod {
   position: relative;
-  font-size: 28.43px;
-  line-height: 140%;
-  font-weight: 600;
-  font-family: Pretendard;
-  color: #fff;
   text-align: left;
 }
 
 .thumnail__horizontal__1 {
-  width: 345px;
+  width: rem(345);
   position: relative;
-  border-radius: 4px;
-  height: 194px;
+  border-radius: rem(4);
+  height: rem(194);
   overflow: hidden;
   flex-shrink: 0;
+}
+
+.icon__quick__vod {
+  position: absolute;
+  top: rem(5);
+  left: rem(5);
 }
 
 .title17 {
@@ -578,14 +731,13 @@ body {
 }
 
 .label__video__title__2 {
-  width: 345px;
+  width: rem(345);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 4px;
-  font-size: 21.33px;
-  color: #c4c4c4;
+  gap: rem(4);
+  color: $gray-200;
 }
 
 .frame__parent5 {
@@ -599,21 +751,58 @@ body {
 .img__frame1 {
   align-self: stretch;
   position: relative;
-  height: 264px;
+  width: 100%;
+  height: rem(264);
   overflow: hidden;
   flex-shrink: 0;
-  font-size: 16px;
-  color: #e1e1e1;
 }
 
-.thumnail__vertical__18 {
-  width: 240px;
+.program__item {
   position: relative;
-  border-radius: 4px;
-  height: 345px;
+  width: rem(240);
+  height: rem(345);
+}
+
+.popular__info {
+  position: absolute;
+  width: rem(240);
+  height: rem(60);
+  top: rem(328);
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  .popular__rangking {
+    display: inline-block;
+  }
+  .popular__title {
+    display: flex;
+    align-items: flex-end;
+    color: $gray-200;
+    margin-left: rem(16);
+  }
+
+  h3::after {
+    content: '•';
+    font-size: rem(30);
+    margin-left: rem(3);
+    color: $brand-red-1;
+  }
+}
+
+.popular__poster {
+  position: absolute;
+  width: rem(240);
+  height: rem(345);
+  border-radius: rem(4);
+  top: 0;
+  left: 0;
   overflow: hidden;
-  flex-shrink: 0;
-  z-index: 0;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .b3 {
@@ -740,8 +929,6 @@ body {
   height: 388px;
   overflow: hidden;
   flex-shrink: 0;
-  font-size: 70px;
-  font-family: 'Noto Sans KR';
 }
 
 .img__frame__icon {
@@ -904,7 +1091,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 16px;
+  gap: rem(16);
 }
 
 .img__frame5 {
@@ -921,17 +1108,9 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 0px 36px 70px;
+  padding-left: $container-gutter;
+  padding-bottom: rem(36);
   gap: 12px;
-}
-
-.text {
-  position: relative;
-  font-size: 21.33px;
-  line-height: 160%;
-  font-family: Pretendard;
-  color: #fff;
-  text-align: left;
 }
 
 .div3 {
