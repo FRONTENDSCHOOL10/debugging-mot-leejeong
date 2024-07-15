@@ -14,11 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   var swiper1 = new Swiper('.contentsSwiper', {
     slidesPerView: 'auto',
-    spaceBetween: 30,
+    spaceBetween: 8,
     freeMode: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1025: {
+        spaceBetween: 16,
+      },
     },
   });
 });
