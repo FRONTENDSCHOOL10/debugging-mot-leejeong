@@ -50,6 +50,10 @@ button {
 }
 
 button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -64,7 +68,7 @@ button {
   font-weight: 700;
 }
 
-.heading-large, .login .login__title {
+.heading-large {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 2.375rem;
   line-height: 1.4;
@@ -93,7 +97,7 @@ button {
 }
 
 /* ------------------- Label ------------------ */
-.label-small, .login-submit__button {
+.label-small {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.75rem;
   line-height: 1.5;
@@ -122,14 +126,14 @@ button {
   font-weight: 400;
 }
 
-.paragraph-medium, .login__form .login__auto, .login-actions, .login__sign-up, .login__sign-up a {
+.paragraph-medium {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.25rem;
   line-height: 1.6;
   font-weight: 400;
 }
 
-.paragraph-large, .login__form {
+.paragraph-large {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1.75rem;
   line-height: 1.6;
@@ -144,7 +148,7 @@ button {
     line-height: 1.4;
     font-weight: 700;
   }
-  .heading-large, .login .login__title {
+  .heading-large {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1.75rem;
     line-height: 1.4;
@@ -169,7 +173,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .login-submit__button {
+  .label-small {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1rem;
     line-height: 1.5;
@@ -194,13 +198,13 @@ button {
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-medium, .login__form .login__auto, .login-actions, .login__sign-up, .login__sign-up a {
+  .paragraph-medium {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.8125rem;
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-large, .login__form {
+  .paragraph-large {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.875rem;
     line-height: 1.6;
@@ -215,7 +219,7 @@ button {
     line-height: 1.4;
     font-weight: 700;
   }
-  .heading-large, .login .login__title {
+  .heading-large {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 1rem;
     line-height: 1.4;
@@ -240,7 +244,7 @@ button {
     font-weight: 700;
   }
   /* ------------------- Label ------------------ */
-  .label-small, .login-submit__button {
+  .label-small {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.75rem;
     line-height: 1.5;
@@ -265,13 +269,13 @@ button {
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-medium, .login__form .login__auto, .login-actions, .login__sign-up, .login__sign-up a {
+  .paragraph-medium {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.75rem;
     line-height: 1.6;
     font-weight: 400;
   }
-  .paragraph-large, .login__form {
+  .paragraph-large {
     font-family: "Pretendard Variable", sans-serif;
     font-size: 0.8125rem;
     line-height: 1.6;
@@ -305,7 +309,7 @@ body {
   border-width: 0;
 }
 
-.login {
+.log-in {
   display: flex;
   flex-flow: column nowrap;
   max-width: 42.5rem;
@@ -314,29 +318,29 @@ body {
   align-items: center;
   padding: 0 clamp(1rem, 3.90625vw, 4.375rem);
 }
-.login .login__title {
+.log-in .log-in__title {
   padding: 1.75rem 0;
 }
 @media (max-width: 64rem) {
-  .login {
+  .log-in {
     max-width: 64rem;
   }
 }
 @media (min-width: 64rem) {
-  .login {
+  .log-in {
     max-width: 100vw;
   }
 }
 
-.login__form {
+.log-in__form {
   width: 100%;
 }
-.login__form fieldset {
+.log-in__form fieldset {
   display: flex;
   flex-flow: column nowrap;
 }
-.login__form .login-form__input--id,
-.login__form .login-form__input--pwd {
+.log-in__form .log-in-form__input--id,
+.log-in__form .log-in-form__input--pwd {
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
   padding: 0.84rem 1.25rem 0.84rem 1rem;
@@ -344,39 +348,56 @@ body {
   border: none;
   color: rgb(255, 255, 255);
 }
-.login__form .login-form__input--id:focus,
-.login__form .login-form__input--pwd:focus {
+.log-in__form .log-in-form__input--id:focus,
+.log-in__form .log-in-form__input--pwd:focus {
   outline: 1px solid #e1e1e1;
 }
-.login__form .login__auto {
-  position: relative;
+.log-in__form .log-in__auto-group {
   padding: 0.5rem 0 1rem;
   font-weight: 600;
 }
-.login__form .login__auto input {
+.log-in__form .log-in__auto-group input {
+  position: absolute;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  width: 1rem;
+  height: 1rem;
 }
-.login__form .login__auto label {
-  position: absolutes;
+@media (min-width: 1025px) {
+  .log-in__form .log-in__auto-group input {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+}
+.log-in__form .log-in__auto-group input:focus {
+  outline: 1px solid #e1e1e1;
+}
+.log-in__form .log-in__auto-group label {
+  position: relative;
   padding: 1.25rem;
-  background-image: url("./../../assets/log-in/input/auto-login-uncheckd-mobile.svg");
-  background-position: left;
+  background-image: url("./../../assets/icon/circle-unchecked-icon.svg");
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: inherit;
+  background-size: 1rem;
   color: #6b6b6b;
 }
-.login__form .login__auto input:checked + label {
-  background-image: url("./../../assets/log-in/input/auto-login-checked-mobile.svg");
+@media (min-width: 1025px) {
+  .log-in__form .log-in__auto-group label {
+    background-size: 1.625rem;
+    padding-left: 2rem;
+  }
+}
+.log-in__form .log-in__auto-group input:checked + label {
+  background-image: url("./../../assets/icon/circle-checked-icon.svg");
   color: rgb(255, 255, 255);
 }
 @media (min-width: 42.5rem) {
-  .login__form {
+  .log-in__form {
     width: 26rem;
   }
-  .login__form .login-form__input--id,
-  .login__form .login-form__input--pwd {
+  .log-in__form .log-in-form__input--id,
+  .log-in__form .log-in-form__input--pwd {
     border-radius: 0.25rem;
     margin-bottom: 0.5rem;
     padding: 0.87rem 1.25rem 0.87rem 1rem;
@@ -385,17 +406,17 @@ body {
     color: rgb(255, 255, 255);
   }
 }
-@media (min-width: 64rem) {
-  .login__form {
+@media (min-width: 1025px) {
+  .log-in__form {
     width: 45.75rem;
   }
-  .login__form .login-form__input--id,
-  .login__form .login-form__input--pwd {
+  .log-in__form .log-in-form__input--id,
+  .log-in__form .log-in-form__input--pwd {
     padding: 1.59rem 1.25rem 1.59rem 1.5rem;
   }
 }
 
-.login-submit__button {
+.log-in-submit__button {
   width: 100%;
   border: none;
   border-radius: 0.25rem;
@@ -404,48 +425,58 @@ body {
   height: 2.625rem;
 }
 @media (min-width: 42.5rem) {
-  .login-submit__button {
+  .log-in-submit__button {
     width: 26rem;
     height: 3.125rem;
   }
 }
 @media (min-width: 64rem) {
-  .login-submit__button {
+  .log-in-submit__button {
     width: 45.75rem;
     height: 5.375rem;
   }
 }
 
-.login-submit__button:hover {
+.log-in-submit__button:hover {
   background-color: #cc1030;
 }
 
-.login-actions {
+.log-in-submit__button:focus {
+  outline: 1px solid #e1e1e1;
+}
+
+.log-in-actions {
   color: #a6a6a6;
   padding-top: 1.25rem;
   font-weight: 600;
 }
-.login-actions a {
+.log-in-actions a {
   padding: 0 0.75rem;
 }
-.login-actions span {
+.log-in-actions a:focus {
+  outline: 1px solid #e1e1e1;
+}
+.log-in-actions span {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
-.login__sign-up {
+.log-in__sign-up {
   font-weight: 600;
   color: #6b6b6b;
   padding-top: 1.25rem;
 }
-.login__sign-up a {
+.log-in__sign-up a {
   font-weight: 600;
   padding: 0 0.75rem;
   color: #a6a6a6;
 }
+.log-in__sign-up a:focus {
+  outline: 1px solid #e1e1e1;
+}
 
-.login-actions a:hover,
-.login__sign-up a:hover {
+.log-in-actions a:hover,
+.log-in__sign-up a:hover {
   color: rgb(255, 255, 255);
 }/*# sourceMappingURL=login.css.map */
