@@ -49,32 +49,3 @@ const animate = (item) => {
     }
   );
 };
-
-/* ------------------ flow ----------------- */
-
-// let flow = $('.flow__slide-list').flow({
-//   duration: 25000,
-//   delayBeforeStart: 500,
-//   direction: 'left',
-//   startVisible: true,
-//   duplicated: true,
-//   gap: 0,
-// });
-
-function FlowSlide(wrap, order, ul) {
-  let roller = document.querySelector(wrap);
-  roller.id = 'roller1';
-
-  let clone = roller.cloneNode(true);
-  clone.id = 'roller2';
-
-  document.querySelector(order).appendChild(clone);
-
-  document.querySelector('#roller1').style.left = '0px';
-  document.querySelector('#roller2').style.left = document.querySelector(ul);
-
-  roller.classList.add('original');
-  roller.classList.add('clone');
-}
-
-FlowSlide('.flow__slide-wrapper', '.flow__slide-first', '.flow__slide-list');
