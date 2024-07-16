@@ -1,13 +1,13 @@
-import '@/pages/main/main.scss';
-import { tiger, insertLast } from 'kind-tiger';
 import getPbImageURL from '@/api/getPbImageURL';
+import pb from '@/api/pocketbase'; // SDK
+import '@/pages/main/main.scss';
+import { insertLast } from 'kind-tiger';
 
 /* ------------- 메인 배너 ------------- */
 async function renderBannerItem() {
-  const responseBanner = await tiger.get(
-    'https://every-taing.pockethost.io/api/collections/main_banner/records'
-  );
-  const bannerData = responseBanner.data.items;
+  const bannerData = await pb.collection('main_banner').getFullList({
+    // sort: '-created',
+  });
 
   bannerData.forEach((item) => {
     const template = `
@@ -49,10 +49,7 @@ renderBannerItem();
 
 /* ------------- 티빙에서 꼭 봐야 하는 컨텐츠 ------------- */
 async function renderMustItem() {
-  const reponseMust = await tiger.get(
-    'https://every-taing.pockethost.io/api/collections/main_must/records'
-  );
-  const mustData = reponseMust.data.items;
+  const mustData = await pb.collection('main_must').getFullList();
 
   mustData.forEach((item) => {
     const template = `
@@ -71,10 +68,7 @@ renderMustItem();
 
 /* ------------- Quick VOD ------------- */
 async function renderQuickItem() {
-  const reponseQuick = await tiger.get(
-    'https://every-taing.pockethost.io/api/collections/main_quick/records'
-  );
-  const quickData = reponseQuick.data.items;
+  const quickData = await pb.collection('main_quick').getFullList();
 
   quickData.forEach((item) => {
     const template = `
@@ -107,3 +101,5 @@ async function renderQuickItem() {
   });
 }
 renderQuickItem();
+
+/* ------------- 실시간 인기 프로그램 ------------- */
