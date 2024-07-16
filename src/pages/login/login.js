@@ -2,7 +2,7 @@ import './login.css';
 
 const userId = document.querySelector('.log-in-form__input--id');
 const autoLogin = document.querySelector('.auto-log-in__input');
-const loginBtn = document.querySelector('.log-in-submit__button');
+const loginSubmitBtn = document.querySelector('.log-in-submit__button');
 
 const userData = {
   userId: '',
