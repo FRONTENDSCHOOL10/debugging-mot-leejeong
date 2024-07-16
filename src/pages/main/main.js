@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// 이미지 렌더링 작업
+// 이미지렌더링 작업
 const pb = new PocketBase('http://127.0.0.1:8090/' ) ;
 
 async function renderVisualList() {
