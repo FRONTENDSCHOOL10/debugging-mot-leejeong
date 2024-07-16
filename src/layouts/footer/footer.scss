@@ -1,182 +1,197 @@
-@use '/src/styles/base' as *;
-@use '/src/styles/utils' as *;
+@use '../../../src/styles/base' as *; 
+@use '../../../src/styles/utils' as *; 
 
-// 웬만하면 rem으로 작성하기
 
 body {
   background-color: $black;
-  color: $gray-200;
-  padding: rem(140) 0 rem(170);
 }
 
 .footer {
-  .footer__container {
+  border: 1px solid red;
+  margin: rem(140) rem(68) rem(170);
+}
+
+.footer__container {
+  width: 100%;
+  border: rem(1) solid $gray-800;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  font-size: rem(21);
+  font-weight: 600;
+}
+
+.footer__inner-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: rem(54);
+
+  &::after {
+    display: block;
+    content: '';
     width: 100%;
-    max-width: rem(1200);
-    margin: 0 auto;
-    position: relative;
+    height: rem(1);
+    background-color: $gray-800;
+    position: absolute;
+    top: rem(54);
+  }
 
-    .footer__inner {
-      width: 100%;
-      box-shadow: 0 -1px 0 0 $gray-800;
+  .footer__notice {
+    display: flex;
+    gap: rem(20);
 
-      .footer__inner-top {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        bottom: rem(54);
+    h3 {
+      color: $gray-500;
+    }
 
-        .footer__notice {
-          display: flex;
+    p {
+      color: $gray-200;
+    }
+  }
 
-          h3 {
-            margin-right: rem(30);
-            color: $gray-500;
-          }
-        }
+  .footer__buttons {
+    display: flex;
+    color: $gray-200;
+    cursor: pointer;
 
-        .footer__buttons {
-          display: flex;
-          cursor: pointer;
+    li:hover,
+    li:focus {
+      color: $gray-100;
+      transition: color 0.2s linear;
+    }
 
-          li:hover,
-          li:focus {
-            color: $gray-100;
-            transition: color 0.2s linear;
-          }
-
-          span {
-            margin: 0 rem(30);
-            color: $gray-500;
-          }
-        }
-      }
-
-      .footer__service {
-        display: flex;
-        gap: rem(36);
-        margin-bottom: rem(24);
-
-        li:hover,
-        li:focus {
-          color: $gray-100;
-          transition: color 0.2s linear;
-        }
-      }
-
-      .footer__company-info {
-        color: $gray-500;
-
-        address {
-          display: flex;
-          flex-direction: column;
-
-          p {
-            margin-bottom: rem(12);
-            gap: rem(8);
-
-            span:not(:first-of-type)::before {
-              display: inline-block;
-              content: '';
-              width: 1px;
-              height: 14px;
-              vertical-align: middle;
-              background-color: $gray-800;
-              margin: 0 rem(8);
-            }
-          }
-
-          .underline {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      .footer__sns {
-        display: flex;
-        margin: rem(20) 0;
-        gap: rem(20);
-
-        li a:hover svg path,
-        li a:focus svg path {
-          fill: $gray-300;
-        }
-      }
-
-      small {
-        color: $gray-500;
-      }
-
-      .underline:hover,
-      .underline:focus {
-        color: $gray-300;
-        transition: color 0.2s linear;
-      }
+    span {
+      margin: 0 rem(30);
     }
   }
 }
 
-/* Tablet Styles */
+.footer__service {
+  display: flex;
+  justify-content: flex-start;
+  gap: rem(36);
+  color: $gray-200;
+  margin-bottom: rem(24);
+
+  li:hover,
+  li:focus {
+    color: $gray-100;
+    transition: color 0.2s linear;
+  }
+}
+
+.footer__company-info {
+  margin-bottom: rem(24);
+  color: $gray-500;
+
+  .underline {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $gray-300;
+      transition: color 0.2s linear;
+    }
+  }
+
+  span:not(:first-of-type)::before {
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    vertical-align: middle;
+    background-color: $gray-800;
+    margin: 0 rem(10);
+    position: relative;
+    bottom: rem(2);
+  }
+}
+
+.footer__sns {
+  display: flex;
+  gap: rem(20);
+  margin-bottom: rem(24);
+
+  li a:hover svg path,
+  li a:focus svg path {
+    fill: $gray-300;
+  }
+}
+
+small {
+  font-size: rem(21);
+  color: $gray-500;
+}
+
+// 태블릿
 @media (max-width: $breakpoint-tablet) {
   .footer {
-    padding: rem(70) rem(40) rem(100);
+    margin: rem(70) rem(40) rem(100) rem(40);
+  }
 
-    .footer__inner {
-      display: flex;
-      flex-direction: column;
+  .footer__container {
+    font-size: rem(12);
+  }
 
-      .footer__inner-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .footer__inner-top {
+    margin-bottom: rem(24);
+  }
 
-        .footer__notice {
-          h3 {
-            margin-right: rem(20);
-          }
-        }
-      }
+  .footer__service {
+    gap: rem(20);
+    margin-bottom: rem(12);
+  }
 
-      .footer__service {
-        flex-direction: row;
-        gap: rem(24);
-      }
+  .footer__sns {
+    gap: rem(8);
+    margin-bottom: rem(12);
 
-      .footer__sns {
-        justify-content: flex-start;
-      }
+    svg {
+      width: rem(30);
+      height: rem(30);
     }
+  }
+
+  small {
+    font-size: rem(12);
   }
 }
 
-/* Mobile Styles */
+
+// 모바일
 @media (max-width: $breakpoint-mobile) {
   .footer {
-    padding: rem(52) rem(16) rem(82);
+    margin: rem(52) rem(16) rem(82) rem(16);
+  }
 
-    .footer__inner {
-      .footer__inner-top {
-        flex-direction: column;
-        align-items: flex-start;
-        bottom: 0;
-      }
+  .footer__container {
+    font-size: rem(12);
+  }
 
-      .footer__buttons {
-        display: none;
-      }
+  .footer__service {
+    flex-direction: column;
+    gap: rem(4);
+    margin-bottom: rem(12);
+  }
 
-      .footer__service {
-        flex-direction: column;
-        gap: rem(16);
-      }
+  .footer__sns {
+    gap: rem(8);
+    margin-bottom: rem(12);
 
-      .footer__company-info {
-        display: none;
-      }
-
-      .footer__sns {
-        justify-content: flex-start;
-      }
+    svg {
+      width: rem(24);
+      height: rem(24);
     }
+  }
+
+  .footer__buttons,
+  .footer__company-info {
+    display: none;
+  }
+
+   small {
+    font-size: rem(12);
   }
 }
