@@ -1,116 +1,131 @@
 import './search.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('search');
-  const autocompleteList = document.getElementById('autocomplete-list');
-  const recentSearchList = document.getElementById('recent-search-list');
-  const clearRecentButton = document.querySelector('.search__recent-clear');
+
+  // DOM 요소 변수
+  const searchInput = document.querySelector('#search');
   const searchForm = document.querySelector('.search__form');
+  const recentSearchList = document.querySelector('#recent-search-list');
+  const popularList = document.querySelector('#popular-list');
+  const updateTimestamp = document.querySelector('#update-timestamp');
+  const clearAllButton = document.querySelector('.search__recent-clear');
 
-  // 자동 완성 제안
-  async function fetchAutocompleteSuggestions(query) {
+  /* -------------------------------------------------------------------------- */
+/*                              최근 검색어 관리                                 */
+/* -------------------------------------------------------------------------- */
+  // 최근 검색어 관리
+  let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+  // TMDB API 키
+  const TMDB_API_KEY = 'c9aa1b53a9a38413c2344dc6b0515510';
+
+  // 인기 영화 데이터 가져오기
+  async function getPopularMovies() {
     try {
-      const response = await fetch(`/api/autocomplete?query=${query}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      const data = await response.json();
-      autocompleteList.innerHTML = ''; // 기존의 자동 완성 목록 초기화
-      data.forEach(item => {
-        const listItem = document.createElement('div');
-        listItem.classList.add('autocomplete-item');
-        listItem.setAttribute('role', 'option');
-        listItem.textContent = item;
-        listItem.addEventListener('click', () => {
-          searchInput.value = item; // 클릭 시 검색 입력창에 값 설정
-          autocompleteList.innerHTML = ''; // 자동 완성 목록 초기화
-          saveRecentSearch(item); // 최근 검색어 저장
-        });
-        autocompleteList.appendChild(listItem);
+      const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}&language=ko-KR`);
+      const data = await response.json(); // 응답 JSON 형식으로 파싱함
+      
+      const movieTitles = [];
+      data.results.slice(0, 10).forEach(movie => {
+        movieTitles.push(movie.title);
       });
-      autocompleteList.style.display = data.length ? 'block' : 'none'; // 데이터가 있는 경우에만 목록 표시
-      searchInput.setAttribute('aria-expanded', data.length ? 'true' : 'false');
+      
+      return movieTitles;
     } catch (error) {
-      console.error('Error fetching autocomplete suggestions:', error);
+      console.error('인기 영화 데이터를 불러오는데 실패했습니다:', error);
+      return [];
     }
   }
 
-  // 검색 입력창에 입력이 발생할 때
-  searchInput.addEventListener('input', (event) => {
-    const query = event.target.value.trim();
-    if (query) {
-      fetchAutocompleteSuggestions(query); // 입력된 값으로 자동 완성 제안 가져오기
-    } else {
-      autocompleteList.innerHTML = ''; // 입력값이 없으면 자동 완성 목록 초기화
-      autocompleteList.style.display = 'none';
-      searchInput.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // 검색 폼 제출 시
-  searchForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const query = searchInput.value.trim();
-    if (query) {
-      saveRecentSearch(query); // 검색어 저장
-    }
-  });
-
-  // 최근 검색어를 localStorage에 저장
-  function saveRecentSearch(term) {
-    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
-    if (!recentSearches.includes(term)) {
-      recentSearches = [term, ...recentSearches.slice(0, 4)]; // 최근 5개의 검색어만 저장
-      localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-      renderRecentSearches(); // 검색어 목록 업데이트
-    }
-  }
-
-  // 최근 검색어 목록 렌더링
-  function renderRecentSearches() {
-    const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
-    recentSearchList.innerHTML = ''; // 기존의 목록 초기화
-    if (recentSearches.length === 0) {
+  /* -------------------------------------------------------------------------- */
+/*                              최근 검색어 업데이트                            */
+/* -------------------------------------------------------------------------- */
+  function updateRecentSearches() {
+    if (recentSearches.length === 0) {   // 최근 검색어가 없는 경우 체크
       recentSearchList.innerHTML = `
         <li class="search__recent-item search__recent-item-empty paragraph-medium">
           <span class="paragraph-medium">검색 내역이 없습니다.</span>
         </li>
       `;
     } else {
-      recentSearches.forEach(term => {
-        const listItem = document.createElement('li');
-        listItem.classList.add('search__recent-item', 'paragraph-medium');
-        listItem.innerHTML = `
-          <button type="button" class="search__recent-content-btn paragraph-medium">${term}</button>
-          <button type="button" class="search__recent-delete-btn" aria-label="검색어 삭제">
-            <img src="/src/assets/deleteList.svg" alt="검색어 삭제" />
-          </button>
+      let htmlContent = '';
+      recentSearches.forEach((searchWord, index) => {
+        htmlContent += `
+          <li class="search__recent-item paragraph-medium">
+            <button class="search__recent-content-btn">${searchWord}</button>
+            <button class="search__recent-delete-btn" aria-label="검색어 삭제" data-index="${index}">×</button>
+          </li>
         `;
-        listItem.querySelector('.search__recent-content-btn').addEventListener('click', () => {
-          searchInput.value = term; // 클릭 시 검색 입력창에 값 설정
-          fetchAutocompleteSuggestions(term); // 자동 완성 제안 가져오기
-        });
-        listItem.querySelector('.search__recent-delete-btn').addEventListener('click', () => {
-          deleteRecentSearch(term); // 검색어 삭제
-        });
-        recentSearchList.appendChild(listItem);
       });
+      recentSearchList.innerHTML = htmlContent;
     }
+    //최근 검색어 배열 -> JSON 문자열로 변환 후 로컬 스토리지에 저장
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches)); 
   }
 
-  // 특정 검색어 삭제
-  function deleteRecentSearch(term) {
-    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
-    recentSearches = recentSearches.filter(item => item !== term); // 선택한 검색어 필터링
-    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-    renderRecentSearches(); // 검색어 목록 업데이트
+  /* -------------------------------------------------------------------------- */
+/*                              인기 검색어 업데이트                            */
+/* -------------------------------------------------------------------------- */
+  async function updatePopularSearches() {
+    // 인기 영화 목록을 가져오는 비동기 함수. 결과 -> popularMovies 변수에 저장
+    const popularMovies = await getPopularMovies();
+    
+    let htmlContent = '';
+    popularMovies.forEach((movie, index) => {
+      htmlContent += `
+        <li class="search__popular-item paragraph-medium">
+          <span class="search__popular-rank">${index + 1}</span>
+          <span class="search__popular-content">${movie}</span>
+        </li>
+      `;
+    });
+    
+    popularList.innerHTML = htmlContent;
+    updateTimestamp.textContent = `${new Date().toLocaleString()} 기준`;
   }
 
-  // 최근 검색어 모두 삭제
-  clearRecentButton.addEventListener('click', () => {
-    localStorage.removeItem('recentSearches'); // 로컬 스토리지에서 삭제
-    renderRecentSearches(); // 검색어 목록 초기화
+  
+  // 검색 수행
+  function performSearch(userSearchWord) {
+    if (userSearchWord.trim() === '') {
+      alert('검색어를 입력해 주세요.');
+      return;
+    }
+    // 중복 제거 후 최근 검색어 목록 앞에 추가
+    recentSearches = [userSearchWord, ...recentSearches.filter(item => item !== userSearchWord)].slice(0, 5);
+    updateRecentSearches();
+    console.log(`검색: ${userSearchWord}`);
+    // 여기에 실제 검색 로직 추가
+  }
+
+  // 이벤트 리스너
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    performSearch(searchInput.value);
+    searchInput.value = '';
   });
 
-  renderRecentSearches(); // 페이지 로드 시 렌더링
+
+  recentSearchList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('search__recent-content-btn')) {
+      performSearch(e.target.textContent);
+    } else if (e.target.classList.contains('search__recent-delete-btn')) {
+      const index = parseInt(e.target.dataset.index);
+      recentSearches.splice(index, 1);
+      updateRecentSearches();
+    }
+  });
+
+  clearAllButton.addEventListener('click', () => {
+    recentSearches = [];
+    updateRecentSearches();
+  });
+
+  // 페이지 로드 시 함수 호출.
+  // 최근 검색어, 인기 검색어 목록 초기화
+  updateRecentSearches();
+  updatePopularSearches();
+
+  // 5분마다 인기 검색어 업데이트
+  setInterval(updatePopularSearches, 300000);
 });
