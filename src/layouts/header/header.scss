@@ -1,6 +1,9 @@
 @use './../../styles/base' as * ;
 @use './../../styles/utils' as * ;
 
+@use './../../styles/base' as * ;
+@use './../../styles/utils' as * ;
+
 body {
   height: auto;
   position: relative;
@@ -145,27 +148,24 @@ body {
     }
 
     .header__menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-left: 3.25rem;
+      
       .header__menu-left {
         display: none; 
       }
     }
 
     .header__actions {
-      position: absolute;
-      right: rem(30);
-
 
       .header__actions-btn svg,
       .header__actions-btn img {
         width: rem(18);
         height: rem(18);
+        display: block;
       }
     }
   }
 }
-
-
-
-
-
-
