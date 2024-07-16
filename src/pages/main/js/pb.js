@@ -1,56 +1,60 @@
-import './../main.scss';
-import { insertLast } from 'kind-tiger';
-import getPbImageURL from '../../../api/getPbImageURL';
-import pb from '../../../api/pocketbase';
+import '@/pages/main/main.scss';
+import { tiger, insertLast } from 'kind-tiger';
+import getPbImageURL from '@/api/getPbImageURL';
 
 /* ------------- 메인 배너 ------------- */
-
 async function renderBannerItem() {
-  const bannerData = await pb.collection('main_banner').getFullList({
-    sort: '-created', // 최신글
-  });
+  const responseBanner = await tiger.get(
+    'https://every-taing.pockethost.io/api/collections/main_banner/records'
+  );
+  const bannerData = responseBanner.data.items;
 
   bannerData.forEach((item) => {
     const template = `
-      <div class="swiper-slide">
-  <div class="banner__info">
-    <div class="banner__title">
-      <img src="${getPbImageURL(item, 'logo')}" alt="${item.bannerTitle}" />
-      <p class="banner__description label-small">${item.bannerDescription}</p>
-    </div>
-    <div class="banner__button">
-      <a href="/" class="btn__more paragraph-medium">자세히 보기</a>
-    </div>
-  </div>
-  <div class="banner__background-image">
-    <img
-      src="https://every-taing.pockethost.io/files/${item.collectionId}/${item.id}/${item.background}"
-      alt="${item.bannerTitle}"
-    />
-  </div>
-</div>
-    `;
-
-    console.log(template);
+    <div class="swiper-slide">
+                <div class="banner__info">
+                  <div class="banner__title">
+                    <img
+                      src="${getPbImageURL(item, 'logo')}"
+                      alt="${item.bannerTitle}"
+                    />
+                    <div class="banner__description-wrapper">
+                      <p class="banner__description label-small">
+                        ${item.bannerDescription1}
+                      </p>
+                      <p class="banner__description label-small">
+                        ${item.bannerDescription2}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="banner__button">
+                    <a href="/" class="btn__more paragraph-medium"
+                      >자세히 보기</a
+                    >
+                  </div>
+                </div>
+                <div class="banner__background-image">
+                  <img
+                    src="${getPbImageURL(item, 'background')}"
+                    alt="${item.bannerTitle}"
+                  />
+                </div>
+              </div>`;
 
     insertLast('.mainSwiper > .swiper-wrapper', template);
-
-    console.log(getPbImageURL(item, 'logo'));
   });
 }
-renderBannerItem();
 
-console.log(renderBannerItem);
+renderBannerItem();
 
 /* ------------- 티빙에서 꼭 봐야 하는 컨텐츠 ------------- */
 async function renderMustItem() {
-  const mustData = await pb.collection('main_must').getFullList({
-    sort: '-created', // 최신글
-  });
+  const reponseMust = await tiger.get(
+    'https://every-taing.pockethost.io/api/collections/main_must/records'
+  );
+  const mustData = reponseMust.data.items;
 
   mustData.forEach((item) => {
-    // console.log(item);
-
     const template = `
     <div class="swiper-slide">
               <div class="thumbnail-wrapper">
@@ -67,13 +71,12 @@ renderMustItem();
 
 /* ------------- Quick VOD ------------- */
 async function renderQuickItem() {
-  const quickData = await pb.collection('main_quick').getFullList({
-    sort: '-created', // 최신글
-  });
+  const reponseQuick = await tiger.get(
+    'https://every-taing.pockethost.io/api/collections/main_quick/records'
+  );
+  const quickData = reponseQuick.data.items;
 
   quickData.forEach((item) => {
-    // console.log(item);
-
     const template = `
     <div class="swiper-slide">
       <div class="thumbnail-wrapper">
