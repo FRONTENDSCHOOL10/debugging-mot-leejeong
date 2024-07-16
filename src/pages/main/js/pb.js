@@ -1,31 +1,29 @@
+import '@/pages/main/main.scss';
 import { tiger, insertLast } from 'kind-tiger';
+import getPbImageURL from '@/api/getPbImageURL';
 
 /* ------------- 메인 배너 데이터 연동 테스트 ------------- */
-// const pb = new PocketBase(
-//   'http://127.0.0.1:8090/api/collections/banners/records'
-// );
+// const pb = new PocketBase('https://every-taing.pockethost.io/');
 
 async function renderBannerItem() {
   const responseBanner = await tiger.get(
-    'http://127.0.0.1:8090/api/collections/banners/records'
+    'https://every-taing.pockethost.io/api/collections/main_banner/records'
   );
-  const bannersData = responseBanner.data.items;
+  const bannerData = responseBanner.data.items;
 
-  bannersData.forEach((item) => {
-    // console.log(item);
+  bannerData.forEach((item) => {
+    console.log(item);
 
     const template = `
     <div class="swiper-slide">
                 <div class="banner__info">
                   <div class="banner__title">
                     <img
-                      src="http://127.0.0.1:8090/api/files/${item.collectionId}/${item.id}/${
-                        item.brand
-                      }"
-                      alt="${item.title}"
+                      src="${getPbImageURL(item, 'logo')}"
+                      alt="${item.bannerTitle}"
                     />
                     <p class="banner__description label-small">
-                      ${item.description}
+                      ${item.bannerDescription}
                     </p>
                   </div>
                   <div class="banner__button">
@@ -36,11 +34,8 @@ async function renderBannerItem() {
                 </div>
                 <div class="banner__background-image">
                   <img
-                    src="http://127.0.0.1:8090/api/files/${item.collectionId}/${item.id}/${
-                      item.background
-                    }"
-                
-                    alt="${item.title}"
+                    src="${getPbImageURL(item, 'background')}"
+                    alt="${item.bannerTitle}"
                   />
                 </div>
               </div>`;
@@ -53,7 +48,7 @@ renderBannerItem();
 
 async function renderMustItem() {
   const reponseMust = await tiger.get(
-    'http://127.0.0.1:8090/api/collections/must/records'
+    'https://every-taing.pockethost.io/api/collections/main_must/records'
   );
   const mustData = reponseMust.data.items;
 
@@ -63,11 +58,9 @@ async function renderMustItem() {
     const template = `
     <div class="swiper-slide">
               <div class="thumbnail-wrapper">
-                <img src="http://127.0.0.1:8090/api/files/${item.collectionId}/${item.id}/${
-                  item.thumbnail
-                }" alt="${item.title}" />
+                <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
               </div>
-              <div class="main-title paragraph-medium">${item.title}</div>
+              <div class="main-title paragraph-medium">${item.mustTitle}</div>
             </div>
   `;
 
