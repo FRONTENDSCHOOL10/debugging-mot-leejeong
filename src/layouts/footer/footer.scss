@@ -1,19 +1,17 @@
 @use '../../../src/styles/base' as *; 
 @use '../../../src/styles/utils' as *; 
 
-
 body {
   background-color: $black;
 }
 
 .footer {
-  border: 1px solid red;
+  background-color: $black;
   margin: rem(140) rem(68) rem(170);
 }
 
 .footer__container {
   width: 100%;
-  border: rem(1) solid $gray-800;
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
@@ -22,13 +20,16 @@ body {
 }
 
 .footer__inner-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
   margin-bottom: rem(54);
 
   &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  &::before {
     display: block;
     content: '';
     width: 100%;
@@ -39,6 +40,7 @@ body {
   }
 
   .footer__notice {
+    float: left;
     display: flex;
     gap: rem(20);
 
@@ -52,18 +54,20 @@ body {
   }
 
   .footer__buttons {
-    display: flex;
+    float: right;
     color: $gray-200;
     cursor: pointer;
+
+    li,
+    span {
+      display: inline-block;
+      margin: 0 rem(15); 
+    }
 
     li:hover,
     li:focus {
       color: $gray-100;
       transition: color 0.2s linear;
-    }
-
-    span {
-      margin: 0 rem(30);
     }
   }
 }
@@ -137,6 +141,11 @@ small {
 
   .footer__inner-top {
     margin-bottom: rem(24);
+
+    &::before {
+      width: 100%;
+      top: rem(27);
+    }
   }
 
   .footer__service {
@@ -159,7 +168,6 @@ small {
   }
 }
 
-
 // 모바일
 @media (max-width: $breakpoint-mobile) {
   .footer {
@@ -168,6 +176,15 @@ small {
 
   .footer__container {
     font-size: rem(12);
+  }
+
+  .footer__inner-top {
+    margin-bottom: rem(24);
+
+    &::before {
+      width: 100%;
+      top: rem(27);
+    }
   }
 
   .footer__service {
@@ -191,7 +208,7 @@ small {
     display: none;
   }
 
-   small {
+  small {
     font-size: rem(12);
   }
 }
