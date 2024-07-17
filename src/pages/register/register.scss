@@ -84,6 +84,11 @@
   }
 }
 
+.sign-up-terms__input-all-accept:checked + .sign-up-terms__label-all-accept {
+  background-image: url('./../../assets/icon/circle-checked-icon.svg');
+  background-repeat: no-repeat;
+  color: $white;
+}
 .sign-up-terms__label-all-accept {
   display: inline-block;
   position: relative;
@@ -99,11 +104,6 @@
     background-size: 1.625rem;
     padding-left: rem(32);
   }
-}
-.sign-up-terms__input-all-accept:checked + .sign-up-terms__label-all-accept {
-  background-image: url('./../../assets/icon/circle-checked-icon.svg');
-  background-repeat: no-repeat;
-  color: $white;
 }
 
 .sign-up-terms__lists {

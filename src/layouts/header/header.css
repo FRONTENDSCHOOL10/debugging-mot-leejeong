@@ -301,7 +301,8 @@ body {
   height: 1px;
   margin: -1px;
   clip: rect(0, 0, 0, 0);
-  clip-path: polygon(0 0, 0 0, 0 0);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0);
   overflow: hidden;
   padding: 0;
   white-space: nowrap;
@@ -309,13 +310,14 @@ body {
 }
 
 body {
+  height: auto;
   position: relative;
   color: #c4c4c4;
-  padding: 0 4.375rem;
 }
 
 .header {
   width: 100%;
+  max-width: 1920px;
   height: 6.25rem;
   position: fixed;
   display: flex;
@@ -323,7 +325,10 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
   z-index: 2;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 4.375rem;
+  box-sizing: border-box;
 }
 .header .header__menu {
   display: flex;
@@ -370,69 +375,9 @@ body {
   border: none;
   cursor: pointer;
 }
-.header .header__actions .header__actions-btn:hover svg path, .header .header__actions .header__actions-btn:hover svg rect {
+.header .header__actions .header__actions-btn:first-of-type:hover svg path, .header .header__actions .header__actions-btn:first-of-type:hover svg rect {
   stroke: rgb(255, 255, 255);
   transition: stroke 0.2s linear;
-}
-.header .header__actions .header__profile-dropdown {
-  width: 19.375rem;
-  padding: 20px;
-  display: none;
-  position: absolute;
-  top: 110%;
-  right: 4.375rem;
-  background: #212121;
-  border: 1px solid #565656;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 3;
-}
-.header .header__actions .header__profile-dropdown .profile {
-  display: flex;
-  align-items: center;
-  gap: 1.5625rem;
-}
-.header .header__actions .header__profile-dropdown .profile::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0.0625rem;
-  background-color: #6b6b6b;
-  position: absolute;
-  top: 6.875rem;
-  left: 0;
-}
-.header .header__actions .header__profile-dropdown .profile img {
-  width: 4.0625rem;
-  border-radius: 0.3125rem;
-}
-.header .header__actions .header__profile-dropdown .profile__info-name {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.header .header__actions .header__profile-dropdown .profile__info-change {
-  font-size: 0.9375rem;
-}
-.header .header__actions .header__profile-dropdown .profile__service-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 3.125rem 0 0.625rem 0;
-  font-size: 20px;
-}
-.header .header__actions .header__profile-dropdown .profile__service-btn li a {
-  color: #c4c4c4;
-  text-decoration: none;
-  padding: 0.3125rem 0;
-}
-.header .header__actions .header__profile-dropdown .profile__service-btn li a:hover, .header .header__actions .header__profile-dropdown .profile__service-btn li a:focus {
-  color: rgb(255, 255, 255);
-  background-color: #565656;
-  border-radius: 5px;
-  transition: background-color 0.2s linear;
-}
-.header .header__actions .profile-btn[aria-expanded=true] + .header__profile-dropdown {
-  display: block;
 }
 
 @media (max-width: 64rem) {
@@ -440,9 +385,13 @@ body {
     padding: 0 2.5rem;
     height: 3.5rem;
   }
-  .header .header__logo img {
+  .header .header__logo svg {
     width: 4.8125rem;
     height: 1.5rem;
+  }
+  .header .header__menu {
+    display: flex;
+    align-items: flex-start;
   }
   .header .header__menu .header__menu-left {
     gap: 1.75rem;
@@ -466,78 +415,30 @@ body {
     width: 1.5rem;
     height: 1.5rem;
   }
-  .header .header__actions .header__profile-dropdown {
-    width: 12.5rem;
-    right: 2.5rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile {
-    gap: 0.9375rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile::after {
-    top: 5.3125rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile img {
-    width: 2.5rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__info-name {
-    font-size: 0.9375rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__info-change {
-    font-size: 0.75rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__service-btn {
-    padding: 2.5rem 0 0.5rem 0;
-    font-size: 0.9375rem;
-  }
 }
 @media (max-width: 42.5rem) {
   .header {
-    padding: 0 1.25rem;
-    height: 3.75rem;
+    padding: 0 1rem;
+    height: 2.375rem;
   }
-  .header .header__logo img {
+  .header .header__logo svg {
     width: 2.875rem;
+    height: 0.9375rem;
+    vertical-align: middle;
   }
-  .header .header__menu-left {
+  .header .header__menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: 3.25rem;
+  }
+  .header .header__menu .header__menu-left {
     display: none;
-  }
-  .header .header__actions {
-    position: absolute;
-    top: 0.8125rem;
-    right: 1.875rem;
   }
   .header .header__actions .header__actions-btn svg,
   .header .header__actions .header__actions-btn img {
     width: 1.125rem;
     height: 1.125rem;
+    display: block;
   }
-  .header .header__actions .header__profile-dropdown {
-    width: 100%;
-    right: 0;
-    left: 0;
-    padding: 10px;
-    box-shadow: none;
-    border: none;
-  }
-  .header .header__actions .header__profile-dropdown .profile {
-    gap: 0.625rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile img {
-    width: 2.5rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__info-name {
-    font-size: 1rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__info-change {
-    font-size: 0.75rem;
-  }
-  .header .header__actions .header__profile-dropdown .profile__service-btn {
-    padding: 1.25rem 0 0.3125rem 0;
-    font-size: 16px;
-  }
-  .header .header__actions .header__profile-dropdown .profile__service-btn li a {
-    padding: 0.1875rem 0;
-  }
-}
-
-/*# sourceMappingURL=header.css.map */
+}/*# sourceMappingURL=header.css.map */
