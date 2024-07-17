@@ -1,53 +1,9 @@
 import getPbImageURL from '@/api/getPbImageURL';
-import pb from '@/api/pocketbase'; // SDK
+import pb from '@/api/pocketbase';
 import '@/pages/main/main.scss';
 import { insertLast } from 'kind-tiger';
 
-/* ------------- 메인 배너 ------------- */
-async function renderBannerItem() {
-  const bannerData = await pb.collection('main_banner').getFullList({
-    // sort: '-created',
-  });
-
-  bannerData.forEach((item) => {
-    const template = `
-    <div class="swiper-slide">
-                <div class="banner__info">
-                  <div class="banner__title">
-                    <img
-                      src="${getPbImageURL(item, 'logo')}"
-                      alt="${item.bannerTitle}"
-                    />
-                    <div class="banner__description-wrapper">
-                      <p class="banner__description label-small">
-                        ${item.bannerDescription1}
-                      </p>
-                      <p class="banner__description label-small">
-                        ${item.bannerDescription2}
-                      </p>
-                    </div>
-                  </div>
-                  <div class="banner__button">
-                    <a href="/" class="btn__more paragraph-medium"
-                      >자세히 보기</a
-                    >
-                  </div>
-                </div>
-                <div class="banner__background-image">
-                  <img
-                    src="${getPbImageURL(item, 'background')}"
-                    alt="${item.bannerTitle}"
-                  />
-                </div>
-              </div>`;
-
-    insertLast('.mainSwiper > .swiper-wrapper', template);
-  });
-}
-
-renderBannerItem();
-
-/* ------------- 티빙에서 꼭 봐야 하는 컨텐츠 ------------- */
+/* ------------------ 티빙에서 꼭 봐야 하는 컨텐츠 ------------------ */
 async function renderMustItem() {
   const mustData = await pb.collection('main_must').getFullList();
 
@@ -66,7 +22,7 @@ async function renderMustItem() {
 }
 renderMustItem();
 
-/* ------------- Quick VOD ------------- */
+/* --------------------------- Quick VOD --------------------------- */
 async function renderQuickItem() {
   const quickData = await pb.collection('main_quick').getFullList();
 
@@ -102,4 +58,110 @@ async function renderQuickItem() {
 }
 renderQuickItem();
 
-/* ------------- 실시간 인기 프로그램 ------------- */
+/* ------------------- 실시간 인기 프로그램 ------------------- */
+async function renderPopularItem() {
+  const popularData = await pb.collection('main_popular').getFullList({
+    sort: 'popularRangking',
+  });
+
+  popularData.forEach((item) => {
+    const template = `<div class="swiper-slide">
+   <div class="thumbnail-wrapper">
+     <img src="${getPbImageURL(item, 'popularThumbnail')}" alt="${item.popularTitle}" />
+   </div>
+   <div class="popular__info">
+     <div class="popular__rangking">
+     <img src="${getPbImageURL(item, 'popularRangkingSvg')}" alt="${item.popularRangking}위" />
+     </div>
+     <h3 class="popular__title paragraph-medium">${item.popularTitle}</h3>
+   </div>
+ </div>
+    `;
+
+    insertLast('.swiperPopular > .swiper-wrapper', template);
+  });
+}
+renderPopularItem();
+
+/* ------------------------- 인기 LIVE 채널 ------------------------- */
+async function renderLiveItem() {
+  const liveData = await pb.collection('main_live').getFullList({
+    sort: 'liveRangking',
+  });
+
+  liveData.forEach((item) => {
+    const template = `
+      <div class="swiper-slide">
+        <div class="thumbnail-wrapper">
+           <img src="${getPbImageURL(item, 'liveThumbnail')}" alt="${item.liveSubTitle}" />
+        </div>
+        <div class="live__info">
+          <div class="live__rangking">
+            <img src="${getPbImageURL(item, 'liveRangkingSvg')}" alt="${item.liveRangking}위" />
+          </div>
+          <div class="title-wrapper">
+            <div class="main-title paragraph-medium">${item.liveMainTitle}</div>
+            <div class="sub-title paragraph-small">${item.liveSubTitle}</div>
+            <div class="viewer paragraph-small">${item.liveViewer}&#37;</div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    insertLast('.swiperLive > .swiper-wrapper', template);
+  });
+}
+renderLiveItem();
+
+/* ------------------------ 오직 티빙에만 있어요 ----------------------- */
+async function renderOnlyItem() {
+  const onlyData = await pb.collection('main_only').getFullList();
+
+  onlyData.forEach((item) => {
+    const template = `
+      <div class="swiper-slide">
+  <div class="thumbnail-wrapper">
+    <img src="${getPbImageURL(item, 'onlyThumbnail')}" alt="${item.onlyTitle}" />
+  </div>
+</div>
+    `;
+
+    insertLast('.swiperOnly > .swiper-wrapper', template);
+  });
+}
+renderOnlyItem();
+
+/* --------------------------- 프로모션 배너 --------------------------- */
+async function renderPromotionItem() {
+  const promotionData = await pb.collection('main_promotion').getFullList();
+
+  promotionData.forEach((item) => {
+    const template = `
+      <div class="swiper-slide">
+              <div class="thumbnail-wrapper">
+                <img src="${getPbImageURL(item, 'promotionThumbnail')}" alt="${item.promotionTitle}" />
+            </div>
+    `;
+
+    insertLast('.swiperPromotion > .swiper-wrapper', template);
+  });
+}
+renderPromotionItem();
+
+/* ----------------------------- 이벤트 ----------------------------- */
+async function renderEventItem() {
+  const eventData = await pb.collection('main_event').getFullList();
+
+  eventData.forEach((item) => {
+    const template = `
+      <div class="swiper-slide">
+        <div class="thumbnail-wrapper">
+          <img src="${getPbImageURL(item, 'eventThumbnail')}" alt="${item.eventTitle}" />
+        </div>
+      </div>
+    `;
+
+    insertLast('.swiperEvent > .swiper-wrapper', template);
+  });
+}
+renderEventItem();
