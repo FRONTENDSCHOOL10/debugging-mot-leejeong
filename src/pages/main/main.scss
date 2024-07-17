@@ -157,6 +157,13 @@ header {
 
 .main__banner {
   width: 100%;
+  padding-top: rem(100);
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: rem(56);
+  }
+  @media (max-width: $breakpoint-mobile) {
+    padding-top: rem(38);
+  }
   .banner__img {
     width: 100%;
     height: calc(100vh - rem(100));
