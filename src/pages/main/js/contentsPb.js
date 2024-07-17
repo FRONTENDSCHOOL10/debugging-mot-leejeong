@@ -49,24 +49,6 @@ async function renderMustItem() {
 
 renderMustItem();
 
-// async function renderMustItem() {
-//   const mustData = await pb.collection('main_must').getFullList();
-
-//   mustData.forEach((item) => {
-//     const template = `
-//     <div class="swiper-slide">
-//               <div class="thumbnail-wrapper">
-//                 <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
-//               </div>
-//               <div class="main-title paragraph-medium">${item.mustTitle}</div>
-//             </div>
-//   `;
-
-//     insertLast('.swiperMust > .swiper-wrapper', template);
-//   });
-// }
-// renderMustItem();
-
 /* --------------------------- Quick VOD --------------------------- */
 async function renderQuickItem() {
   const quickData = await pb.collection('main_quick').getFullList();
