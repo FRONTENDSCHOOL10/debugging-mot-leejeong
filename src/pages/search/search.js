@@ -11,35 +11,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearAllButton = document.querySelector('.search__recent-clear');
 
   /* -------------------------------------------------------------------------- */
-/*                              최근 검색어 관리                                 */
-/* -------------------------------------------------------------------------- */
+  /*                              최근 검색어 관리                                 */
+  /* -------------------------------------------------------------------------- */
   // 최근 검색어 관리
   let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
 
   // TMDB API 키
   const TMDB_API_KEY = 'c9aa1b53a9a38413c2344dc6b0515510';
 
-  // 인기 영화 데이터 가져오기
-  async function getPopularMovies() {
+  // 인기 트렌드 데이터 가져오기
+  async function getTrendingItems() {
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}&language=ko-KR`);
-      const data = await response.json(); // 응답 JSON 형식으로 파싱함
+      // const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR`);
+      const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR&region=KR`);
+      const data = await response.json();
       
-      const movieTitles = [];
-      data.results.slice(0, 10).forEach(movie => {
-        movieTitles.push(movie.title);
+      const trendingItems = [];
+      data.results.slice(0, 10).forEach(item => {
+        trendingItems.push(item.title || item.name);
       });
       
-      return movieTitles;
+      return trendingItems;
     } catch (error) {
-      console.error('인기 영화 데이터를 불러오는데 실패했습니다:', error);
+      console.error('인기 트렌드 데이터를 불러오는데 실패했습니다:', error);
       return [];
     }
   }
 
   /* -------------------------------------------------------------------------- */
-/*                              최근 검색어 업데이트                            */
-/* -------------------------------------------------------------------------- */
+  /*                              최근 검색어 업데이트                            */
+  /* -------------------------------------------------------------------------- */
   function updateRecentSearches() {
     if (recentSearches.length === 0) {   // 최근 검색어가 없는 경우 체크
       recentSearchList.innerHTML = `
@@ -64,18 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------------------------- */
-/*                              인기 검색어 업데이트                            */
-/* -------------------------------------------------------------------------- */
+  /*                              인기 검색어 업데이트                            */
+  /* -------------------------------------------------------------------------- */
   async function updatePopularSearches() {
-    // 인기 영화 목록을 가져오는 비동기 함수. 결과 -> popularMovies 변수에 저장
-    const popularMovies = await getPopularMovies();
+    // 인기 트렌드 목록을 가져오는 비동기 함수. 결과 -> trendingItems 변수에 저장
+    const trendingItems = await getTrendingItems();
     
     let htmlContent = '';
-    popularMovies.forEach((movie, index) => {
+    trendingItems.forEach((item, index) => {
       htmlContent += `
         <li class="search__popular-item paragraph-medium">
           <span class="search__popular-rank">${index + 1}</span>
-          <span class="search__popular-content">${movie}</span>
+          <span class="search__popular-content">${item}</span>
         </li>
       `;
     });
@@ -106,6 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  // 해당 클래스 포함하면, performSearch 함수를 호출
+  // 클릭된 요소의 텍스트 내용을 검색어로 검색 수행
   recentSearchList.addEventListener('click', (e) => {
     if (e.target.classList.contains('search__recent-content-btn')) {
       performSearch(e.target.textContent);
