@@ -38,10 +38,14 @@
                 type="email"
                 name="useremail"
                 id="useremail"
+                class="find-id__input--email"
                 placeholder="이메일"
                 required
               />
               <label for="useremail" class="sr-only">이메일</label>
+              <p class="find-id__validation--email" hidden>
+                이메일의 형식이 올바르지 않습니다.
+              </p>
             </fieldset>
           </form>
 
@@ -55,10 +59,8 @@
         </article>
 
         <!-- 구분선 -->
-        <div role="group" aria-label="구분선" class="find-id__or">
-          <span tabindex="-1" aria-hidden="true"></span>
+        <div class="divider-line__layout" aria-hidden="true" tabindex="-1">
           <p>또는</p>
-          <span tabindex="-1" aria-hidden="true"></span>
         </div>
 
         <!-- 본인인증으로 찾기 -->
