@@ -1,6 +1,6 @@
-import './main.scss';
-import './js/mainbanner.js';
-import './js/contentsPb.js';
-import './js/contentsSwiper.js';
-import './../../layouts/header/header.js';
-import './../../layouts/footer/footer.js';
+import '@/pages/main/main.scss';
+import '@/pages/main/js/mainbanner.js';
+import '@/pages/main/js/contentsPb.js';
+import '@/pages/main/js/contentsSwiper.js';
+import '@/layouts/header/header.js';
+import '@/layouts/footer/footer.js';
