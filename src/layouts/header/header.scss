@@ -1,3 +1,929 @@
+// @use './../../styles/base' as *;
+// @use './../../styles/utils' as *;
+
+// body {
+//   position: relative;
+//   color: $gray-200;
+// }
+
+// .header {
+//   width: 100%;
+//   height: rem(100);
+//   position: fixed;
+//   display: flex;
+//   align-items: center;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+//   z-index: 2;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 $container-gutter;
+//   box-sizing: border-box;
+
+//   .header__logo a:focus {
+//     outline: 2px solid $white;
+//     outline-offset: 2px;
+//   }
+
+//   .header__menu {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-grow: 1;
+//     margin-left: rem(52);
+
+//     .header__menu-left {
+//       display: flex;
+//       align-items: flex-end;
+//       gap: rem(52);
+//     }
+
+//     .header__menu-item {
+//       font-size: rem(21);
+//       font-weight: 600;
+
+//       a {
+//         display: flex;
+//         align-items: flex-end;
+//         transition: color .15s linear;
+
+//         svg {
+//           margin-right: rem(10);
+//           transition: all .2s linear;
+//         }
+
+//         &:hover {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:focus {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:hover svg path,
+//         &:hover svg circle {
+//           stroke: $white;
+//         }
+
+//         &:focus svg path,
+//         &:focus svg circle {
+//           stroke: $white;
+//         }
+//       }
+
+//       &:last-of-type {
+//         a:hover svg path,
+//         a:focus svg path {
+//           fill: $white;
+//         }
+//       }
+//     }
+//   }
+
+//   .header__actions {
+//     display: flex;
+//     align-items: center;
+//     gap: rem(40);
+
+//     .header__actions-btn {
+//       background: none;
+//       border: none;
+//       cursor: pointer;
+//       transition: all .2s linear;
+
+//       &:hover:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:focus:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:hover:not(.profile-btn) svg path,
+//       &:hover:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus:not(.profile-btn) svg path,
+//       &:focus:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus.profile-btn {
+//         outline: 2px solid $white;
+//         outline-offset: 2px;
+//       }
+//     }
+//   }
+// }
+
+// // Tablet
+// @media (max-width: $breakpoint-tablet) {
+//   .header {
+//     height: rem(56);
+
+//     .header__logo svg {
+//       width: rem(77);
+//       height: rem(24);
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       align-items: flex-start;
+
+//       .header__menu-left {
+//         gap: rem(28);
+//       }
+
+//       .header__menu-item {
+//         font-size: rem(12);
+
+//         svg {
+//           width: rem(20);
+//           height: rem(20);
+//         }
+
+//         &:last-of-type svg {
+//           width: rem(65);
+//           height: rem(20);
+//         }
+//       }
+//     }
+
+//     .header__actions {
+//       gap: rem(24);
+
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(24);
+//         height: rem(24);
+//       }
+//     }
+//   }
+// }
+
+// // Mobile
+// @media (max-width: $breakpoint-mobile) {
+//   .header {
+//     height: rem(38);
+
+//     .header__logo svg {
+//       width: rem(46);
+//       height: rem(15);
+//       vertical-align: middle;
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: flex-end;
+//       margin-left: 3.25rem;
+
+//       .header__menu-left {
+//         display: none;
+//       }
+//     }
+
+//     .header__actions {
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(18);
+//         height: rem(18);
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+
+// 두번째!!!! 방금 한 거
+// @use './../../styles/base' as *;
+// @use './../../styles/utils' as *;
+
+// body {
+//   position: relative;
+//   color: $gray-200;
+// }
+
+// .header {
+//   width: 100%;
+//   height: rem(100);
+//   position: fixed;
+//   display: flex;
+//   align-items: center;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+//   z-index: 2;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 $container-gutter;
+//   box-sizing: border-box;
+
+//   .header__logo a:focus {
+//     outline: 2px solid $white;
+//     outline-offset: 2px;
+//   }
+
+//   .header__menu {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-grow: 1;
+//     margin-left: rem(52);
+
+//     .header__menu-left {
+//       display: flex;
+//       align-items: flex-end;
+//       gap: rem(52);
+//     }
+
+//     .header__menu-item {
+//       font-size: rem(21);
+//       font-weight: 600;
+
+//       a {
+//         display: flex;
+//         align-items: flex-end;
+//         transition: color .15s linear;
+
+//         svg {
+//           margin-right: rem(10);
+//           transition: all .2s linear;
+//         }
+
+//         &:hover {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:focus {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:hover svg path,
+//         &:hover svg circle {
+//           stroke: $white;
+//         }
+
+//         &:focus svg path,
+//         &:focus svg circle {
+//           stroke: $white;
+//         }
+//       }
+
+//       &:last-of-type {
+//         a:hover svg path,
+//         a:focus svg path {
+//           fill: $white;
+//         }
+//       }
+//     }
+//   }
+
+//   .header__actions {
+//     display: flex;
+//     align-items: center;
+//     gap: rem(40);
+//     position: relative;
+
+//     .header__actions-btn {
+//       background: none;
+//       border: none;
+//       cursor: pointer;
+//       transition: all .2s linear;
+
+//       &:hover:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:focus:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:hover:not(.profile-btn) svg path,
+//       &:hover:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus:not(.profile-btn) svg path,
+//       &:focus:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus.profile-btn {
+//         outline: 2px solid $white;
+//         outline-offset: 2px;
+//       }
+//     }
+
+//     .header__dropdown-menu {
+//       display: none;
+//       position: absolute;
+//       padding: rem(20) rem(15);
+//       top: rem(55);
+//       right: -3px;
+//       background: $gray-600;
+//       border-radius: rem(15);
+//       z-index: 3;
+//       padding: rem(10) rem(20);
+//       color: $white;
+
+//       &:hover,
+//       &:focus {
+//         background: $gray-500;
+//         transition: background 0.2s;
+//       }
+//     }
+
+//     .profile-btn[aria-expanded="true"] + .header__dropdown-menu {
+//       display: block;
+//     }
+//   }
+// }
+
+// // Tablet
+// @media (max-width: $breakpoint-tablet) {
+//   .header {
+//     height: rem(56);
+
+//     .header__logo svg {
+//       width: rem(77);
+//       height: rem(24);
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       align-items: flex-start;
+
+//       .header__menu-left {
+//         gap: rem(28);
+//       }
+
+//       .header__menu-item {
+//         font-size: rem(12);
+
+//         svg {
+//           width: rem(20);
+//           height: rem(20);
+//         }
+
+//         &:last-of-type svg {
+//           width: rem(65);
+//           height: rem(20);
+//         }
+//       }
+//     }
+
+//     .header__actions {
+//       gap: rem(24);
+
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(24);
+//         height: rem(24);
+//       }
+
+//       .header__dropdown-menu {
+//         .header__dropdown-link {
+//           padding: rem(8) rem(16);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // Mobile
+// @media (max-width: $breakpoint-mobile) {
+//   .header {
+//     height: rem(38);
+
+//     .header__logo svg {
+//       width: rem(46);
+//       height: rem(15);
+//       vertical-align: middle;
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: flex-end;
+//       margin-left: 3.25rem;
+
+//       .header__menu-left {
+//         display: none;
+//       }
+//     }
+
+//     .header__actions {
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(18);
+//         height: rem(18);
+//         display: block;
+//       }
+
+//       .header__dropdown-menu {
+//         .header__dropdown-link {
+//           padding: rem(6) rem(12);
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+// @use './../../styles/base' as *;
+// @use './../../styles/utils' as *;
+
+// body {
+//   position: relative;
+//   color: $gray-200;
+// }
+
+// .header {
+//   width: 100%;
+//   height: rem(100);
+//   position: fixed;
+//   display: flex;
+//   align-items: center;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+//   z-index: 2;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 $container-gutter;
+//   box-sizing: border-box;
+
+//   .header__logo a:focus {
+//     outline: 2px solid $white;
+//     outline-offset: 2px;
+//   }
+
+//   .header__menu {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-grow: 1;
+//     margin-left: rem(52);
+
+//     .header__menu-left {
+//       display: flex;
+//       align-items: flex-end;
+//       gap: rem(52);
+//     }
+
+//     .header__menu-item {
+//       font-size: rem(21);
+//       font-weight: 600;
+
+//       a {
+//         display: flex;
+//         align-items: flex-end;
+//         transition: color .15s linear;
+
+//         svg {
+//           margin-right: rem(10);
+//           transition: all .2s linear;
+//         }
+
+//         &:hover {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:focus {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:hover svg path,
+//         &:hover svg circle {
+//           stroke: $white;
+//         }
+
+//         &:focus svg path,
+//         &:focus svg circle {
+//           stroke: $white;
+//         }
+//       }
+
+//       &:last-of-type {
+//         a:hover svg path,
+//         a:focus svg path {
+//           fill: $white;
+//         }
+//       }
+//     }
+//   }
+
+//   .header__actions {
+//     display: flex;
+//     align-items: center;
+//     gap: rem(40);
+//     position: relative;
+
+//     .header__actions-btn {
+//       background: none;
+//       border: none;
+//       cursor: pointer;
+//       transition: all .2s linear;
+
+//       &:hover:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:focus:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:hover:not(.profile-btn) svg path,
+//       &:hover:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus:not(.profile-btn) svg path,
+//       &:focus:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus.profile-btn {
+//         outline: 2px solid $white;
+//         outline-offset: 2px;
+//       }
+//     }
+
+//     .header__dropdown-menu {
+//       display: none;
+//       position: absolute;
+//       top: rem(55);
+//       right: -3px;
+//       background: $gray-600;
+//       border-radius: rem(15);
+//       z-index: 3;
+//       padding: rem(10) rem(20);
+//       color: $white;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+//       &:hover,
+//       &:focus {
+//         background: $gray-500;
+//         transition: background 0.2s;
+//       }
+//     }
+
+//     .profile-btn[aria-expanded="true"] + .header__dropdown-menu {
+//       display: block;
+//     }
+//   }
+// }
+
+// // Tablet
+// @media (max-width: $breakpoint-tablet) {
+//   .header {
+//     height: rem(56);
+
+//     .header__logo svg {
+//       width: rem(77);
+//       height: rem(24);
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       align-items: flex-start;
+
+//       .header__menu-left {
+//         gap: rem(28);
+//       }
+
+//       .header__menu-item {
+//         font-size: rem(12);
+
+//         svg {
+//           width: rem(20);
+//           height: rem(20);
+//         }
+
+//         &:last-of-type svg {
+//           width: rem(65);
+//           height: rem(20);
+//         }
+//       }
+//     }
+
+//     .header__actions {
+//       gap: rem(24);
+
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(24);
+//         height: rem(24);
+//       }
+
+//       .header__dropdown-menu {
+//         top: rem(35);
+//         right: -3px;
+//         padding: rem(10) rem(17);
+//         font-size: rem(10);
+//       }
+//     }
+//   }
+// }
+
+// // Mobile
+// @media (max-width: $breakpoint-mobile) {
+//   .header {
+//     height: rem(38);
+
+//     .header__logo svg {
+//       width: rem(46);
+//       height: rem(15);
+//       vertical-align: middle;
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: flex-end;
+//       margin-left: 3.25rem;
+
+//       .header__menu-left {
+//         display: none;
+//       }
+//     }
+
+//     .header__actions {
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(18);
+//         height: rem(18);
+//         display: block;
+//       }
+
+//       .header__dropdown-menu {
+//         top: rem(30);
+//         right: -3px;
+//         padding: rem(8) rem(12);
+//         font-size: rem(10);
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+// @use './../../styles/base' as *;
+// @use './../../styles/utils' as *;
+
+// body {
+//   position: relative;
+//   color: $gray-200;
+// }
+
+// .header {
+//   width: 100%;
+//   height: rem(100);
+//   position: fixed;
+//   display: flex;
+//   align-items: center;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+//   z-index: 2;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 $container-gutter;
+//   box-sizing: border-box;
+
+//   .header__logo a:focus {
+//     outline: 2px solid $white;
+//     outline-offset: 2px;
+//   }
+
+//   .header__menu {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-grow: 1;
+//     margin-left: rem(52);
+
+//     .header__menu-left {
+//       display: flex;
+//       align-items: flex-end;
+//       gap: rem(52);
+//     }
+
+//     .header__menu-item {
+//       font-size: rem(21);
+//       font-weight: 600;
+
+//       a {
+//         display: flex;
+//         align-items: flex-end;
+//         transition: color .15s linear;
+
+//         svg {
+//           margin-right: rem(10);
+//           transition: all .2s linear;
+//         }
+
+//         &:hover {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:focus {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:hover svg path,
+//         &:hover svg circle {
+//           stroke: $white;
+//         }
+
+//         &:focus svg path,
+//         &:focus svg circle {
+//           stroke: $white;
+//         }
+//       }
+
+//       &:last-of-type {
+//         a:hover svg path,
+//         a:focus svg path {
+//           fill: $white;
+//         }
+//       }
+//     }
+//   }
+
+//   .header__actions {
+//     display: flex;
+//     align-items: center;
+//     gap: rem(40);
+//     position: relative;
+
+//     .header__actions-btn {
+//       background: none;
+//       border: none;
+//       cursor: pointer;
+//       transition: all .2s linear;
+
+//       &:hover:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:focus:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:hover:not(.profile-btn) svg path,
+//       &:hover:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus:not(.profile-btn) svg path,
+//       &:focus:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus.profile-btn {
+//         outline: none;
+//       }
+//     }
+
+//     .header__dropdown-menu {
+//       display: none;
+//       position: absolute;
+//       top: rem(55);
+//       right: -3px;
+//       background: $gray-600;
+//       border-radius: rem(15);
+//       z-index: 3;
+//       padding: rem(10) rem(20);
+//       color: $white;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+//       &:hover,
+//       &:focus {
+//         background: $gray-500;
+//         transition: background 0.2s;
+//       }
+//     }
+
+//     .profile-btn[aria-expanded="true"] + .header__dropdown-menu {
+//       display: block;
+//     }
+//   }
+// }
+
+// // Tablet
+// @media (max-width: $breakpoint-tablet) {
+//   .header {
+//     height: rem(56);
+
+//     .header__logo svg {
+//       width: rem(77);
+//       height: rem(24);
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       align-items: flex-start;
+
+//       .header__menu-left {
+//         gap: rem(28);
+//       }
+
+//       .header__menu-item {
+//         font-size: rem(12);
+
+//         svg {
+//           width: rem(20);
+//           height: rem(20);
+//         }
+
+//         &:last-of-type svg {
+//           width: rem(65);
+//           height: rem(20);
+//         }
+//       }
+//     }
+
+//     .header__actions {
+//       gap: rem(24);
+
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(24);
+//         height: rem(24);
+//       }
+
+//       .header__dropdown-menu {
+//         top: rem(35);
+//         right: -3px;
+//         padding: rem(10) rem(17);
+//         font-size: rem(10);
+//       }
+//     }
+//   }
+// }
+
+// // Mobile
+// @media (max-width: $breakpoint-mobile) {
+//   .header {
+//     height: rem(38);
+
+//     .header__logo svg {
+//       width: rem(46);
+//       height: rem(15);
+//       vertical-align: middle;
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: flex-end;
+//       margin-left: 3.25rem;
+
+//       .header__menu-left {
+//         display: none;
+//       }
+//     }
+
+//     .header__actions {
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(18);
+//         height: rem(18);
+//         display: block;
+//       }
+
+//       .header__dropdown-menu {
+//         top: rem(30);
+//         right: -3px;
+//         padding: rem(8) rem(12);
+//         font-size: rem(10);
+//       }
+//     }
+//   }
+// }
+
+
+
 @use './../../styles/base' as *;
 @use './../../styles/utils' as *;
 
@@ -86,6 +1012,7 @@ body {
     display: flex;
     align-items: center;
     gap: rem(40);
+    position: relative;
 
     .header__actions-btn {
       background: none;
@@ -115,6 +1042,33 @@ body {
         outline: 2px solid $white;
         outline-offset: 2px;
       }
+    }
+
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: rem(55);
+      right: -3px;
+      background: $gray-600;
+      border-radius: rem(15);
+      z-index: 3;
+      padding: rem(10) rem(20);
+      color: $white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      &.show {
+        display: block;
+      }
+
+      &:hover,
+      &:focus {
+        background: $gray-500;
+        transition: background 0.2s;
+      }
+    }
+
+    .profile-btn[aria-expanded="true"] + .header__dropdown-menu {
+      display: block;
     }
   }
 }
@@ -160,6 +1114,13 @@ body {
         width: rem(24);
         height: rem(24);
       }
+
+      .header__dropdown-menu {
+        top: rem(35);
+        right: -3px;
+        padding: rem(10) rem(17);
+        font-size: rem(10);
+      }
     }
   }
 }
@@ -192,6 +1153,13 @@ body {
         width: rem(18);
         height: rem(18);
         display: block;
+      }
+
+      .header__dropdown-menu {
+        top: rem(30);
+        right: -3px;
+        padding: rem(8) rem(12);
+        font-size: rem(10);
       }
     }
   }
