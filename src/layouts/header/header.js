@@ -129,12 +129,13 @@ class HeaderComponent extends HTMLElement {
       `
   }  
 
- 
+  // setupSearchButton, setupStyles 호출 -> 버튼 및 스타일 설정 초기화
   connectedCallback() {
     this.setupSearchButton();
     this.setupStyles();
   }
 
+  // 클릭, Enter, Space 키 누름 -> toggleSearchIcon 호출
   setupSearchButton() {
     const searchBtn = this.shadowRoot.querySelector('.search-btn');
     
@@ -163,6 +164,7 @@ class HeaderComponent extends HTMLElement {
     this.shadowRoot.appendChild(style);
   }
 
+
   toggleSearchIcon(btn) {
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', !isExpanded);
@@ -179,6 +181,7 @@ class HeaderComponent extends HTMLElement {
     }
   }
 
+  // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
     return `
       <g id="Header / Icon / Search" clip-path="url(#clip0_4596_4975)">
@@ -199,6 +202,7 @@ class HeaderComponent extends HTMLElement {
     `;
   }
 
+  // X 모양 SVG 반환
   getCloseSVGContent() {
     return `
       <g id="Group">
