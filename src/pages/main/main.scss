@@ -356,7 +356,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(240), rem(380));
-      cursor: pointer;
       img {
         display: block;
         object-fit: cover;
@@ -391,7 +390,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(345), rem(264));
-      cursor: pointer;
 
       @media (max-width: $breakpoint-tablet) {
         width: rem(224);
@@ -455,7 +453,6 @@ header {
     .swiper-slide {
       position: relative;
       @include swiperSlide(rem(240), rem(385));
-      cursor: pointer;
 
       @media (max-width: $breakpoint-tablet) {
         width: rem(130);
@@ -549,7 +546,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(345), rem(285));
-      cursor: pointer;
       @media (max-width: $breakpoint-tablet) {
         width: rem(224);
         height: rem(190);
@@ -627,7 +623,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(285), rem(570));
-      cursor: pointer;
       @media (max-width: $breakpoint-tablet) {
         width: rem(130);
         height: rem(260);
@@ -662,7 +657,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(100%, auto);
-      cursor: pointer;
       img {
         display: block;
         width: 100%;
@@ -691,7 +685,6 @@ header {
 
     .swiper-slide {
       @include swiperSlide(rem(348), rem(120));
-      cursor: pointer;
       @media (max-width: $breakpoint-tablet) {
         width: rem(214);
         height: rem(73);
@@ -717,4 +710,5 @@ header {
       transform: scaleX(-1) translateY(0%);
     }
   }
+  padding-bottom: rem(80);
 }
