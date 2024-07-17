@@ -1,19 +1,14 @@
-@use './../../styles/base' as * ;
-@use './../../styles/utils' as * ;
-
-@use './../../styles/base' as * ;
-@use './../../styles/utils' as * ;
+@use './../../styles/base' as *;
+@use './../../styles/utils' as *;
 
 body {
-  height: auto;
   position: relative;
   color: $gray-200;
-  // background-color: black;
 }
 
 .header {
   width: 100%;
-  max-width: 1920px; 
+  max-width: rem(1920);
   height: rem(100);
   position: fixed;
   display: flex;
@@ -21,10 +16,15 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
   z-index: 2;
   top: 0;
-  left: 50%; 
-  transform: translateX(-50%); 
-  padding: 0 rem(70); 
-  box-sizing: border-box; 
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 rem(70);
+  box-sizing: border-box;
+
+  .header__logo a:focus {
+    outline: 2px solid $white;
+    outline-offset: 2px;
+  }
 
   .header__menu {
     display: flex;
@@ -43,28 +43,42 @@ body {
       font-size: rem(21);
       font-weight: 600;
 
-      a:first-of-type {
+      a {
         display: flex;
         align-items: flex-end;
+        transition: color .15s linear;
 
         svg {
           margin-right: rem(10);
+          transition: all .2s linear;
+        }
+
+        &:hover {
+          color: $white;
+          outline: none;
+        }
+
+        &:focus {
+          color: $white;
+          outline: none;
+        }
+
+        &:hover svg path,
+        &:hover svg circle {
+          stroke: $white;
+        }
+
+        &:focus svg path,
+        &:focus svg circle {
+          stroke: $white;
         }
       }
-    }
 
-    .header__menu-item:last-of-type:hover svg path {
-      fill: $white;
-      transition: stroke .2s linear;
-    }
-
-    .header__menu-item:not(:last-of-type):hover {
-      color: $white;
-      transition: color .15s linear;
-
-      svg path {
-        stroke: $white;
-        transition: stroke .2s linear;
+      &:last-of-type {
+        a:hover svg path,
+        a:focus svg path {
+          fill: $white;
+        }
       }
     }
   }
@@ -78,11 +92,29 @@ body {
       background: none;
       border: none;
       cursor: pointer;
+      transition: all .2s linear;
 
-      &:first-of-type:hover svg path,
-      &:first-of-type:hover svg rect {
+      &:hover:not(.profile-btn) {
+        outline: none;
+      }
+
+      &:focus:not(.profile-btn) {
+        outline: none;
+      }
+
+      &:hover:not(.profile-btn) svg path,
+      &:hover:not(.profile-btn) svg circle {
         stroke: $white;
-        transition: stroke .2s linear;
+      }
+
+      &:focus:not(.profile-btn) svg path,
+      &:focus:not(.profile-btn) svg circle {
+        stroke: $white;
+      }
+
+      &:focus.profile-btn {
+        outline: 2px solid $white;
+        outline-offset: 2px;
       }
     }
   }
@@ -102,7 +134,7 @@ body {
     .header__menu {
       display: flex;
       align-items: flex-start;
-      
+
       .header__menu-left {
         gap: rem(28);
       }
@@ -134,7 +166,6 @@ body {
   }
 }
 
-
 // Mobile
 @media (max-width: $breakpoint-mobile) {
   .header {
@@ -152,14 +183,13 @@ body {
       justify-content: flex-end;
       align-items: flex-end;
       margin-left: 3.25rem;
-      
+
       .header__menu-left {
-        display: none; 
+        display: none;
       }
     }
 
     .header__actions {
-
       .header__actions-btn svg,
       .header__actions-btn img {
         width: rem(18);
