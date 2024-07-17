@@ -211,8 +211,13 @@ header {
             max-height: rem(50);
           }
         }
-        .banner__description {
-          margin-top: em(16, 28);
+        .banner__description-wrapper {
+          margin-top: em(50, 28);
+          display: flex;
+          flex-direction: column;
+          @media (max-width: $breakpoint-mobile) {
+            margin-top: em(16, 28);
+          }
         }
       }
 
@@ -222,6 +227,7 @@ header {
           padding: em(22, 20) em(64, 20);
           border: rem(1) solid rgba(255, 255, 255, 0.7);
           border-radius: rem(4);
+          white-space: nowrap;
           &:hover {
             border: rem(1) solid rgba(255, 255, 255, 1);
             background-color: $white;
