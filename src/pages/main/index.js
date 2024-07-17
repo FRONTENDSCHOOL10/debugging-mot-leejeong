@@ -1,3 +1,4 @@
 import './main.scss';
-import './js/swiper.js';
-import './js/pb.js';
+import './js/mainbanner.js';
+import './js/contentsPb.js';
+import './js/contentsSwiper.js';

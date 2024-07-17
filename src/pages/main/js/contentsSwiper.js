@@ -1,24 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-  /* ---------------- 메인 배너 스와이퍼 ---------------- */
-  var swiper = new Swiper('.mainSwiper', {
-    navigation: {
-      nextEl: '.mainSwiper .swiper-button-next',
-      prevEl: '.mainSwiper .swiper-button-prev',
-    },
-    loop: true,
-    pagination: {
-      el: '.mainSwiper .swiper-pagination',
-    },
-  });
+/* ----------------- 컨텐츠 스와이퍼 ----------------- */
 
-  // /* ----------------- 컨텐츠 스와이퍼 ----------------- */
+document.addEventListener('DOMContentLoaded', function () {
   const swiperConfigs = [
     { selector: '.swiperMust' },
     { selector: '.swiperQuick' },
     { selector: '.swiperPopular' },
     { selector: '.swiperLive' },
     { selector: '.swiperOnly' },
-    { selector: '.swiperBanner' },
+    { selector: '.swiperPromotion' },
     { selector: '.swiperEvent' },
   ];
 
