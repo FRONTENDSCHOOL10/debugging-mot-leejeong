@@ -3,69 +3,24 @@ import pb from '@/api/pocketbase';
 import '@/pages/main/main.scss';
 import { insertLast } from 'kind-tiger';
 
-const AuthData = localStorage.getItem('auth');
-
-let authData = {};
-authData = JSON.parse(AuthData);
-
-const isAuth = authData.isAuth;
-console.log('isAuth:', isAuth);
-
-/* ------------------ 로그인 전 컨텐츠 클릭 시 confirm  ------------------ */
-function isAuthChk() {
-  if (isAuth !== true) {
-    if (confirm('로그인이 필요합니다. 로그인 페이지로 이동 하시겠습니까?')) {
-      location.href = '/src/pages/login/index.html';
-    }
-  }
-}
-
-const parentElements = document.querySelectorAll('.swiper-wrapper');
-parentElements.forEach((parentElement) => {
-  parentElement.addEventListener('click', function (event) {
-    if (event.target.closest('.swiper-slide')) {
-      isAuthChk();
-    }
-  });
-});
-
 /* ------------------ 티빙에서 꼭 봐야 하는 컨텐츠 ------------------ */
 async function renderMustItem() {
   const mustData = await pb.collection('main_must').getFullList();
 
   mustData.forEach((item) => {
     const template = `
-      <div class="swiper-slide">
-        <div class="thumbnail-wrapper">
-          <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
-        </div>
-        <div class="main-title paragraph-medium">${item.mustTitle}</div>
-      </div>
-    `;
+    <div class="swiper-slide">
+              <div class="thumbnail-wrapper">
+                <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
+              </div>
+              <div class="main-title paragraph-medium">${item.mustTitle}</div>
+            </div>
+  `;
 
     insertLast('.swiperMust > .swiper-wrapper', template);
   });
 }
-
 renderMustItem();
-
-// async function renderMustItem() {
-//   const mustData = await pb.collection('main_must').getFullList();
-
-//   mustData.forEach((item) => {
-//     const template = `
-//     <div class="swiper-slide">
-//               <div class="thumbnail-wrapper">
-//                 <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
-//               </div>
-//               <div class="main-title paragraph-medium">${item.mustTitle}</div>
-//             </div>
-//   `;
-
-//     insertLast('.swiperMust > .swiper-wrapper', template);
-//   });
-// }
-// renderMustItem();
 
 /* --------------------------- Quick VOD --------------------------- */
 async function renderQuickItem() {
