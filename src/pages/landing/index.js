@@ -2,7 +2,7 @@
 import gsap from 'gsap';
 import './landing.scss';
 
-/* ---------------- Swiper --------------- */
+/* --------------------- Swiper -------------------- */
 
 new Swiper('.swiper', {
   loop: false,
@@ -49,7 +49,3 @@ const animate = (item) => {
     }
   );
 };
-
-
-
-
