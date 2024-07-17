@@ -6,8 +6,9 @@ body {
 }
 
 .footer {
+  width: 100%;
   background-color: $black;
-  margin: rem(140) rem(68) rem(170);
+  padding: rem(140) rem(68) rem(170);
 }
 
 .footer__container {
