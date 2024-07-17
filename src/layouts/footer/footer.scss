@@ -6,8 +6,9 @@ body {
 }
 
 .footer {
+  width: 100%;
   background-color: $black;
-  margin: rem(140) rem(68) rem(170);
+  padding: rem(140) $container-gutter rem(170);
 }
 
 .footer__container {
@@ -132,7 +133,7 @@ small {
 // 태블릿
 @media (max-width: $breakpoint-tablet) {
   .footer {
-    margin: rem(70) rem(40) rem(100) rem(40);
+    padding: rem(70) $container-gutter rem(100);
   }
 
   .footer__container {
@@ -171,7 +172,7 @@ small {
 // 모바일
 @media (max-width: $breakpoint-mobile) {
   .footer {
-    margin: rem(52) rem(16) rem(82) rem(16);
+    padding: rem(52) $container-gutter rem(82);
   }
 
   .footer__container {
