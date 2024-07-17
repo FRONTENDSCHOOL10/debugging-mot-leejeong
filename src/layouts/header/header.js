@@ -178,6 +178,9 @@ class HeaderComponent extends HTMLElement {
       // X 아이콘으로 변경
       svg.innerHTML = this.getCloseSVGContent();
       btn.setAttribute('aria-label', '검색 닫기');
+
+      // 검색 페이지로 이동
+      location.href = '/src/pages/search/index.html';
     }
   }
 
