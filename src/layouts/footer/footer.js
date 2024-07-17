@@ -296,6 +296,8 @@ class FooterComponent extends HTMLElement {
         this.render();
       }
     });
+
+    this.style.width = '100%';
   }
 }
 
