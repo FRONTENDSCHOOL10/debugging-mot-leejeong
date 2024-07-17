@@ -42,7 +42,7 @@
   input {
     width: 100%;
     border-radius: 0.25rem;
-    margin: 1rem 0 1.25rem 0;
+    margin: 1rem 0 0.25rem 0;
     padding: 0.84rem 1.25rem 0.84rem 1rem;
     background-color: $brand-dark-bg-2;
     border: none;
@@ -65,28 +65,35 @@
     width: 45.75rem;
 
     input {
-      margin: 1.5rem 0 2.25rem 0;
+      margin: 1.5rem 0 0.25rem 0;
       padding: 1.59rem 1.75rem 1.59rem 1.5rem;
     }
   }
+}
+
+.find-id__validation--email {
+  color: #ff1531;
 }
 
 .find-id__submit-button--email {
   width: 100%;
   border: none;
   border-radius: 0.25rem;
-  color: $white;
-  background-color: $gray-700;
+  color: $black;
+  background-color: $gray-100;
   height: 2.625rem;
+  margin-top: 1.25rem;
 
   @media (min-width: $breakpoint-mobile) {
     width: 26rem;
     height: 3.125rem;
+    margin-top: 1.5rem;
   }
 
   @media (min-width: 1025px) {
     width: 45.75rem;
     height: 5.375rem;
+    margin-top: 2.25rem;
   }
 }
 
@@ -97,27 +104,45 @@
 
 .find-id__submit-button--email:focus {
   outline: 1px solid $gray-100;
+  background-color: $white;
+  color: $black;
 }
 
-// .find-id__or::before,
-// .find-id__or::after {
-//   content: '';
-//   display: inline-block;
-//   background-color: #fff;
+.find-id__submit-button--email:disabled {
+  color: $gray-400;
+  background-color: $gray-700;
+}
 
-//   width: 150px;
-//   height: 1px;
-// }
+.divider-line__layout {
+  color: $gray-700;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 2.5rem auto;
+  width: 100%;
 
-.find-id__or {
-  span {
-    display: inline-block;
-    width: 50px;
-    height: 1px;
-    color: white;
-    background-color: white;
+  p {
+    flex-shrink: 0;
+  }
+  @media (min-width: $breakpoint-mobile) {
+    width: 26rem;
+  }
+
+  @media (min-width: 1025px) {
+    width: 45.75rem;
   }
 }
+
+.divider-line__layout::before,
+.divider-line__layout::after {
+  content: '';
+  display: block;
+  background-color: $gray-700;
+  width: 100%;
+  height: 1px;
+}
+
 .find-id__article--verify {
   width: 100%;
 
@@ -160,5 +185,6 @@
 }
 
 .find-id__button--verify:focus {
-  outline: 1px solid $brand-red-1;
+  outline: 1px solid $gray-100;
+  background-color: $gray-200;
 }

@@ -40,7 +40,8 @@
   input {
     width: 100%;
     border-radius: 0.25rem;
-    margin: 1rem 0 1.25rem 0;
+    margin: 1rem 0 0.25rem 0;
+
     padding: 0.84rem 1.25rem 0.84rem 1rem;
     background-color: $brand-dark-bg-2;
     border: none;
@@ -63,6 +64,8 @@
     width: 45.75rem;
 
     input {
+      margin: 1.5rem 0 0.25rem 0;
+
       padding: 1.59rem 1.75rem 1.59rem 1.5rem;
     }
   }
@@ -72,9 +75,10 @@
   width: 100%;
   border: none;
   border-radius: 0.25rem;
-  color: $white;
-  background-color: $gray-700;
+  background-color: $gray-100;
+  color: $black;
   height: 2.625rem;
+  margin-top: 1.25rem;
 
   @media (min-width: $breakpoint-mobile) {
     width: 26rem;
@@ -87,7 +91,22 @@
   }
 }
 
+.find-pwd__validation--id {
+  color: #ff1531;
+}
+
 .find-pwd__submit-button--id:hover {
+  background-color: $white;
+  color: $black;
+}
+
+.find-pwd__submit-button--id:disabled {
+  background-color: $gray-700;
+  color: $white;
+}
+
+.find-pwd__submit-button--id:focus {
+  outline: 1px solid $gray-100;
   background-color: $white;
   color: $black;
 }

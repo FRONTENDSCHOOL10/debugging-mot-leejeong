@@ -1,0 +1,475 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* 스타일 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+address {
+  all: unset;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+figure {
+  margin: 0;
+}
+
+input,
+textarea,
+select,
+option,
+button {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Color */
+/* Breakpoints */
+/* Spacing */
+/* Typography */
+.heading-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.375rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.625rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xxlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2.875rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.heading-xxxlarge {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 3.125rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* ------------------- Label ------------------ */
+.label-small {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.label-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.label-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ------------------- Paragraph ------------------ */
+.paragraph-small {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.paragraph-medium {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.paragraph-large {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1024px) {
+  /* ------------------ Heading ----------------- */
+  .heading-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  /* ------------------- Label ------------------ */
+  .label-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  /* ------------------- Paragraph ------------------ */
+  .paragraph-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 680px) {
+  /* ------------------ Heading ----------------- */
+  .heading-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .heading-xxxlarge {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  /* ------------------- Label ------------------ */
+  .label-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .label-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  /* ------------------- Paragraph ------------------ */
+  .paragraph-small {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-medium {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .paragraph-large {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard Variable", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+.footer {
+  border: 1px solid red;
+  margin: 8.75rem 4.25rem 10.625rem;
+}
+
+.footer__container {
+  width: 100%;
+  border: 0.0625rem solid #2b2b2b;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  font-size: 1.3125rem;
+  font-weight: 600;
+}
+
+.footer__inner-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3.375rem;
+}
+.footer__inner-top::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 0.0625rem;
+  background-color: #2b2b2b;
+  position: absolute;
+  top: 3.375rem;
+}
+.footer__inner-top .footer__notice {
+  display: flex;
+  gap: 1.25rem;
+}
+.footer__inner-top .footer__notice h3 {
+  color: #6b6b6b;
+}
+.footer__inner-top .footer__notice p {
+  color: #c4c4c4;
+}
+.footer__inner-top .footer__buttons {
+  display: flex;
+  color: #c4c4c4;
+  cursor: pointer;
+}
+.footer__inner-top .footer__buttons li:hover,
+.footer__inner-top .footer__buttons li:focus {
+  color: #e1e1e1;
+  transition: color 0.2s linear;
+}
+.footer__inner-top .footer__buttons span {
+  margin: 0 1.875rem;
+}
+
+.footer__service {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2.25rem;
+  color: #c4c4c4;
+  margin-bottom: 1.5rem;
+}
+.footer__service li:hover,
+.footer__service li:focus {
+  color: #e1e1e1;
+  transition: color 0.2s linear;
+}
+
+.footer__company-info {
+  margin-bottom: 1.5rem;
+  color: #6b6b6b;
+}
+.footer__company-info .underline {
+  text-decoration: underline;
+}
+.footer__company-info .underline:hover, .footer__company-info .underline:focus {
+  color: #a6a6a6;
+  transition: color 0.2s linear;
+}
+.footer__company-info span:not(:first-of-type)::before {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #2b2b2b;
+  margin: 0 0.625rem;
+  position: relative;
+  bottom: 0.125rem;
+}
+
+.footer__sns {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.footer__sns li a:hover svg path,
+.footer__sns li a:focus svg path {
+  fill: #a6a6a6;
+}
+
+small {
+  font-size: 1.3125rem;
+  color: #6b6b6b;
+}
+
+@media (max-width: 64rem) {
+  .footer {
+    margin: 4.375rem 2.5rem 6.25rem 2.5rem;
+  }
+  .footer__container {
+    font-size: 0.75rem;
+  }
+  .footer__inner-top {
+    margin-bottom: 1.5rem;
+  }
+  .footer__service {
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer__sns {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer__sns svg {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  small {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 42.5rem) {
+  .footer {
+    margin: 3.25rem 1rem 5.125rem 1rem;
+  }
+  .footer__container {
+    font-size: 0.75rem;
+  }
+  .footer__service {
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer__sns {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer__sns svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .footer__buttons,
+  .footer__company-info {
+    display: none;
+  }
+  small {
+    font-size: 0.75rem;
+  }
+}/*# sourceMappingURL=footer.css.map */
