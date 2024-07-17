@@ -19,6 +19,7 @@ export default defineConfig({
         main: resolve(__dirname, 'src/pages/main/index.html'),
         modal: resolve(__dirname, 'src/layouts/modal/index.html'),
         search: resolve(__dirname, 'src/pages/search/index.html'),
+        temp: resolve(__dirname, 'src/pages/temp.html'),
       },
     },
   },
