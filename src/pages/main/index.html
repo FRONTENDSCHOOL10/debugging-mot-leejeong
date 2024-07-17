@@ -1,118 +1,119 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="./index.js"></script>
-    <title>Taing - Main Page</title>
-  </head>
-  <body>
-    <!-- 헤더 -->
-    <header-component></header-component>
-    <!-- 메인 -->
-    <main id="main">
-      <!-- 메인 배너 -->
-      <section class="main__banner">
-        <div class="banner__img">
-          <div class="swiper mainSwiper">
+<html lang="ko">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
+      <title>Taing - Main Page</title>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script type="module" src="./index.js"></script>
+    </head>
+    <body>
+      <!-- 헤더 -->
+      <header-component></header-component>
+      <!-- 메인 -->
+      <main id="main">
+        <!-- 메인 배너 -->
+        <section class="main__banner">
+          <div class="banner__img">
+            <div class="swiper mainSwiper">
+              <div class="swiper-wrapper"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 티빙에서 꼭 봐야하는 컨텐츠 -->
+        <section class="section must">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">
+              티빙에서 꼭 봐야 하는 컨텐츠
+            </h2>
+          </div>
+          <div class="swiper swiperMust">
             <div class="swiper-wrapper"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 티빙에서 꼭 봐야하는 컨텐츠 -->
-      <section class="section must">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">
-            티빙에서 꼭 봐야 하는 컨텐츠
-          </h2>
-        </div>
-        <div class="swiper swiperMust">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
+        <!-- Quick VOD -->
+        <section class="section quick">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">Quick VOD</h2>
+          </div>
+          <div class="swiper swiperQuick">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
 
-      <!-- Quick VOD -->
-      <section class="section quick">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">Quick VOD</h2>
-        </div>
-        <div class="swiper swiperQuick">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
+        <!-- 실시간 인기 프로그램 -->
+        <section class="section popular">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">실시간 인기 프로그램</h2>
+          </div>
+          <div class="swiper swiperPopular">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
 
-      <!-- 실시간 인기 프로그램 -->
-      <section class="section popular">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">실시간 인기 프로그램</h2>
-        </div>
-        <div class="swiper swiperPopular">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
+        <!-- 인기 LIVE 채널 -->
+        <section class="section live">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">인기 LIVE 채널</h2>
+          </div>
+          <div class="swiper swiperLive">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
 
-      <!-- 인기 LIVE 채널 -->
-      <section class="section live">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">인기 LIVE 채널</h2>
-        </div>
-        <div class="swiper swiperLive">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
+        <!-- 오직 티빙에만 있어요 -->
+        <section class="section only">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">오직 티빙에만 있어요</h2>
+          </div>
+          <div class="swiper swiperOnly">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
 
-      <!-- 오직 티빙에만 있어요 -->
-      <section class="section only">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">오직 티빙에만 있어요</h2>
-        </div>
-        <div class="swiper swiperOnly">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
-
-      <!-- 배너 -->
-      <section class="section promotion">
-        <div class="swiper swiperPromotion">
-          <div class="swiper-wrapper"></div>
-          <!-- <div class="swiper-button-next"></div>
+        <!-- 프로모션 -->
+        <section class="section promotion">
+          <div class="swiper swiperPromotion">
+            <div class="swiper-wrapper"></div>
+            <!-- <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div> -->
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- 이벤트 -->
-      <section class="section event">
-        <div class="title__wrap">
-          <h2 class="section__title label-small">이벤트</h2>
-        </div>
-        <div class="swiper swiperEvent">
-          <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </section>
+        <!-- 이벤트 -->
+        <section class="section event">
+          <div class="title__wrap">
+            <h2 class="section__title label-small">이벤트</h2>
+          </div>
+          <div class="swiper swiperEvent">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
 
-      <!-- 푸터 -->
-      <footer-component></footer-component>
-    </main>
-  </body>
+        <!-- 푸터 -->
+        <footer-component></footer-component>
+      </main>
+    </body>
+  </html>
 </html>
