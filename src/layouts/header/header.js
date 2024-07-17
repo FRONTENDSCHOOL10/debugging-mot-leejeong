@@ -128,6 +128,85 @@ class HeaderComponent extends HTMLElement {
       </header>
       `
   }  
+
+ 
+  connectedCallback() {
+    this.setupSearchButton();
+    this.setupStyles();
+  }
+
+  setupSearchButton() {
+    const searchBtn = this.shadowRoot.querySelector('.search-btn');
+    
+    searchBtn.addEventListener('click', () => this.toggleSearchIcon(searchBtn));
+    searchBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleSearchIcon(searchBtn);
+      }
+    });
+  }
+
+  setupStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+      .header__actions-btn {
+        transition: all 0.3s ease;
+      }
+      .header__actions-btn svg {
+        transition: all 0.3s ease;
+      }
+      .header__actions-btn[aria-expanded="true"] svg path {
+        fill: white;
+      }
+    `;
+    this.shadowRoot.appendChild(style);
+  }
+
+  toggleSearchIcon(btn) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+
+    const svg = btn.querySelector('svg');
+    if (isExpanded) {
+      // 돋보기 아이콘으로 변경
+      svg.innerHTML = this.getMagnifierSVGContent();
+      btn.setAttribute('aria-label', '검색');
+    } else {
+      // X 아이콘으로 변경
+      svg.innerHTML = this.getCloseSVGContent();
+      btn.setAttribute('aria-label', '검색 닫기');
+    }
+  }
+
+  getMagnifierSVGContent() {
+    return `
+      <g id="Header / Icon / Search" clip-path="url(#clip0_4596_4975)">
+      <g id="Group" opacity="0.997">
+      <g id="Group_2">
+      <path id="Vector" d="M33.3711 35.4531L41.9657 44.1853" stroke="#C4C4C4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+      <g id="Group_3">
+      <path id="Vector_2" d="M23.2136 38.4457C31.3499 38.4457 37.9457 31.8499 37.9457 23.7136C37.9457 15.5773 31.3499 8.98145 23.2136 8.98145C15.0773 8.98145 8.48145 15.5773 8.48145 23.7136C8.48145 31.8499 15.0773 38.4457 23.2136 38.4457Z" stroke="#C4C4C4" stroke-width="1.5"/>
+      </g>
+      </g>
+      </g>
+      </g>
+      <defs>
+      <clipPath id="clip0_4596_4975">
+      <rect width="50" height="50" fill="white" transform="translate(0 0.5)"/>
+      </clipPath>
+      </defs>
+    `;
+  }
+
+  getCloseSVGContent() {
+    return `
+      <g id="Group">
+      <path id="Vector" d="M34.1147 35.8809L24.9985 26.7647L15.8822 35.8809C15.7671 35.9984 15.6294 36.091 15.4776 36.1543C15.3258 36.2177 15.1629 36.2504 14.9985 36.2496C14.7508 36.25 14.5087 36.1771 14.3027 36.0396C14.0966 35.9021 13.9359 35.707 13.8412 35.4781C13.7465 35.2492 13.7217 34.9958 13.7704 34.753C13.8191 34.5101 13.939 34.288 14.1147 34.1133L23.2309 24.9971L14.1147 15.8809C13.887 15.6452 13.7609 15.3297 13.7637 15.002C13.7666 14.6743 13.8982 14.3597 14.1299 14.128C14.3617 13.8962 14.675 13.7646 15.0027 13.7618C15.3305 13.7589 15.6465 13.8856 15.8822 14.1133L24.9985 23.2295L34.1147 14.1133C34.3504 13.8856 34.6664 13.7589 34.9942 13.7618C35.3219 13.7646 35.6352 13.8962 35.867 14.128C36.0987 14.3597 36.2303 14.6743 36.2332 15.002C36.236 15.3297 36.1099 15.6452 35.8822 15.8809L26.766 24.9971L35.8822 34.1133C36.0016 34.2286 36.0969 34.3661 36.1624 34.5186C36.2279 34.6711 36.2623 34.836 36.2637 35.002C36.2652 35.168 36.2338 35.3318 36.1709 35.4854C36.1081 35.639 36.0149 35.7782 35.8975 35.8956C35.7801 36.0129 35.641 36.1061 35.4873 36.169C35.3337 36.2318 35.1687 36.2632 35.0027 36.2618C34.8368 36.2603 34.6731 36.2272 34.5205 36.1617C34.368 36.0962 34.23 36.0003 34.1147 35.8809Z" fill="#C4C4C4"/>
+      </g>
+    `;
+  }
 }
+
 
 customElements.define('header-component', HeaderComponent);
