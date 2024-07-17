@@ -1,6 +1,6 @@
 /* global Swiper, ScrollTrigger */
+import './src/styles/style.scss';
 import gsap from 'gsap';
-import './landing.scss';
 
 /* --------------------- Swiper -------------------- */
 
