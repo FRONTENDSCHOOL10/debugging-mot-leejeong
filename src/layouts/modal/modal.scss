@@ -8,11 +8,11 @@ body {
 .modal__background {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(0.5px); // 배경 흐림 효과
+  backdrop-filter: blur(0.5px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999; // 다른 요소 위에 배치
+  z-index: 999;
 
   .modal {
     width: rem(526);
@@ -21,46 +21,153 @@ body {
     border-radius: 3px;
     position: relative;
 
-
     .modal__container {
       width: 100%;
-      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       p {
-        width: 100%;
-        height: rem(110);
         padding: rem(36) 0;
         font-size: rem(21);
         text-align: center;
       }
 
       .modal__btns {
-        width: 100%;
-        height: rem(82);
-        color: $gray-300;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: rem(24);
         position: relative;
 
-
-        button:hover {
-          color: $white;
+        &::after {
+          display: block;
+          content: '';
+          width: rem(1);
+          height: rem(20);
+          background-color: $gray-700;
+          position: absolute;
+          top: rem(7);
         }
 
-        .modal__btn--confirm {
-          position: absolute;
+        button {
           font-size: rem(21);
-          left: rem(158);
-          bottom: rem(24);
-        }
+          color: $gray-300;
 
-        .modal__btn--cancel {
-          position: absolute;
-          font-size: rem(21);
-          right: rem(158);
-          bottom: rem(24);
+          
+          &:first-of-type {
+            position: relative;
+            left: rem(45);
+          }
+
+          &:last-of-type {
+            position: relative;
+            right: rem(45);
+          }
+
+          &:hover {
+            color: $white;
+          }
         }
       }
     }
   }
 }
 
+// Tablet
+@media (max-width: $breakpoint-tablet) {
+  .modal__background {
+    .modal {
+      width: rem(295);
+      height: rem(110);
 
+      .modal__container {
+        p {
+          font-size: rem(12);
+          padding: rem(28) 0;
+        }
+
+        .modal__btns {
+          padding-bottom: rem(15);
+
+          &::after {
+            display: block;
+            content: '';
+            width: rem(1);
+            height: rem(12);
+            background-color: $gray-700;
+            position: absolute;
+            top: rem(3);
+          }
+
+          button {
+            font-size: rem(12);
+            position: relative;
+
+              &:first-of-type {
+                position: relative;
+                left: rem(25);
+              }
+  
+              &:last-of-type {
+                position: relative;
+                right: rem(25);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+// Mobile
+// Mobile
+@media (max-width: $breakpoint-mobile) {
+  .modal__background {
+    width: 100%;
+    padding: rem(145) 0;
+
+    .modal {
+      width: rem(196);
+      height: rem(91);
+
+      .modal__container {
+        p {
+          font-size: rem(12);
+          padding: rem(20) 0;
+        }
+
+        .modal__btns {
+          padding-bottom: rem(10);
+          display: flex;
+          align-items: center;
+
+          &::after {
+            display: block;
+            content: '';
+            width: rem(1);
+            height: rem(12);
+            background-color: $gray-700;
+            position: absolute;
+            top: rem(3);
+          }
+
+          button {
+            font-size: rem(12);
+            position: relative;
+
+            &:first-of-type {
+              position: relative;
+              left: rem(15);
+            }
+
+            &:last-of-type {
+              position: relative;
+              right: rem(15);
+            }
+          }
+        }
+      }
+    }
+  }
+}
