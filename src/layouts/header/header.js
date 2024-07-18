@@ -150,16 +150,21 @@ class HeaderComponent extends HTMLElement {
   connectedCallback() {
     this.setupSearchButton();
     this.setupProfileButton();
+    window.addEventListener('resize', this.updatePlaceholder.bind(this));
   }
 
   setupSearchButton() {
     const searchBtn = this.shadowRoot.querySelector('.search-btn');
 
-    searchBtn.addEventListener('click', () => this.toggleSearch(searchBtn));
+    searchBtn.addEventListener('click', () => {
+      this.toggleSearch(searchBtn);
+      this.updatePlaceholder(); // Placeholder 업데이트
+    });
     searchBtn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         this.toggleSearch(searchBtn);
+        this.updatePlaceholder(); // Placeholder 업데이트
       }
     });
   }
@@ -223,6 +228,17 @@ class HeaderComponent extends HTMLElement {
     btn.style.outline = 'none';
   }
 
+  updatePlaceholder() {
+    const searchInput = this.shadowRoot.querySelector('.search-area search-component').shadowRoot.querySelector('.search__form-input');
+    if (searchInput) {
+      if (window.innerWidth <= 768) {
+        searchInput.placeholder = '검색';
+      } else {
+        searchInput.placeholder = 'TV 프로그램, 영화 제목 및 출연진으로 검색해보세요.';
+      }
+    }
+  }
+  
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
     return `
