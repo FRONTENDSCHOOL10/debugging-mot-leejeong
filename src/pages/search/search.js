@@ -1,4 +1,5 @@
-
+import searchIcon from '../../assets/search/search.svg';
+import deleteAllIcon from '../../assets/search/deleteAll.svg'
 import './search.scss';
 import style from '/src/pages/search/search.scss?inline';
 
@@ -6,6 +7,10 @@ class SearchComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+
+    this.searchIcon = searchIcon;
+    this.deleteAllIcon = deleteAllIcon;
+
     this.shadowRoot.innerHTML = `
       <style>
       ${style}
@@ -29,11 +34,11 @@ class SearchComponent extends HTMLElement {
                   <label for="search" class="sr-only">콘텐츠 검색</label>
                   <input type="text" class="search__form-input heading-large" id="search" placeholder="TV 프로그램, 영화 제목 및 출연진으로 검색해보세요." />
                   <button type="submit" class="search__button" aria-label="검색">
-                    <img src="/src/assets/search/search.svg" alt="검색" />
+                    <img src="${this.searchIcon}" alt="검색" />
                   </button>
                 </div>
               </fieldset>
-              <div id="autocomplete-list" class="autocomplete-list" role="listbox"></div>
+              <div id="autocomplete-list" class="autocomplete-list" role="listbox" aria-label="검색 자동 완성 목록"></div>
             </form>
 
             <!-- 검색어 영역 -->
@@ -44,7 +49,7 @@ class SearchComponent extends HTMLElement {
                   <span>최근 검색어</span>
                   <button type="button" class="search__recent-clear" aria-label="최근 검색어 모두 지우기">
                     <span class="label-small">모두 지우기</span>
-                    <img src="../../assets/search/deleteAll.svg" alt="최근 검색어 모두 삭제" />
+                    <img src="${this.deleteAllIcon}" alt="최근 검색어 모두 삭제" />
                   </button>
                 </h2>
                 <ul class="search__recent-list" id="recent-search-list">
