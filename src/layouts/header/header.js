@@ -147,6 +147,7 @@ class HeaderComponent extends HTMLElement {
       `;
   }
 
+  
   connectedCallback() {
     this.setupSearchButton();
     this.setupProfileButton();
@@ -180,10 +181,12 @@ class HeaderComponent extends HTMLElement {
       svg.innerHTML = this.getMagnifierSVGContent();
       btn.setAttribute('aria-label', '검색');
       searchArea.style.display = 'none';
+      document.body.classList.remove('no-scroll'); // 검색 영역 닫힐 때 클래스 제거
     } else {
       svg.innerHTML = this.getCloseSVGContent();
       btn.setAttribute('aria-label', '검색 닫기');
       searchArea.style.display = 'block';
+      document.body.classList.add('no-scroll'); // 검색 영역 열릴 때 클래스 추가
     }
   }
 
@@ -238,6 +241,7 @@ class HeaderComponent extends HTMLElement {
       }
     }
   }
+
   
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
