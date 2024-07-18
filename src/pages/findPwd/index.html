@@ -24,8 +24,17 @@
         <form action="/" class="find-pwd__form--id paragraph-large">
           <fieldset>
             <legend class="sr-only">아이디로 찾기</legend>
-
-            <label for="userId" aria-label="아이디" class="find-pwd__label--id">
+            <div
+              role="group"
+              aria-label="아이디 인풋 영역"
+              class="id-input__container"
+            >
+              <label
+                for="userId"
+                aria-label="아이디"
+                class="find-pwd__label--id sr-only"
+              >
+              </label>
               <input
                 type="text"
                 name="userId"
@@ -40,7 +49,7 @@
                 aria-label="아이디 지우기"
                 hidden
               ></button>
-            </label>
+            </div>
             <p class="find-pwd__validation--id">
               아이디를 올바른 형식으로 입력해 주세요.
             </p>

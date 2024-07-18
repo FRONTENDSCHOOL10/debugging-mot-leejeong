@@ -19,94 +19,114 @@
         <form action="/" class="sign-up__form paragraph-large">
           <fieldset class="sign-up__fieldset">
             <legend class="sr-only">회원가입</legend>
-            <div role="group" aria-hidden="true">
-              <label for="userId" class="sign-up-form__label--id">
-                <input
-                  type="text"
-                  name="userId"
-                  id="userId"
-                  placeholder="아이디"
-                  class="sign-up-form__input--id"
-                  required
-                />
-                <button
-                  type="button"
-                  class="sign-up__button-delete-id"
-                  aria-label="아이디 지우기"
-                  hidden
-                ></button>
-              </label>
-              <p class="sign-up__validation--id paragraph-medium">
-                영문 또는 영문, 숫자 조합 6&minus;12자리
-              </p>
+            <div
+              role="group"
+              aria-hidden="true"
+              aria-label="아이디 인풋 영역"
+              class="id-input__container"
+            >
+              <label
+                for="userId"
+                class="sign-up-form__label--id sr-only"
+              ></label>
+              <input
+                type="text"
+                name="userId"
+                id="userId"
+                placeholder="아이디"
+                class="sign-up-form__input--id"
+                required
+              />
+              <button
+                type="button"
+                class="sign-up__button-delete-id"
+                aria-label="아이디 지우기"
+                hidden
+              ></button>
             </div>
-            <div role="group" aria-hidden="true">
+            <p class="sign-up__validation--id paragraph-medium">
+              영문 또는 영문, 숫자 조합 6&minus;12자리
+            </p>
+            <div
+              role="group"
+              aria-hidden="true"
+              aria-label="비밀번호 인풋 영역"
+              class="pwd-input__container"
+            >
               <label
                 for="userPwd"
                 aria-label="비밀번호"
-                class="sign-up-form__label--pwd"
+                class="sign-up-form__label--pwd sr-only"
               >
-                <input
-                  type="password"
-                  name="userPwd"
-                  id="userPwd"
-                  placeholder="비밀번호"
-                  class="sign-up-form__input--pwd"
-                  required
-                />
-                <button
-                  type="button"
-                  class="sign-up__button-delete-pwd"
-                  aria-label="비밀번호 지우기"
-                  hidden
-                ></button>
-                <button
-                  type="button"
-                  class="sign-up__button-show-pwd"
-                  aria-label="비밀번호 보기"
-                ></button>
               </label>
-
-              <p class="sign-up__validation--pwd paragraph-medium">
-                영문, 숫자,
-                특수문자&#40;&#126;&#33;&#64;&#35;&#36;&#37;&#94;&#38;&#42;&#41;
-                조합 8&minus;15자리
-              </p>
+              <input
+                type="password"
+                name="userPwd"
+                id="userPwd"
+                placeholder="비밀번호"
+                class="sign-up-form__input--pwd"
+                required
+              />
+              <button
+                type="button"
+                class="sign-up__button-delete-pwd"
+                aria-label="비밀번호 지우기"
+                hidden
+              ></button>
+              <button
+                type="button"
+                class="sign-up__button-show-pwd"
+                aria-label="비밀번호 보기"
+              ></button>
             </div>
-            <div role="group" aria-hidden="true">
+            <p class="sign-up__validation--pwd paragraph-medium">
+              영문, 숫자,
+              특수문자&#40;&#126;&#33;&#64;&#35;&#36;&#37;&#94;&#38;&#42;&#41;
+              조합 8&minus;15자리
+            </p>
+            <div
+              role="group"
+              aria-hidden="true"
+              aria-label="아이디 인풋 영역"
+              class="pwd-input__container--confirm"
+            >
               <label
                 for="userPwdConfirm"
                 aria-label="비밀번호 재입력"
-                class="sign-up-form__label--pwd-confirm"
+                class="sign-up-form__label--pwd-confirm sr-only"
               >
-                <input
-                  type="password"
-                  name="userPwdConfirm"
-                  id="userPwdConfirm"
-                  class="sign-up-form__input--pwd-confirm"
-                  placeholder="비밀번호 재입력"
-                  required />
-                <button
-                  type="button"
-                  class="sign-up__button-delete-pwd-confirm"
-                  aria-label="비밀번호 지우기"
-                  hidden
-                ></button>
-                <button
-                  type="button"
-                  class="sign-up__button-show-pwd-confirm"
-                  aria-label="비밀번호 보기"
-                ></button
-              ></label>
-              <p
-                class="sign-up__validation--pwd-confirm paragraph-medium"
+              </label>
+              <input
+                type="password"
+                name="userPwdConfirm"
+                id="userPwdConfirm"
+                class="sign-up-form__input--pwd-confirm"
+                placeholder="비밀번호 재입력"
+                required
+              />
+              <button
+                type="button"
+                class="sign-up__button-delete-pwd-confirm"
+                aria-label="비밀번호 지우기"
                 hidden
-              >
-                비밀번호가 일치합니다.
-              </p>
+              ></button>
+              <button
+                type="button"
+                class="sign-up__button-show-pwd-confirm"
+                aria-label="비밀번호 보기"
+              ></button>
             </div>
-
-            <label for="userEmail" class="sign-up-form__label--email">
+            <p class="sign-up__validation--pwd-confirm paragraph-medium" hidden>
+              비밀번호가 일치합니다.
+            </p>
+            <div
+              role="group"
+              aria-hidden="true"
+              aria-label="이메일 인풋 영역"
+              class="email-input__container"
+            >
+              <label for="userEmail" class="sign-up-form__label--email sr-only">
+              </label>
               <input
                 type="email"
                 name="userEmail"
@@ -121,7 +141,7 @@
                 aria-label="이메일 지우기"
                 hidden
               ></button>
-            </label>
+            </div>
             <p class="sign-up__validation--email paragraph-medium" hidden>
               이메일의 형식이 올바르지 않습니다.
             </p>
