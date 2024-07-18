@@ -1,13 +1,15 @@
 import pb from '../../api/pocketbase';
 import { validateId } from '../../utils/validate';
-import './find-pwd.css';
+import { deleteInputVal } from '../../utils/input';
+import './find-pwd.scss';
 
 const userId = document.querySelector('.find-pwd__input--id');
 const findPwdSubmitBtn = document.querySelector('.find-pwd__submit-button--id');
 
-function handleUserId(e) {
+function handleUserIdInput(e) {
   const target = e.target;
   const idValidateText = document.querySelector('.find-pwd__validation--id');
+
   if (validateId(target.value)) {
     idValidateText.hidden = true;
     findPwdSubmitBtn.disabled = false;
@@ -15,6 +17,8 @@ function handleUserId(e) {
     idValidateText.hidden = false;
     findPwdSubmitBtn.disabled = true;
   }
+
+  deleteInputVal(target);
 }
 
 async function handleFindPwd() {
@@ -29,5 +33,5 @@ async function handleFindPwd() {
   }
 }
 
-userId.addEventListener('input', handleUserId);
+userId.addEventListener('input', handleUserIdInput);
 findPwdSubmitBtn.addEventListener('click', handleFindPwd);

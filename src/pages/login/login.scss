@@ -1,7 +1,6 @@
 @use './../../styles/style';
 @use './../../styles/utils' as *;
 
-// 이 부분 논의!!
 .log-in {
   display: flex;
   flex-flow: column nowrap;
@@ -15,7 +14,7 @@
     padding: rem(28) 0;
   }
 
-  @media (max-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-mobile) {
     max-width: $breakpoint-tablet;
   }
 
@@ -31,10 +30,59 @@
     flex-flow: column nowrap;
   }
 
+  .log-in-form__label--id {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+  }
+
+  .log-in__button-delete-id {
+    position: absolute;
+    right: 1.25rem;
+    background-image: url('./../../assets/icon/circle-delete-icon.svg');
+    background-repeat: no-repeat;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-size: contain;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 2.25rem;
+      height: 2.25rem;
+      right: 1.5rem;
+    }
+  }
+
+  .log-in-form__label--pwd {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    margin-top: rem(8);
+  }
+
+  .log-in__button-delete-pwd {
+    position: absolute;
+    right: 3.25rem;
+    background-image: url('./../../assets/icon/circle-delete-icon.svg');
+    background-repeat: no-repeat;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-size: contain;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 2.25rem;
+      height: 2.25rem;
+      right: 4.75rem;
+    }
+  }
+
   .log-in-form__input--id,
   .log-in-form__input--pwd {
+    width: 100%;
     border-radius: 0.25rem;
-    margin-bottom: rem(8);
     padding: 0.84rem 1.25rem 0.84rem 1rem;
     background-color: $brand-dark-bg-2;
     border: none;
@@ -44,6 +92,46 @@
   .log-in-form__input--id:focus,
   .log-in-form__input--pwd:focus {
     outline: 1px solid $gray-100;
+  }
+
+  .log-in-form__input--id:active,
+  .log-in-form__input--pwd:active {
+    outline: 1px solid $gray-100;
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+    width: 26rem;
+
+    .log-in-form__input--id,
+    .log-in-form__input--pwd {
+      padding: 0.87rem 1.25rem 0.87rem 1rem;
+      background-color: $brand-dark-bg-2;
+      border: none;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    width: 45.75rem;
+    .log-in-form__input--id,
+    .log-in-form__input--pwd {
+      padding: 1.59rem 1.25rem 1.59rem 1.5rem;
+    }
+  }
+
+  .log-in__button-show-pwd {
+    position: absolute;
+    right: 1.25rem;
+    background-image: url('./../../assets/icon/show-pwd-icon.svg');
+    background-repeat: no-repeat;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-size: contain;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 2.25rem;
+      height: 2.25rem;
+      right: 1.5rem;
+    }
   }
 
   .log-in__auto-group {
@@ -83,28 +171,6 @@
     input:checked + label {
       background-image: url('./../../assets/icon/circle-checked-icon.svg');
       color: $white;
-    }
-  }
-
-  @media (min-width: $breakpoint-mobile) {
-    width: 26rem;
-
-    .log-in-form__input--id,
-    .log-in-form__input--pwd {
-      border-radius: 0.25rem;
-      margin-bottom: rem(8);
-      padding: 0.87rem 1.25rem 0.87rem 1rem;
-      background-color: $brand-dark-bg-2;
-      border: none;
-      color: $white;
-    }
-  }
-
-  @media (min-width: 1025px) {
-    width: 45.75rem;
-    .log-in-form__input--id,
-    .log-in-form__input--pwd {
-      padding: 1.59rem 1.25rem 1.59rem 1.5rem;
     }
   }
 }

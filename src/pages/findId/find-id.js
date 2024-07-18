@@ -1,6 +1,7 @@
 import { validateEmail } from '../../utils/validate';
+import { deleteInputVal } from '../../utils/input';
 import pb from '../../api/pocketbase';
-import './find-id.css';
+import './find-id.scss';
 
 const userEmail = document.querySelector('.find-id__input--email');
 
@@ -13,6 +14,7 @@ function handleUserEmail(e) {
   const emailValidateText = document.querySelector(
     '.find-id__validation--email'
   );
+
   if (validateEmail(target.value)) {
     emailValidateText.hidden = true;
     findIdSubmitBtn.disabled = false;
@@ -20,6 +22,8 @@ function handleUserEmail(e) {
     emailValidateText.hidden = false;
     findIdSubmitBtn.disabled = true;
   }
+
+  deleteInputVal(target);
 }
 
 async function handleSubmitBtn() {

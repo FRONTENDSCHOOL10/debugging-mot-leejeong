@@ -314,13 +314,12 @@ body {
 }
 
 .footer {
-  border: 1px solid red;
-  margin: 8.75rem 4.25rem 10.625rem;
+  background-color: rgb(0, 0, 0);
+  padding: 8.75rem clamp(1rem, 3.90625vw, 4.375rem) 10.625rem;
 }
 
 .footer__container {
   width: 100%;
-  border: 0.0625rem solid #2b2b2b;
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
@@ -329,13 +328,15 @@ body {
 }
 
 .footer__inner-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
   margin-bottom: 3.375rem;
 }
 .footer__inner-top::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer__inner-top::before {
   display: block;
   content: "";
   width: 100%;
@@ -345,6 +346,7 @@ body {
   top: 3.375rem;
 }
 .footer__inner-top .footer__notice {
+  float: left;
   display: flex;
   gap: 1.25rem;
 }
@@ -355,17 +357,19 @@ body {
   color: #c4c4c4;
 }
 .footer__inner-top .footer__buttons {
-  display: flex;
+  float: right;
   color: #c4c4c4;
   cursor: pointer;
+}
+.footer__inner-top .footer__buttons li,
+.footer__inner-top .footer__buttons span {
+  display: inline-block;
+  margin: 0 0.9375rem;
 }
 .footer__inner-top .footer__buttons li:hover,
 .footer__inner-top .footer__buttons li:focus {
   color: #e1e1e1;
   transition: color 0.2s linear;
-}
-.footer__inner-top .footer__buttons span {
-  margin: 0 1.875rem;
 }
 
 .footer__service {
@@ -421,13 +425,17 @@ small {
 
 @media (max-width: 64rem) {
   .footer {
-    margin: 4.375rem 2.5rem 6.25rem 2.5rem;
+    padding: 4.375rem clamp(1rem, 3.90625vw, 4.375rem) 6.25rem;
   }
   .footer__container {
     font-size: 0.75rem;
   }
   .footer__inner-top {
     margin-bottom: 1.5rem;
+  }
+  .footer__inner-top::before {
+    width: 100%;
+    top: 1.6875rem;
   }
   .footer__service {
     gap: 1.25rem;
@@ -447,10 +455,17 @@ small {
 }
 @media (max-width: 42.5rem) {
   .footer {
-    margin: 3.25rem 1rem 5.125rem 1rem;
+    padding: 3.25rem clamp(1rem, 3.90625vw, 4.375rem) 5.125rem;
   }
   .footer__container {
     font-size: 0.75rem;
+  }
+  .footer__inner-top {
+    margin-bottom: 1.5rem;
+  }
+  .footer__inner-top::before {
+    width: 100%;
+    top: 1.6875rem;
   }
   .footer__service {
     flex-direction: column;
