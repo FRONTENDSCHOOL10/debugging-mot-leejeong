@@ -25,12 +25,12 @@
 //       // const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR`);
 //       const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR&region=KR`);
 //       const data = await response.json();
-      
+
 //       const trendingItems = [];
 //       data.results.slice(0, 10).forEach(item => {
 //         trendingItems.push(item.title || item.name);
 //       });
-      
+
 //       return trendingItems;
 //     } catch (error) {
 //       console.error('인기 트렌드 데이터를 불러오는데 실패했습니다:', error);
@@ -61,7 +61,7 @@
 //       recentSearchList.innerHTML = htmlContent;
 //     }
 //     //최근 검색어 배열 -> JSON 문자열로 변환 후 로컬 스토리지에 저장
-//     localStorage.setItem('recentSearches', JSON.stringify(recentSearches)); 
+//     localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
 //   }
 
 //   /* -------------------------------------------------------------------------- */
@@ -70,7 +70,7 @@
 //   async function updatePopularSearches() {
 //     // 인기 트렌드 목록을 가져오는 비동기 함수. 결과 -> trendingItems 변수에 저장
 //     const trendingItems = await getTrendingItems();
-    
+
 //     let htmlContent = '';
 //     trendingItems.forEach((item, index) => {
 //       htmlContent += `
@@ -80,12 +80,11 @@
 //         </li>
 //       `;
 //     });
-    
+
 //     popularList.innerHTML = htmlContent;
 //     updateTimestamp.textContent = `${new Date().toLocaleString()} 기준`;
 //   }
 
-  
 //   // 검색 수행
 //   function performSearch(userSearchWord) {
 //     if (userSearchWord.trim() === '') {
@@ -105,7 +104,6 @@
 //     performSearch(searchInput.value);
 //     searchInput.value = '';
 //   });
-
 
 //   // 해당 클래스 포함하면, performSearch 함수를 호출
 //   // 클릭된 요소의 텍스트 내용을 검색어로 검색 수행
@@ -160,12 +158,12 @@
 //       // const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR`);
 //       const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR&region=KR`);
 //       const data = await response.json();
-      
+
 //       const trendingItems = [];
 //       data.results.slice(0, 10).forEach(item => {
 //         trendingItems.push(item.title || item.name);
 //       });
-      
+
 //       return trendingItems;
 //     } catch (error) {
 //       console.error('인기 트렌드 데이터를 불러오는데 실패했습니다:', error);
@@ -196,7 +194,7 @@
 //       recentSearchList.innerHTML = htmlContent;
 //     }
 //     //최근 검색어 배열 -> JSON 문자열로 변환 후 로컬 스토리지에 저장
-//     localStorage.setItem('recentSearches', JSON.stringify(recentSearches)); 
+//     localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
 //   }
 
 //   /* -------------------------------------------------------------------------- */
@@ -205,7 +203,7 @@
 //   async function updatePopularSearches() {
 //     // 인기 트렌드 목록을 가져오는 비동기 함수. 결과 -> trendingItems 변수에 저장
 //     const trendingItems = await getTrendingItems();
-    
+
 //     let htmlContent = '';
 //     trendingItems.forEach((item, index) => {
 //       htmlContent += `
@@ -215,12 +213,11 @@
 //         </li>
 //       `;
 //     });
-    
+
 //     popularList.innerHTML = htmlContent;
 //     updateTimestamp.textContent = `${new Date().toLocaleString()} 기준`;
 //   }
 
-  
 //   // 검색 수행
 //   function performSearch(userSearchWord) {
 //     if (userSearchWord.trim() === '') {
@@ -240,7 +237,6 @@
 //     performSearch(searchInput.value);
 //     searchInput.value = '';
 //   });
-
 
 //   // 해당 클래스 포함하면, performSearch 함수를 호출
 //   // 클릭된 요소의 텍스트 내용을 검색어로 검색 수행
@@ -268,7 +264,6 @@
 //   setInterval(updatePopularSearches, 300000);
 // });
 
-
 import './search.scss';
 import style from '/src/pages/search/search.scss?inline';
 
@@ -280,8 +275,9 @@ class SearchComponent extends HTMLElement {
       <style>
       ${style}
       :host {
+        display: block;
+        width: 100%;
         position: relative;
-        top: 50px;
         z-index: 1000;
       }
       </style>
@@ -344,20 +340,29 @@ class SearchComponent extends HTMLElement {
   setupSearch() {
     const searchInput = this.shadowRoot.querySelector('#search');
     const searchForm = this.shadowRoot.querySelector('.search__form');
-    const recentSearchList = this.shadowRoot.querySelector('#recent-search-list');
+    const recentSearchList = this.shadowRoot.querySelector(
+      '#recent-search-list'
+    );
     const popularList = this.shadowRoot.querySelector('#popular-list');
     const updateTimestamp = this.shadowRoot.querySelector('#update-timestamp');
-    const clearAllButton = this.shadowRoot.querySelector('.search__recent-clear');
+    const clearAllButton = this.shadowRoot.querySelector(
+      '.search__recent-clear'
+    );
 
-    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+    let recentSearches =
+      JSON.parse(localStorage.getItem('recentSearches')) || [];
 
     const TMDB_API_KEY = 'c9aa1b53a9a38413c2344dc6b0515510';
 
     const getTrendingItems = async () => {
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR&region=KR`);
+        const response = await fetch(
+          `https://api.themoviedb.org/3/trending/all/day?api_key=${TMDB_API_KEY}&language=ko-KR&region=KR`
+        );
         const data = await response.json();
-        const trendingItems = data.results.slice(0, 10).map(item => item.title || item.name);
+        const trendingItems = data.results
+          .slice(0, 10)
+          .map((item) => item.title || item.name);
         return trendingItems;
       } catch (error) {
         console.error('인기 트렌드 데이터를 불러오는데 실패했습니다:', error);
@@ -373,24 +378,32 @@ class SearchComponent extends HTMLElement {
           </li>
         `;
       } else {
-        recentSearchList.innerHTML = recentSearches.map((searchWord, index) => `
+        recentSearchList.innerHTML = recentSearches
+          .map(
+            (searchWord, index) => `
           <li class="search__recent-item paragraph-medium">
             <button class="search__recent-content-btn">${searchWord}</button>
             <button class="search__recent-delete-btn" aria-label="검색어 삭제" data-index="${index}">×</button>
           </li>
-        `).join('');
+        `
+          )
+          .join('');
       }
       localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
     };
 
     const updatePopularSearches = async () => {
       const trendingItems = await getTrendingItems();
-      popularList.innerHTML = trendingItems.map((item, index) => `
+      popularList.innerHTML = trendingItems
+        .map(
+          (item, index) => `
         <li class="search__popular-item paragraph-medium">
           <span class="search__popular-rank">${index + 1}</span>
           <span class="search__popular-content">${item}</span>
         </li>
-      `).join('');
+      `
+        )
+        .join('');
       updateTimestamp.textContent = `${new Date().toLocaleString()} 기준`;
     };
 
@@ -399,7 +412,10 @@ class SearchComponent extends HTMLElement {
         alert('검색어를 입력해 주세요.');
         return;
       }
-      recentSearches = [userSearchWord, ...recentSearches.filter(item => item !== userSearchWord)].slice(0, 5);
+      recentSearches = [
+        userSearchWord,
+        ...recentSearches.filter((item) => item !== userSearchWord),
+      ].slice(0, 5);
       updateRecentSearches();
       console.log(`검색: ${userSearchWord}`);
     };
