@@ -88,7 +88,7 @@ class FooterComponent extends HTMLElement {
               </address>
             </section>
             <ul class="footer__sns">
-              <li>
+              <li aria-label="유튜브 바로가기">
                  <a href="https://www.youtube.com/">
                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
@@ -96,7 +96,7 @@ class FooterComponent extends HTMLElement {
                    </svg>
                  </a>
                </li>
-               <li>
+               <li aria-label="인스타그램 바로가기">
                  <a href="https://www.instagram.com/">
                   <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
@@ -111,7 +111,7 @@ class FooterComponent extends HTMLElement {
                   </svg>
                  </a>
                </li>
-               <li>
+               <li aria-label="트위터 바로가기">
                  <a href="https:x.com/?lang=ko">
                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http:www.w3.org/2000/svg">
                      <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
@@ -126,7 +126,7 @@ class FooterComponent extends HTMLElement {
                    </svg>
                  </a>
                </li>
-               <li>
+               <li aria-label="페이스북 바로가기">
                  <a href="https:www.facebook.com/?locale=ko_KR">
                   <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http:www.w3.org/2000/svg">
                    <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
