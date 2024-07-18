@@ -14,10 +14,8 @@
   </head>
   <body>
     <!-- 로그인 페이지 헤딩 -->
-    <!-- 헤더가 있어서 이 부분을 어떻게 해야할지 모르곘어요. -->
-    <header class="header">
-      <h1 class="header__title">TAING</h1>
-    </header>
+    <header-component></header-component>
+
     <!-- 로그인 페이지 본문 -->
     <main class="main">
       <section class="log-in">
@@ -26,24 +24,53 @@
         <form action="/" class="log-in__form paragraph-large">
           <fieldset class="log-in-form__fieldset">
             <legend class="log-in-form__legend sr-only">로그인</legend>
-            <input
-              class="log-in-form__input--id"
-              type="text"
-              name="userId"
-              id="userId"
-              placeholder="아이디"
-              required
-            />
-            <label for="userId" class="sr-only">아이디</label>
-            <input
-              class="log-in-form__input--pwd"
-              type="password"
-              name="userPwd"
-              id="userPwd"
-              placeholder="비밀번호"
-              required
-            />
-            <label for="userPwd" class="sr-only">비밀번호</label>
+
+            <label
+              for="userId"
+              aria-label="아이디"
+              class="log-in-form__label--id"
+            >
+              <input
+                class="log-in-form__input--id"
+                type="text"
+                name="userId"
+                id="userId"
+                placeholder="아이디"
+                required
+              />
+              <button
+                type="button"
+                class="log-in__button-delete-id"
+                aria-label="아이디 지우기"
+                hidden
+              ></button>
+            </label>
+
+            <label
+              aria-label="비밀번호"
+              for="userPwd"
+              class="log-in-form__label--pwd"
+            >
+              <input
+                class="log-in-form__input--pwd"
+                type="password"
+                name="userPwd"
+                id="userPwd"
+                placeholder="비밀번호"
+                required
+              />
+              <button
+                type="button"
+                class="log-in__button-delete-pwd"
+                aria-label="비밀번호 지우기"
+                hidden
+              ></button>
+              <button
+                type="button"
+                class="log-in__button-show-pwd"
+                aria-label="비밀번호 보기"
+              ></button>
+            </label>
             <div
               role="group"
               aria-label="자동 로그인"
@@ -89,5 +116,7 @@
         </p>
       </section>
     </main>
+    <!-- 푸터 -->
+    <footer-component></footer-component>
   </body>
 </html>

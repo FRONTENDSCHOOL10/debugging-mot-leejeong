@@ -8,12 +8,8 @@
     <title>TAING 비밀번호 찾기</title>
   </head>
   <body>
-    <!-- 헤더가 있어서 이 부분을 어떻게 해야할지 모르곘어요. -->
     <!-- 헤더 -->
-    <header class="header">
-      <h1 class="header__title">TAING</h1>
-    </header>
-
+    <header-component></header-component>
     <!-- 메인 -->
     <main class="main">
       <section class="find-pwd">
@@ -28,15 +24,23 @@
         <form action="/" class="find-pwd__form--id paragraph-large">
           <fieldset>
             <legend class="sr-only">아이디로 찾기</legend>
-            <input
-              type="text"
-              name="userId"
-              id="userId"
-              class="find-pwd__input--id"
-              placeholder="아이디"
-              required
-            />
-            <label for="userId" class="sr-only">아이디</label>
+
+            <label for="userId" aria-label="아이디" class="find-pwd__label--id">
+              <input
+                type="text"
+                name="userId"
+                id="userId"
+                class="find-pwd__input--id"
+                placeholder="아이디"
+                required
+              />
+              <button
+                type="button"
+                class="find-pwd__button-delete-id"
+                aria-label="아이디 지우기"
+                hidden
+              ></button>
+            </label>
             <p class="find-pwd__validation--id">
               아이디를 올바른 형식으로 입력해 주세요.
             </p>
@@ -51,5 +55,7 @@
         </button>
       </section>
     </main>
+    <!-- 푸터 -->
+    <footer-component></footer-component>
   </body>
 </html>

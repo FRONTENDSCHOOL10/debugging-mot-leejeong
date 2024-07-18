@@ -1,8 +1,18 @@
 import pb from '../../api/pocketbase';
+import { deleteInputVal } from '../../utils/input';
+import { showInputPwd } from '../../utils/input';
+import './login.scss';
 
-import './login.css';
-
+const idInput = document.querySelector('.log-in-form__input--id');
+const pwdInput = document.querySelector('.log-in-form__input--pwd');
 const loginSubmitBtn = document.querySelector('.log-in-submit__button');
+const showPwdBtn = document.querySelector('.log-in__button-show-pwd');
+
+function handleInput(e) {
+  const target = e.target;
+
+  deleteInputVal(target);
+}
 
 async function handleLogin() {
   const userId = document.querySelector('.log-in-form__input--id');
@@ -35,4 +45,7 @@ async function handleLogin() {
   }
 }
 
+idInput.addEventListener('input', handleInput);
+pwdInput.addEventListener('input', handleInput);
+showPwdBtn.addEventListener('click', showInputPwd(pwdInput));
 loginSubmitBtn.addEventListener('click', handleLogin);
