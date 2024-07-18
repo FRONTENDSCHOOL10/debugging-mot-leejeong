@@ -29,7 +29,7 @@ class SearchComponent extends HTMLElement {
                   <label for="search" class="sr-only">콘텐츠 검색</label>
                   <input type="text" class="search__form-input heading-large" id="search" placeholder="TV 프로그램, 영화 제목 및 출연진으로 검색해보세요." />
                   <button type="submit" class="search__button" aria-label="검색">
-                    <img src="/src/assets/search.svg" alt="검색" />
+                    <img src="/src/assets/search/search.svg" alt="검색" />
                   </button>
                 </div>
               </fieldset>
@@ -44,7 +44,7 @@ class SearchComponent extends HTMLElement {
                   <span>최근 검색어</span>
                   <button type="button" class="search__recent-clear" aria-label="최근 검색어 모두 지우기">
                     <span class="label-small">모두 지우기</span>
-                    <img src="/src/assets/deleteAll.svg" alt="최근 검색어 모두 삭제" />
+                    <img src="/src/assets/search/deleteAll.svg" alt="최근 검색어 모두 삭제" />
                   </button>
                 </h2>
                 <ul class="search__recent-list" id="recent-search-list">
