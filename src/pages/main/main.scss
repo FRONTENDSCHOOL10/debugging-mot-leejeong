@@ -129,14 +129,14 @@ header {
 }
 
 .main-title {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  width: 100%;
+  display: inline-block;
   text-align: left;
   color: $gray-200;
   line-height: 1.4;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .title-wrapper {
@@ -483,12 +483,15 @@ header {
         }
 
         .popular__title {
-          display: flex;
-          align-items: flex-end;
+          width: 100%;
           color: $gray-200;
           text-align: left;
           margin-left: rem(16);
           line-height: 1.4;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           @media (max-width: $breakpoint-tablet) {
             margin-left: rem(6);
           }
@@ -585,6 +588,11 @@ header {
         .title-wrapper {
           color: $gray-200;
           gap: 0;
+          .sub-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
         @media (max-width: $breakpoint-tablet) {
           gap: rem(6);
