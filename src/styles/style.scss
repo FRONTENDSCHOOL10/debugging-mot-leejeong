@@ -66,9 +66,18 @@ body {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, #000 100%),
-    url(/src/assets/landing/main-bg.jpg);
+    image-set(
+      url(/src/assets/landing/main_bg_1x.webp) 1x,
+      url(/src/assets/landing/main_bg_2x.webp) 2x
+    );
   background-size: cover;
   background-position: center;
+  @media (max-width: $breakpoint-tablet) {
+    min-height: rem(800);
+  }
+  @media (max-width: $breakpoint-mobile) {
+    min-height: rem(600);
+  }
 }
 
 .main__wrap {
@@ -94,7 +103,7 @@ body {
 
 .main__button {
   height: rem(80);
-  background-color: $brand-red-2;
+  background-color: $brand-red-1;
   color: $white;
   padding: 0 em(80, 28) 0 0;
   border: 0;
