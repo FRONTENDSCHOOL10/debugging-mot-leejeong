@@ -44,7 +44,7 @@ class SearchComponent extends HTMLElement {
                   <span>최근 검색어</span>
                   <button type="button" class="search__recent-clear" aria-label="최근 검색어 모두 지우기">
                     <span class="label-small">모두 지우기</span>
-                    <img src="/src/assets/search/deleteAll.svg" alt="최근 검색어 모두 삭제" />
+                    <img src="../../assets/search/deleteAll.svg" alt="최근 검색어 모두 삭제" />
                   </button>
                 </h2>
                 <ul class="search__recent-list" id="recent-search-list">
