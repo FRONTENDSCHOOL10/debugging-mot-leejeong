@@ -22,7 +22,7 @@ class HeaderComponent extends HTMLElement {
       </style>
       <header class="header">
           <h1 class="header__logo">
-              <a href="/" aria-label="홈으로 이동">
+              <a href="/src/pages/main/index.html" aria-label="홈으로 이동">
                   <svg width="132" height="42" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_3_342)">
                     <mask id="mask0_3_342" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
