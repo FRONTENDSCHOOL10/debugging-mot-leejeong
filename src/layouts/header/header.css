@@ -310,14 +310,12 @@ body {
 }
 
 body {
-  height: auto;
   position: relative;
   color: #c4c4c4;
 }
 
 .header {
   width: 100%;
-  max-width: 1920px;
   height: 6.25rem;
   position: fixed;
   display: flex;
@@ -327,8 +325,12 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0 4.375rem;
+  padding: 0 clamp(1rem, 3.90625vw, 4.375rem);
   box-sizing: border-box;
+}
+.header .header__logo a:focus {
+  outline: 2px solid rgb(255, 255, 255);
+  outline-offset: 2px;
 }
 .header .header__menu {
   display: flex;
@@ -346,24 +348,32 @@ body {
   font-size: 1.3125rem;
   font-weight: 600;
 }
-.header .header__menu .header__menu-item a:first-of-type {
+.header .header__menu .header__menu-item a {
   display: flex;
   align-items: flex-end;
-}
-.header .header__menu .header__menu-item a:first-of-type svg {
-  margin-right: 0.625rem;
-}
-.header .header__menu .header__menu-item:last-of-type:hover svg path {
-  fill: rgb(255, 255, 255);
-  transition: stroke 0.2s linear;
-}
-.header .header__menu .header__menu-item:not(:last-of-type):hover {
-  color: rgb(255, 255, 255);
   transition: color 0.15s linear;
 }
-.header .header__menu .header__menu-item:not(:last-of-type):hover svg path {
+.header .header__menu .header__menu-item a svg {
+  margin-right: 0.625rem;
+  transition: all 0.2s linear;
+}
+.header .header__menu .header__menu-item a:hover {
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+.header .header__menu .header__menu-item a:focus {
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+.header .header__menu .header__menu-item a:hover svg path, .header .header__menu .header__menu-item a:hover svg circle {
   stroke: rgb(255, 255, 255);
-  transition: stroke 0.2s linear;
+}
+.header .header__menu .header__menu-item a:focus svg path, .header .header__menu .header__menu-item a:focus svg circle {
+  stroke: rgb(255, 255, 255);
+}
+.header .header__menu .header__menu-item:last-of-type a:hover svg path,
+.header .header__menu .header__menu-item:last-of-type a:focus svg path {
+  fill: rgb(255, 255, 255);
 }
 .header .header__actions {
   display: flex;
@@ -374,15 +384,27 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  transition: all 0.2s linear;
 }
-.header .header__actions .header__actions-btn:first-of-type:hover svg path, .header .header__actions .header__actions-btn:first-of-type:hover svg rect {
+.header .header__actions .header__actions-btn:hover:not(.profile-btn) {
+  outline: none;
+}
+.header .header__actions .header__actions-btn:focus:not(.profile-btn) {
+  outline: none;
+}
+.header .header__actions .header__actions-btn:hover:not(.profile-btn) svg path, .header .header__actions .header__actions-btn:hover:not(.profile-btn) svg circle {
   stroke: rgb(255, 255, 255);
-  transition: stroke 0.2s linear;
+}
+.header .header__actions .header__actions-btn:focus:not(.profile-btn) svg path, .header .header__actions .header__actions-btn:focus:not(.profile-btn) svg circle {
+  stroke: rgb(255, 255, 255);
+}
+.header .header__actions .header__actions-btn:focus.profile-btn {
+  outline: 2px solid rgb(255, 255, 255);
+  outline-offset: 2px;
 }
 
 @media (max-width: 64rem) {
   .header {
-    padding: 0 2.5rem;
     height: 3.5rem;
   }
   .header .header__logo svg {
@@ -418,7 +440,6 @@ body {
 }
 @media (max-width: 42.5rem) {
   .header {
-    padding: 0 1rem;
     height: 2.375rem;
   }
   .header .header__logo svg {

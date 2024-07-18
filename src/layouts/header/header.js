@@ -1,15 +1,27 @@
+import '@/pages/search/search.js';
 import './header.scss';
 import style from '/src/layouts/header/header.scss?inline';
 
 class HeaderComponent extends HTMLElement {
   constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-      this.shadowRoot.innerHTML = `
-      <style>${style}</style>
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+      ${style}
+      .search-area {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        color: $white;
+        box-sizing: border-box;
+      }
+      </style>
       <header class="header">
           <h1 class="header__logo">
-              <a href="/" aria-label="홈으로 이동">
+              <a href="/src/pages/main/index.html" aria-label="홈으로 이동">
                   <svg width="132" height="42" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_3_342)">
                     <mask id="mask0_3_342" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
@@ -66,7 +78,7 @@ class HeaderComponent extends HTMLElement {
                   <li class="header__menu-item">
                       <a href="/movies">영화</a>
                   </li>
-                  <li class="header__menu-item">
+                  <li class="header__menu-item" aria-label="파라마운트 플러스 서비스">
                       <a href="/">
                           <svg width="112" height="34" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <g clip-path="url(#clip0_159_10880)">
@@ -123,64 +135,114 @@ class HeaderComponent extends HTMLElement {
                       </defs>
                     </svg>
                   </button>
+                  <div class="header__dropdown-menu">
+                    <a href="/src/layouts/modal/index.html" class="header__dropdown-link">로그아웃</a>
+                 </div>
               </section>
           </nav>
       </header>
-      `
-  }  
-
-  // setupSearchButton, setupStyles 호출 -> 버튼 및 스타일 설정 초기화
-  connectedCallback() {
-    this.setupSearchButton();
-    this.setupStyles();
+      <div class="search-area">
+        <search-component></search-component>
+      </div>
+      `;
   }
 
-  // 클릭, Enter, Space 키 누름 -> toggleSearchIcon 호출
+  
+  connectedCallback() {
+    this.setupSearchButton();
+    this.setupProfileButton();
+    window.addEventListener('resize', this.updatePlaceholder.bind(this));
+  }
+
   setupSearchButton() {
     const searchBtn = this.shadowRoot.querySelector('.search-btn');
-    
-    searchBtn.addEventListener('click', () => this.toggleSearchIcon(searchBtn));
+
+    searchBtn.addEventListener('click', () => {
+      this.toggleSearch(searchBtn);
+      this.updatePlaceholder(); // Placeholder 업데이트
+    });
     searchBtn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        this.toggleSearchIcon(searchBtn);
+        this.toggleSearch(searchBtn);
+        this.updatePlaceholder(); // Placeholder 업데이트
       }
     });
   }
 
-  setupStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-      .header__actions-btn {
-        transition: all 0.3s ease;
-      }
-      .header__actions-btn svg {
-        transition: all 0.3s ease;
-      }
-      .header__actions-btn[aria-expanded="true"] svg path {
-        fill: white;
-      }
-    `;
-    this.shadowRoot.appendChild(style);
-  }
-
-
-  toggleSearchIcon(btn) {
+  toggleSearch(btn) {
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', !isExpanded);
 
     const svg = btn.querySelector('svg');
+    const searchArea = this.shadowRoot.querySelector('.search-area');
+
     if (isExpanded) {
-      // 돋보기 아이콘으로 변경
       svg.innerHTML = this.getMagnifierSVGContent();
       btn.setAttribute('aria-label', '검색');
+      searchArea.style.display = 'none';
+      document.body.classList.remove('no-scroll'); // 검색 영역 닫힐 때 클래스 제거
     } else {
-      // X 아이콘으로 변경
       svg.innerHTML = this.getCloseSVGContent();
       btn.setAttribute('aria-label', '검색 닫기');
+      searchArea.style.display = 'block';
+      document.body.classList.add('no-scroll'); // 검색 영역 열릴 때 클래스 추가
     }
   }
 
+  setupProfileButton() {
+    const profileBtn = this.shadowRoot.querySelector('.profile-btn');
+    const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
+
+    profileBtn.addEventListener('click', () =>
+      this.toggleDropdown(profileBtn, dropdown)
+    );
+    profileBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleDropdown(profileBtn, dropdown);
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        !event.composedPath().includes(profileBtn) &&
+        !event.composedPath().includes(dropdown)
+      ) {
+        this.closeDropdown(profileBtn, dropdown);
+      }
+    });
+  }
+
+  toggleDropdown(btn, dropdown) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+    dropdown.classList.toggle('show');
+    if (!isExpanded) {
+      btn.style.outline = '2px solid white';
+    } else {
+      btn.style.outline = 'none';
+    }
+  }
+
+  closeDropdown(btn, dropdown) {
+    btn.setAttribute('aria-expanded', 'false');
+    dropdown.classList.remove('show');
+    btn.style.outline = 'none';
+  }
+
+  updatePlaceholder() {
+    const searchInput = this.shadowRoot.querySelector('.search-area search-component').shadowRoot.querySelector('.search__form-input');
+    if (searchInput) {
+      if (window.innerWidth <= 768) {
+        searchInput.placeholder = '검색';
+      } else {
+        searchInput.placeholder = 'TV 프로그램, 영화 제목 및 출연진으로 검색해보세요.';
+      }
+    }
+  }
+
+  
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
     return `
@@ -211,6 +273,5 @@ class HeaderComponent extends HTMLElement {
     `;
   }
 }
-
 
 customElements.define('header-component', HeaderComponent);

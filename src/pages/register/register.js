@@ -4,13 +4,18 @@ import {
   validatePwd,
   validateEmail,
 } from './../../utils/validate.js';
-import './register.css';
+import { deleteInputVal, showInputPwd } from '../../utils/input.js';
+import './register.scss';
 
-const userId = document.querySelector('.form__input--id');
-const userPwd = document.querySelector('.form__input--pwd');
-const userPwdConfirm = document.querySelector('.form__input--pwd-confirm');
-const userEmail = document.querySelector('.form__input--email');
-const allTermsInputs = document.querySelectorAll('.sign-up-terms__lists input');
+const userId = document.querySelector('.sign-up-form__input--id');
+const userPwd = document.querySelector('.sign-up-form__input--pwd');
+const userPwdConfirm = document.querySelector(
+  '.sign-up-form__input--pwd-confirm'
+);
+const userEmail = document.querySelector('.sign-up-form__input--email');
+const allTermsLists = document.querySelectorAll(
+  '.sign-up-terms__lists  li:not(:has(ul)) > input'
+);
 const acceptAllTerms = document.querySelector(
   '.sign-up-terms__input-all-accept'
 );
@@ -18,51 +23,44 @@ const collectPersonalInfoTerms = document.querySelector(
   '.sign-up-terms__input-collect-info'
 );
 const registerSubmitBtn = document.querySelector('.sign-up__submit-button');
-let isChecked = false;
 
-function findInput(node) {
-  let lists = [];
-
-  function inner(elements) {
-    for (let list of elements) {
-      for (let elem of list.children) {
-        if (elem.nodeName.toLowerCase() === 'input') {
-          lists.push(elem);
-        }
-        if (elem.nodeName.toLowerCase() === 'ul') {
-          inner(elem.children);
-        }
-      }
-    }
+function activeBtn() {
+  if (
+    validateId(userId.value) &&
+    validatePwd(userPwd.value) &&
+    userPwd.value === userPwdConfirm.value &&
+    validateEmail(userEmail.value)
+  ) {
+    registerSubmitBtn.disabled = false;
   }
-  inner(node);
-  return lists;
-}
-
-function handleSubTermsList(e) {
-  const parentList = e.target.closest('ul').closest('li');
-  const childInput = findInput([parentList]);
-  console.log(childInput);
-  const checkInputBox = (currentInput) => currentInput.checked === true;
-  const isAllChecked = [...allTermsInputs].every(checkInputBox);
-  childInput[0].checked = isAllChecked;
 }
 
 //사실 함수를 여러개 두지 말고 하나로 합치고 싶음
 function handleUserIdInput(e) {
   const target = e.target;
   const idValidateText = document.querySelector('.sign-up__validation--id');
+
   !validateId(target.value)
     ? (idValidateText.hidden = false)
     : (idValidateText.hidden = true);
+
+  deleteInputVal(target);
+  activeBtn();
 }
 
 function handleUserPwdInput(e) {
   const target = e.target;
   const pwdValidateText = document.querySelector('.sign-up__validation--pwd');
+  const showPwdBtn = target.nextElementSibling.nextElementSibling;
+
   !validatePwd(target.value)
     ? (pwdValidateText.hidden = false)
     : (pwdValidateText.hidden = true);
+
+  deleteInputVal(target);
+  activeBtn();
+
+  showPwdBtn.addEventListener('click', showInputPwd(target));
 }
 
 function handleUserPwdConfirmInput(e) {
@@ -70,9 +68,16 @@ function handleUserPwdConfirmInput(e) {
   const pwdConfirmText = document.querySelector(
     '.sign-up__validation--pwd-confirm'
   );
+  const showPwdBtn = target.nextElementSibling.nextElementSibling;
+
   userPwd.value === target.value
     ? (pwdConfirmText.hidden = false)
     : (pwdConfirmText.hidden = true);
+
+  deleteInputVal(target);
+  activeBtn();
+
+  showPwdBtn.addEventListener('click', showInputPwd(target));
 }
 
 function handleUserEmailInput(e) {
@@ -80,28 +85,13 @@ function handleUserEmailInput(e) {
   const emailValidateText = document.querySelector(
     '.sign-up__validation--email'
   );
+
   !validateEmail(target.value)
     ? (emailValidateText.hidden = false)
     : (emailValidateText.hidden = true);
-}
+  activeBtn();
 
-//상위 terms를 찾아서 해당 terms의 하위 terms를 전부 선택
-function handleTerms(e) {
-  const target = e.target;
-  let siblingElem = target.nextElementSibling;
-  isChecked = target.checked;
-
-  if (siblingElem.nodeName.toLowerCase() !== 'ul') {
-    while (siblingElem.nodeName.toLowerCase() !== 'ul') {
-      siblingElem = siblingElem.nextElementSibling;
-    }
-  }
-  const termsLists = siblingElem.children;
-  const termsInputs = findInput(termsLists);
-
-  termsInputs.forEach((input) => {
-    input.checked = isChecked;
-  });
+  deleteInputVal(target);
 }
 
 async function handleRegister() {
@@ -122,14 +112,47 @@ async function handleRegister() {
   }
 }
 
+let isAllChecked = false;
+
+function handleCheckAllTerms(e) {
+  const target = e.target;
+  const subList = target.nextElementSibling.nextElementSibling;
+  const allInputs = [...subList.querySelectorAll('input')];
+  isAllChecked = !isAllChecked;
+
+  allInputs.forEach((input) => {
+    isAllChecked ? (input.checked = true) : (input.checked = false);
+  });
+}
+
+function handleTermList(e) {
+  const target = e.target;
+  const currentUl = target.closest('ul');
+  const parentInput = currentUl.previousElementSibling.previousElementSibling;
+
+  const allInputs = [...currentUl.querySelectorAll('input')];
+  const checkInputBox = (input) => input.checked;
+
+  if (allInputs.every(checkInputBox)) {
+    isAllChecked = true;
+    parentInput.checked = isAllChecked;
+    acceptAllTerms.checked = true;
+    console.log(acceptAllTerms.checked);
+  } else {
+    isAllChecked = false;
+    parentInput.checked = isAllChecked;
+  }
+}
+
+acceptAllTerms.addEventListener('click', handleCheckAllTerms);
+allTermsLists.forEach((li) => {
+  li.addEventListener('click', handleTermList);
+});
+collectPersonalInfoTerms.addEventListener('click', handleCheckAllTerms);
+
 userId.addEventListener('input', handleUserIdInput);
 userPwd.addEventListener('input', handleUserPwdInput);
 userPwdConfirm.addEventListener('input', handleUserPwdConfirmInput);
 userEmail.addEventListener('input', handleUserEmailInput);
 
-acceptAllTerms.addEventListener('input', handleTerms);
-collectPersonalInfoTerms.addEventListener('input', handleTerms);
 registerSubmitBtn.addEventListener('click', handleRegister);
-allTermsInputs.forEach((elem) => {
-  elem.addEventListener('click', handleSubTermsList);
-});
