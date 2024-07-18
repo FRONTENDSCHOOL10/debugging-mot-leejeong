@@ -123,19 +123,21 @@ class HeaderComponent extends HTMLElement {
                       </defs>
                     </svg>
                   </button>
+                  <div class="header__dropdown-menu">
+                    <a href="/src/layouts/modal/index.html" class="header__dropdown-link">로그아웃</a>
+                 </div>
               </section>
           </nav>
       </header>
       `
   }  
 
-  // setupSearchButton, setupStyles 호출 -> 버튼 및 스타일 설정 초기화
+ 
   connectedCallback() {
     this.setupSearchButton();
-    this.setupStyles();
+    this.setupProfileButton();
   }
 
-  // 클릭, Enter, Space 키 누름 -> toggleSearchIcon 호출
   setupSearchButton() {
     const searchBtn = this.shadowRoot.querySelector('.search-btn');
     
@@ -148,22 +150,41 @@ class HeaderComponent extends HTMLElement {
     });
   }
 
-  setupStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-      .header__actions-btn {
-        transition: all 0.3s ease;
+  setupProfileButton() {
+    const profileBtn = this.shadowRoot.querySelector('.profile-btn');
+    const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
+    
+    profileBtn.addEventListener('click', () => this.toggleDropdown(profileBtn, dropdown));
+    profileBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleDropdown(profileBtn, dropdown);
       }
-      .header__actions-btn svg {
-        transition: all 0.3s ease;
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.composedPath().includes(profileBtn) && !event.composedPath().includes(dropdown)) {
+        this.closeDropdown(profileBtn, dropdown);
       }
-      .header__actions-btn[aria-expanded="true"] svg path {
-        fill: white;
-      }
-    `;
-    this.shadowRoot.appendChild(style);
+    });
   }
 
+  toggleDropdown(btn, dropdown) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+    dropdown.classList.toggle('show');
+    if (!isExpanded) {
+      btn.style.outline = '2px solid white';
+    } else {
+      btn.style.outline = 'none';
+    }
+  }
+
+  closeDropdown(btn, dropdown) {
+    btn.setAttribute('aria-expanded', 'false');
+    dropdown.classList.remove('show');
+    btn.style.outline = 'none';
+  }
 
   toggleSearchIcon(btn) {
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
@@ -171,18 +192,17 @@ class HeaderComponent extends HTMLElement {
 
     const svg = btn.querySelector('svg');
     if (isExpanded) {
-      // 돋보기 아이콘으로 변경
       svg.innerHTML = this.getMagnifierSVGContent();
       btn.setAttribute('aria-label', '검색');
     } else {
-      // X 아이콘으로 변경
       svg.innerHTML = this.getCloseSVGContent();
       btn.setAttribute('aria-label', '검색 닫기');
-
-      // 검색 페이지로 이동
       location.href = '/src/pages/search/index.html';
     }
   }
+
+
+
 
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
