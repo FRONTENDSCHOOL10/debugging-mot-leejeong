@@ -1,5 +1,5 @@
-import './../../layouts/header/header.js';
-import './../../layouts/footer/footer.js';
+import '@/layouts/header/header.js';
+import '@/layouts/footer/footer.js';
 import '@/pages/main/main.scss';
 import getPbImageURL from '@/api/getPbImageURL';
 import pb from '@/api/pocketbase';
@@ -50,24 +50,6 @@ async function renderMustItem() {
 }
 
 renderMustItem();
-
-// async function renderMustItem() {
-//   const mustData = await pb.collection('main_must').getFullList();
-
-//   mustData.forEach((item) => {
-//     const template = `
-//     <div class="swiper-slide">
-//               <div class="thumbnail-wrapper">
-//                 <img src="${getPbImageURL(item, 'mustThumbnail')}" alt="${item.mustTitle}" />
-//               </div>
-//               <div class="main-title paragraph-medium">${item.mustTitle}</div>
-//             </div>
-//   `;
-
-//     insertLast('.swiperMust > .swiper-wrapper', template);
-//   });
-// }
-// renderMustItem();
 
 /* --------------------------- Quick VOD --------------------------- */
 async function renderQuickItem() {
@@ -213,7 +195,6 @@ async function renderEventItem() {
 }
 renderEventItem();
 
-
 /* ------------------------MAIN BANNER.js 통합--------------------------*/
 /* --------------------------- 메인 배너 --------------------------- */
 async function renderBannerItem() {
@@ -252,10 +233,9 @@ async function renderBannerItem() {
                   />
                 </div>
               </div>`;
-   
-              insertLast('.mainSwiper > .swiper-wrapper', template);
-  });
 
+    insertLast('.mainSwiper > .swiper-wrapper', template);
+  });
 
   var swiper = new Swiper('.mainSwiper', {
     navigation: {
