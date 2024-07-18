@@ -66,7 +66,7 @@ class HeaderComponent extends HTMLElement {
                   <li class="header__menu-item">
                       <a href="/movies">영화</a>
                   </li>
-                  <li class="header__menu-item">
+                  <li class="header__menu-item" aria-label="파라마운트 플러스 서비스">
                       <a href="/">
                           <svg width="112" height="34" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <g clip-path="url(#clip0_159_10880)">
