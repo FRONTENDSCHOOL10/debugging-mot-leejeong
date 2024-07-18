@@ -119,6 +119,11 @@ body {
       margin-right: em(38, 28);
     }
   }
+
+  &:hover {
+    background-color: $brand-red-3;
+  }
+
   @media (max-width: $breakpoint-tablet) {
     height: rem(48);
     .symbol svg {
