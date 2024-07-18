@@ -33,7 +33,7 @@ class SearchComponent extends HTMLElement {
                   </button>
                 </div>
               </fieldset>
-              <div id="autocomplete-list" class="autocomplete-list" role="listbox"></div>
+              <div id="autocomplete-list" class="autocomplete-list" role="listbox" aria-label="검색 자동 완성 목록"></div>
             </form>
 
             <!-- 검색어 영역 -->
