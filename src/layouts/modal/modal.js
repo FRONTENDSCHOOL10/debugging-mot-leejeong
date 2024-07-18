@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 확인 버튼 클릭 시 랜딩 페이지로 이동
   confirmButton.addEventListener('click', () => {
     localStorage.setItem('auth', JSON.stringify({isAuth : false}));
-    window.location.href = '../../pages/landing/index.html'; 
+    location.href = '/'; 
   });
 
   // 취소 버튼 클릭 시 모달 닫기
