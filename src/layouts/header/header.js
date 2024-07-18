@@ -1,3 +1,4 @@
+import '../../pages/search/search.js';
 import './header.scss';
 import style from '/src/layouts/header/header.scss?inline';
 
@@ -6,7 +7,19 @@ class HeaderComponent extends HTMLElement {
       super();
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = `
-      <style>${style}</style>
+      <style>
+      ${style}
+      .search-area {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      </style>
       <header class="header">
           <h1 class="header__logo">
               <a href="/" aria-label="홈으로 이동">
@@ -129,78 +142,83 @@ class HeaderComponent extends HTMLElement {
               </section>
           </nav>
       </header>
+      <div class="search-area">
+        <search-component></search-component>
+      </div>
       `
   }  
-
- 
-  connectedCallback() {
-    this.setupSearchButton();
-    this.setupProfileButton();
-  }
-
-  setupSearchButton() {
-    const searchBtn = this.shadowRoot.querySelector('.search-btn');
-    
-    searchBtn.addEventListener('click', () => this.toggleSearchIcon(searchBtn));
-    searchBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.toggleSearchIcon(searchBtn);
+  
+    connectedCallback() {
+      this.setupSearchButton();
+      this.setupProfileButton();
+    }
+  
+    setupSearchButton() {
+      const searchBtn = this.shadowRoot.querySelector('.search-btn');
+      
+      searchBtn.addEventListener('click', () => this.toggleSearch(searchBtn));
+      searchBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggleSearch(searchBtn);
+        }
+      });
+    }
+  
+    toggleSearch(btn) {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+  
+      const svg = btn.querySelector('svg');
+      const searchArea = this.shadowRoot.querySelector('.search-area');
+      
+      if (isExpanded) {
+        svg.innerHTML = this.getMagnifierSVGContent();
+        btn.setAttribute('aria-label', '검색');
+        searchArea.style.display = 'none';
+      } else {
+        svg.innerHTML = this.getCloseSVGContent();
+        btn.setAttribute('aria-label', '검색 닫기');
+        searchArea.style.display = 'block';
       }
-    });
-  }
-
-  setupProfileButton() {
-    const profileBtn = this.shadowRoot.querySelector('.profile-btn');
-    const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
-    
-    profileBtn.addEventListener('click', () => this.toggleDropdown(profileBtn, dropdown));
-    profileBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.toggleDropdown(profileBtn, dropdown);
+    }
+  
+    setupProfileButton() {
+      const profileBtn = this.shadowRoot.querySelector('.profile-btn');
+      const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
+      
+      profileBtn.addEventListener('click', () => this.toggleDropdown(profileBtn, dropdown));
+      profileBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggleDropdown(profileBtn, dropdown);
+        }
+      });
+  
+      document.addEventListener('click', (event) => {
+        if (!event.composedPath().includes(profileBtn) && !event.composedPath().includes(dropdown)) {
+          this.closeDropdown(profileBtn, dropdown);
+        }
+      });
+    }
+  
+    toggleDropdown(btn, dropdown) {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      dropdown.classList.toggle('show');
+      if (!isExpanded) {
+        btn.style.outline = '2px solid white';
+      } else {
+        btn.style.outline = 'none';
       }
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!event.composedPath().includes(profileBtn) && !event.composedPath().includes(dropdown)) {
-        this.closeDropdown(profileBtn, dropdown);
-      }
-    });
-  }
-
-  toggleDropdown(btn, dropdown) {
-    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !isExpanded);
-    dropdown.classList.toggle('show');
-    if (!isExpanded) {
-      btn.style.outline = '2px solid white';
-    } else {
+    }
+  
+    closeDropdown(btn, dropdown) {
+      btn.setAttribute('aria-expanded', 'false');
+      dropdown.classList.remove('show');
       btn.style.outline = 'none';
     }
-  }
-
-  closeDropdown(btn, dropdown) {
-    btn.setAttribute('aria-expanded', 'false');
-    dropdown.classList.remove('show');
-    btn.style.outline = 'none';
-  }
-
-  toggleSearchIcon(btn) {
-    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !isExpanded);
-
-    const svg = btn.querySelector('svg');
-    if (isExpanded) {
-      svg.innerHTML = this.getMagnifierSVGContent();
-      btn.setAttribute('aria-label', '검색');
-    } else {
-      svg.innerHTML = this.getCloseSVGContent();
-      btn.setAttribute('aria-label', '검색 닫기');
-      location.href = '/src/pages/search/index.html';
-    }
-  }
-
+  
 
 
 
