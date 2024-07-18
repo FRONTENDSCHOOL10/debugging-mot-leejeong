@@ -1,22 +1,21 @@
-import '../../pages/search/search.js';
+import '@/pages/search/search.js';
 import './header.scss';
 import style from '/src/layouts/header/header.scss?inline';
 
 class HeaderComponent extends HTMLElement {
   constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-      this.shadowRoot.innerHTML = `
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
       <style>
       ${style}
       .search-area {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 100px;
         left: 0;
         width: 100%;
-        color: #fff;
-        padding: 20px;
+        color: $white;
         box-sizing: border-box;
       }
       </style>
@@ -145,82 +144,84 @@ class HeaderComponent extends HTMLElement {
       <div class="search-area">
         <search-component></search-component>
       </div>
-      `
-  }  
-  
-    connectedCallback() {
-      this.setupSearchButton();
-      this.setupProfileButton();
-    }
-  
-    setupSearchButton() {
-      const searchBtn = this.shadowRoot.querySelector('.search-btn');
-      
-      searchBtn.addEventListener('click', () => this.toggleSearch(searchBtn));
-      searchBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.toggleSearch(searchBtn);
-        }
-      });
-    }
-  
-    toggleSearch(btn) {
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !isExpanded);
-  
-      const svg = btn.querySelector('svg');
-      const searchArea = this.shadowRoot.querySelector('.search-area');
-      
-      if (isExpanded) {
-        svg.innerHTML = this.getMagnifierSVGContent();
-        btn.setAttribute('aria-label', '검색');
-        searchArea.style.display = 'none';
-      } else {
-        svg.innerHTML = this.getCloseSVGContent();
-        btn.setAttribute('aria-label', '검색 닫기');
-        searchArea.style.display = 'block';
+      `;
+  }
+
+  connectedCallback() {
+    this.setupSearchButton();
+    this.setupProfileButton();
+  }
+
+  setupSearchButton() {
+    const searchBtn = this.shadowRoot.querySelector('.search-btn');
+
+    searchBtn.addEventListener('click', () => this.toggleSearch(searchBtn));
+    searchBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleSearch(searchBtn);
       }
+    });
+  }
+
+  toggleSearch(btn) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+
+    const svg = btn.querySelector('svg');
+    const searchArea = this.shadowRoot.querySelector('.search-area');
+
+    if (isExpanded) {
+      svg.innerHTML = this.getMagnifierSVGContent();
+      btn.setAttribute('aria-label', '검색');
+      searchArea.style.display = 'none';
+    } else {
+      svg.innerHTML = this.getCloseSVGContent();
+      btn.setAttribute('aria-label', '검색 닫기');
+      searchArea.style.display = 'block';
     }
-  
-    setupProfileButton() {
-      const profileBtn = this.shadowRoot.querySelector('.profile-btn');
-      const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
-      
-      profileBtn.addEventListener('click', () => this.toggleDropdown(profileBtn, dropdown));
-      profileBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.toggleDropdown(profileBtn, dropdown);
-        }
-      });
-  
-      document.addEventListener('click', (event) => {
-        if (!event.composedPath().includes(profileBtn) && !event.composedPath().includes(dropdown)) {
-          this.closeDropdown(profileBtn, dropdown);
-        }
-      });
-    }
-  
-    toggleDropdown(btn, dropdown) {
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !isExpanded);
-      dropdown.classList.toggle('show');
-      if (!isExpanded) {
-        btn.style.outline = '2px solid white';
-      } else {
-        btn.style.outline = 'none';
+  }
+
+  setupProfileButton() {
+    const profileBtn = this.shadowRoot.querySelector('.profile-btn');
+    const dropdown = this.shadowRoot.querySelector('.header__dropdown-menu');
+
+    profileBtn.addEventListener('click', () =>
+      this.toggleDropdown(profileBtn, dropdown)
+    );
+    profileBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleDropdown(profileBtn, dropdown);
       }
-    }
-  
-    closeDropdown(btn, dropdown) {
-      btn.setAttribute('aria-expanded', 'false');
-      dropdown.classList.remove('show');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        !event.composedPath().includes(profileBtn) &&
+        !event.composedPath().includes(dropdown)
+      ) {
+        this.closeDropdown(profileBtn, dropdown);
+      }
+    });
+  }
+
+  toggleDropdown(btn, dropdown) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+    dropdown.classList.toggle('show');
+    if (!isExpanded) {
+      btn.style.outline = '2px solid white';
+    } else {
       btn.style.outline = 'none';
     }
-  
+  }
 
-
+  closeDropdown(btn, dropdown) {
+    btn.setAttribute('aria-expanded', 'false');
+    dropdown.classList.remove('show');
+    btn.style.outline = 'none';
+  }
 
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
@@ -252,6 +253,5 @@ class HeaderComponent extends HTMLElement {
     `;
   }
 }
-
 
 customElements.define('header-component', HeaderComponent);
