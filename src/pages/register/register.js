@@ -121,7 +121,10 @@ function handleCheckAllTerms(e) {
   const subList = target.nextElementSibling.nextElementSibling;
   const allInputs = [...subList.querySelectorAll('input')];
   isAllChecked = !isAllChecked;
-
+  acceptAllTerms.checked = isAllChecked;
+  if (target.id === 'acceptAllTerms') {
+    acceptAllTerms.checked = isAllChecked;
+  }
   allInputs.forEach((input) => {
     isAllChecked ? (input.checked = true) : (input.checked = false);
   });
@@ -136,13 +139,19 @@ function handleTermList(e) {
   const checkInputBox = (input) => input.checked;
 
   if (allInputs.every(checkInputBox)) {
+    if (parentInput.id === 'acceptAllTerms') {
+      acceptAllTerms.checked = true;
+    }
+    if ([...allTermsLists].every(checkInputBox)) {
+      acceptAllTerms.checked = true;
+    }
+
     isAllChecked = true;
     parentInput.checked = isAllChecked;
-    acceptAllTerms.checked = true;
-    console.log(acceptAllTerms.checked);
   } else {
     isAllChecked = false;
     parentInput.checked = isAllChecked;
+    acceptAllTerms.checked = false;
   }
 }
 
