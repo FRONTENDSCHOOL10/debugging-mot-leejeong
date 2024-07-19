@@ -17,6 +17,7 @@ class HeaderComponent extends HTMLElement {
         width: 100%;
         color: $white;
         box-sizing: border-box;
+        overflow: auto; /* 검색 영역에 스크롤을 활성화 */
       }
       </style>
       <header class="header">
@@ -147,7 +148,6 @@ class HeaderComponent extends HTMLElement {
       `;
   }
 
-  
   connectedCallback() {
     this.setupSearchButton();
     this.setupProfileButton();
