@@ -24,12 +24,17 @@
         <form action="/" class="log-in__form paragraph-large">
           <fieldset class="log-in-form__fieldset">
             <legend class="log-in-form__legend sr-only">로그인</legend>
-
-            <label
-              for="userId"
-              aria-label="아이디"
-              class="log-in-form__label--id"
+            <div
+              role="group"
+              aria-label="아이디 인풋 영역"
+              class="id-input__container"
             >
+              <label
+                for="userId"
+                aria-label="아이디"
+                class="log-in-form__label--id sr-only"
+              >
+              </label>
               <input
                 class="log-in-form__input--id"
                 type="text"
@@ -44,13 +49,18 @@
                 aria-label="아이디 지우기"
                 hidden
               ></button>
-            </label>
-
-            <label
-              aria-label="비밀번호"
-              for="userPwd"
-              class="log-in-form__label--pwd"
+            </div>
+            <div
+              role="group"
+              aria-label="비밀번호 인풋 영역"
+              class="pwd-input__container"
             >
+              <label
+                aria-label="비밀번호"
+                for="userPwd"
+                class="log-in-form__label--pwd sr-only"
+              >
+              </label>
               <input
                 class="log-in-form__input--pwd"
                 type="password"
@@ -70,7 +80,7 @@
                 class="log-in__button-show-pwd"
                 aria-label="비밀번호 보기"
               ></button>
-            </label>
+            </div>
             <div
               role="group"
               aria-label="자동 로그인"

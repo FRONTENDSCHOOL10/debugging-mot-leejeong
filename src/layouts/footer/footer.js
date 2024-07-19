@@ -89,7 +89,7 @@ class FooterComponent extends HTMLElement {
             </section>
             <ul class="footer__sns">
               <li>
-                 <a href="https://www.youtube.com/">
+                 <a href="https://www.youtube.com/" aria-label="유튜브 바로가기">
                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
                      <path d="M40.9906 18.2705C40.6307 16.8847 39.5705 15.7934 38.2243 15.423C35.7843 14.75 25.9999 14.75 25.9999 14.75C25.9999 14.75 16.2157 14.75 13.7756 15.423C12.4294 15.7934 11.3691 16.8847 11.0093 18.2705C10.3555 20.7822 10.3555 26.0227 10.3555 26.0227C10.3555 26.0227 10.3555 31.2632 11.0093 33.775C11.3691 35.1607 12.4294 36.2066 13.7756 36.577C16.2157 37.25 25.9999 37.25 25.9999 37.25C25.9999 37.25 35.7842 37.25 38.2243 36.577C39.5705 36.2066 40.6307 35.1607 40.9906 33.775C41.6444 31.2632 41.6444 26.0227 41.6444 26.0227C41.6444 26.0227 41.6444 20.7822 40.9906 18.2705ZM22.7999 30.7807V21.2647L30.9777 26.0229L22.7999 30.7807Z" fill="#6B6B6B"/>
@@ -97,7 +97,7 @@ class FooterComponent extends HTMLElement {
                  </a>
                </li>
                <li>
-                 <a href="https://www.instagram.com/">
+                 <a href="https://www.instagram.com/" aria-label="인스타그램 바로가기">
                   <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
                    <g clip-path="url(#clip0_14_459)">
@@ -112,7 +112,7 @@ class FooterComponent extends HTMLElement {
                  </a>
                </li>
                <li>
-                 <a href="https:x.com/?lang=ko">
+                 <a href="https:x.com/?lang=ko" aria-label="트위터 바로가기">
                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http:www.w3.org/2000/svg">
                      <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
                      <g clip-path="url(#clip0_14_462)">
@@ -127,7 +127,7 @@ class FooterComponent extends HTMLElement {
                  </a>
                </li>
                <li>
-                 <a href="https:www.facebook.com/?locale=ko_KR">
+                 <a href="https:www.facebook.com/?locale=ko_KR" aria-label="페이스북 바로가기">
                   <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http:www.w3.org/2000/svg">
                    <rect width="52" height="52" rx="26" fill="#2B2B2B"/>
                    <g clip-path="url(#clip0_14_465)">

@@ -31,12 +31,17 @@
           <form action="/" class="find-id__form--email paragraph-large">
             <fieldset>
               <legend class="sr-only">이메일 입력</legend>
-
-              <label
-                for="useremail"
-                aria-label="이메일"
-                class="find-id__label--email"
+              <div
+                role="group"
+                aria-label="이메일 인풋 영역"
+                class="email-input__container"
               >
+                <label
+                  for="useremail"
+                  aria-label="이메일"
+                  class="find-id__label--email sr-only"
+                >
+                </label>
                 <input
                   type="email"
                   name="useremail"
@@ -51,7 +56,7 @@
                   aria-label="이메일 지우기"
                   hidden
                 ></button>
-              </label>
+              </div>
               <p class="find-id__validation--email" hidden>
                 이메일의 형식이 올바르지 않습니다.
               </p>
