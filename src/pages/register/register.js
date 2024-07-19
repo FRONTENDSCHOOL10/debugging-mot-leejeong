@@ -5,6 +5,8 @@ import {
   validateEmail,
 } from './../../utils/validate.js';
 import { deleteInputVal, showInputPwd } from '../../utils/input.js';
+import './../../layouts/header/header.js';
+import './../../layouts/footer/footer.js';
 import './register.scss';
 
 const userId = document.querySelector('.sign-up-form__input--id');
