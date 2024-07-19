@@ -1,6 +1,8 @@
 import pb from '../../api/pocketbase';
 import { validateId } from '../../utils/validate';
 import { deleteInputVal } from '../../utils/input';
+import './../../layouts/header/header.js';
+import './../../layouts/footer/footer.js';
 import './find-pwd.scss';
 
 const userId = document.querySelector('.find-pwd__input--id');

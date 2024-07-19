@@ -1,6 +1,8 @@
 import pb from '../../api/pocketbase';
 import { deleteInputVal } from '../../utils/input';
 import { showInputPwd } from '../../utils/input';
+import './../../layouts/header/header.js';
+import './../../layouts/footer/footer.js';
 import './login.scss';
 
 const idInput = document.querySelector('.log-in-form__input--id');
