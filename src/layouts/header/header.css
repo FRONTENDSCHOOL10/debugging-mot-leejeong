@@ -311,7 +311,11 @@ body {
 
 body {
   position: relative;
-  color: #c4c4c4;
+  overflow-y: auto; /* 스크롤을 활성화 */
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 .header {
@@ -327,6 +331,7 @@ body {
   transform: translateX(-50%);
   padding: 0 clamp(1rem, 3.90625vw, 4.375rem);
   box-sizing: border-box;
+  overflow: visible; /* 스크롤을 방해하지 않도록 설정 */
 }
 .header .header__logo a:focus {
   outline: 2px solid rgb(255, 255, 255);
@@ -343,6 +348,7 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 3.25rem;
+  color: #c4c4c4;
 }
 .header .header__menu .header__menu-item {
   font-size: 1.3125rem;
@@ -379,6 +385,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  position: relative;
 }
 .header .header__actions .header__actions-btn {
   background: none;
@@ -401,6 +408,38 @@ body {
 .header .header__actions .header__actions-btn:focus.profile-btn {
   outline: 2px solid rgb(255, 255, 255);
   outline-offset: 2px;
+}
+.header .header__actions .header__dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 4.875rem;
+  height: 1.9375rem;
+  top: 3.75rem;
+  right: -3px;
+  background: #565656;
+  border-radius: 0.3125rem;
+  z-index: 3;
+  padding: 0.3125rem 0.625rem;
+  background-color: #ff153c;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  cursor: pointer;
+}
+.header .header__actions .header__dropdown-menu a {
+  display: inline-block;
+  position: relative;
+  top: 0.1875rem;
+  left: 0.0625rem;
+}
+.header .header__actions .header__dropdown-menu.show {
+  display: block;
+}
+.header .header__actions .header__dropdown-menu:hover, .header .header__actions .header__dropdown-menu:focus {
+  background: #f24333;
+  transition: background 0.2s;
+}
+.header .header__actions .profile-btn[aria-expanded=true] + .header__dropdown-menu {
+  display: block;
 }
 
 @media (max-width: 64rem) {
@@ -437,6 +476,16 @@ body {
     width: 1.5rem;
     height: 1.5rem;
   }
+  .header .header__actions .header__dropdown-menu {
+    width: 2.8125rem;
+    height: 1.25rem;
+    top: 2.5rem;
+    right: -3px;
+    font-size: 0.625rem;
+  }
+  .header .header__actions .header__dropdown-menu a {
+    top: 0.125rem;
+  }
 }
 @media (max-width: 42.5rem) {
   .header {
@@ -461,5 +510,17 @@ body {
     width: 1.125rem;
     height: 1.125rem;
     display: block;
+  }
+  .header .header__actions .header__dropdown-menu {
+    width: 2.1875rem;
+    height: 0.625rem;
+    top: 1.875rem;
+    right: -3px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.625rem;
+  }
+  .header .header__actions .header__dropdown-menu a {
+    position: relative;
+    top: -2px;
   }
 }/*# sourceMappingURL=header.css.map */

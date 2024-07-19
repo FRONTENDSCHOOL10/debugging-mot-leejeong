@@ -718,11 +718,13 @@ figcaption {
 @media (min-width: 42.5rem) {
   .find-pwd {
     max-width: 64rem;
+    padding: 2.5rem 1.5rem clamp(1rem, 3.90625vw, 4.375rem);
   }
 }
 @media (min-width: 1025px) {
   .find-pwd {
     max-width: 100vw;
+    padding: 4.38rem 3.75rem clamp(1rem, 3.90625vw, 4.375rem);
   }
 }
 
