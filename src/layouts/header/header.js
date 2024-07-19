@@ -232,17 +232,19 @@ class HeaderComponent extends HTMLElement {
   }
 
   updatePlaceholder() {
-    const searchInput = this.shadowRoot.querySelector('.search-area search-component').shadowRoot.querySelector('.search__form-input');
+    const searchInput = this.shadowRoot
+      .querySelector('.search-area search-component')
+      .shadowRoot.querySelector('.search__form-input');
     if (searchInput) {
       if (window.innerWidth <= 768) {
         searchInput.placeholder = '검색';
       } else {
-        searchInput.placeholder = 'TV 프로그램, 영화 제목 및 출연진으로 검색해보세요.';
+        searchInput.placeholder =
+          'TV 프로그램, 영화 제목 및 출연진으로 검색해보세요.';
       }
     }
   }
 
-  
   // 돋보기 모양 SVG 반환
   getMagnifierSVGContent() {
     return `
