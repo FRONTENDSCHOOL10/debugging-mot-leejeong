@@ -263,6 +263,277 @@
 // }
 
 
+// @use './../../styles/base' as *;
+// @use './../../styles/utils' as *;
+
+// body {
+//   position: relative;
+//   overflow-y: auto; /* 스크롤을 활성화 */
+// }
+
+// body.no-scroll {
+//   overflow: hidden;
+// }
+
+// .header {
+//   width: 100%;
+//   height: rem(100);
+//   position: fixed;
+//   display: flex;
+//   align-items: center;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+//   z-index: 2;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 $container-gutter;
+//   box-sizing: border-box;
+//   overflow: visible; /* 스크롤을 방해하지 않도록 설정 */
+
+//   .header__logo a:focus {
+//     outline: 2px solid $white;
+//     outline-offset: 2px;
+//   }
+
+//   .header__menu {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-grow: 1;
+//     margin-left: rem(52);
+
+//     .header__menu-left {
+//       display: flex;
+//       align-items: flex-end;
+//       gap: rem(52);
+//       color: $gray-200;
+//     }
+
+//     .header__menu-item {
+//       font-size: rem(21);
+//       font-weight: 600;
+
+//       a {
+//         display: flex;
+//         align-items: flex-end;
+//         transition: color .15s linear;
+
+//         svg {
+//           margin-right: rem(10);
+//           transition: all .2s linear;
+//         }
+
+//         &:hover {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:focus {
+//           color: $white;
+//           outline: none;
+//         }
+
+//         &:hover svg path,
+//         &:hover svg circle {
+//           stroke: $white;
+//         }
+
+//         &:focus svg path,
+//         &:focus svg circle {
+//           stroke: $white;
+//         }
+//       }
+
+//       &:last-of-type {
+//         a:hover svg path,
+//         a:focus svg path {
+//           fill: $white;
+//         }
+//       }
+//     }
+//   }
+
+//   .header__actions {
+//     display: flex;
+//     align-items: center;
+//     gap: rem(40);
+//     position: relative;
+
+//     .header__actions-btn {
+//       background: none;
+//       border: none;
+//       cursor: pointer;
+//       transition: all .2s linear;
+
+//       &:hover:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:focus:not(.profile-btn) {
+//         outline: none;
+//       }
+
+//       &:hover:not(.profile-btn) svg path,
+//       &:hover:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus:not(.profile-btn) svg path,
+//       &:focus:not(.profile-btn) svg circle {
+//         stroke: $white;
+//       }
+
+//       &:focus.profile-btn {
+//         outline: 2px solid $white;
+//         outline-offset: 2px;
+//       }
+//     }
+
+//     .header__dropdown-menu {
+//       display: none;
+//       position: absolute;
+//       width: rem(78);
+//       height: rem(31);
+//       top: rem(60);
+//       right: -3px;
+//       background: $gray-600;
+//       border-radius: rem(5);
+//       z-index: 3;
+//       padding: rem(5) rem(10);
+//       background-color: $brand-red-1;
+//       color: $white;
+//       text-align: center;
+//       cursor: pointer;
+
+//       a {
+//         display: inline-block;
+//         position: relative;
+//         top: rem(3);
+//         left: rem(1);
+//       }
+
+//       &.show {
+//         display: block;
+//       }
+
+//       &:hover,
+//       &:focus {
+//         background: #f24333;
+//         transition: background 0.2s;
+//       }
+//     }
+
+//     .profile-btn[aria-expanded="true"] + .header__dropdown-menu {
+//       display: block;
+//     }
+//   }
+// }
+
+// // Tablet
+// @media (max-width: $breakpoint-tablet) {
+//   .header {
+//     height: rem(56);
+
+//     .header__logo svg {
+//       width: rem(77);
+//       height: rem(24);
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       align-items: flex-start;
+
+//       .header__menu-left {
+//         gap: rem(28);
+//       }
+
+//       .header__menu-item {
+//         font-size: rem(12);
+
+//         svg {
+//           width: rem(20);
+//           height: rem(20);
+//         }
+
+//         &:last-of-type svg {
+//           width: rem(65);
+//           height: rem(20);
+//         }
+//       }
+//     }
+
+//     .header__actions {
+//       gap: rem(24);
+
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(24);
+//         height: rem(24);
+//       }
+
+//       .header__dropdown-menu {
+//         width: rem(45);
+//         height: rem(20);
+//         top: rem(40);
+//         right: -3px;
+//         font-size: rem(10);
+
+//         a {
+//           top: rem(2);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // Mobile
+// @media (max-width: $breakpoint-mobile) {
+//   .header {
+//     height: rem(38);
+
+//     .header__logo svg {
+//       width: rem(46);
+//       height: rem(15);
+//       vertical-align: middle;
+//     }
+
+//     .header__menu {
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: flex-end;
+//       margin-left: 3.25rem;
+
+//       .header__menu-left {
+//         display: none;
+//       }
+//     }
+
+//     .header__actions {
+//       .header__actions-btn svg,
+//       .header__actions-btn img {
+//         width: rem(18);
+//         height: rem(18);
+//         display: block;
+//       }
+
+//       .header__dropdown-menu {
+//         width: rem(35);
+//         height: rem(10);
+//         top: rem(30);
+//         right: -3px;
+//         padding: rem(8) rem(12);
+//         font-size: rem(10);
+
+//         a {
+//           position: relative;
+//           top: -2px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
 @use './../../styles/base' as *;
 @use './../../styles/utils' as *;
 
